@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Kurun&#39;s Blog</title>
-    <link>https://Kurun-pan.github.io/</link>
-    <description>Recent content on Kurun&#39;s Blog</description>
+    <title>note on Kurun&#39;s Blog</title>
+    <link>https://Kurun-pan.github.io/tags/note/</link>
+    <description>Recent content in note on Kurun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kurunpan09@gmail.com (Kurun / くるん)</managingEditor>
     <webMaster>kurunpan09@gmail.com (Kurun / くるん)</webMaster>
     <lastBuildDate>Sat, 15 Aug 2020 20:35:18 +0900</lastBuildDate>
     
-	<atom:link href="https://Kurun-pan.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://Kurun-pan.github.io/tags/note/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -22,17 +22,6 @@
 何書くの？ 自分が学んだことのアウトプットを出す自由な場として、技術ネタ中心に記事を投稿しようと思います。
 参考 Github Pages + Hugoを使った手順 ここを参考にして、 とても簡単に出来ました。
 Hugoのテーマはデザイン性の高いものが多くあり、どれにするか迷いましたが、 結局はシンプルなBeautiful Hugoにしました。</description>
-    </item>
-    
-    <item>
-      <title>About me</title>
-      <link>https://Kurun-pan.github.io/page/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
-      <guid>https://Kurun-pan.github.io/page/about/</guid>
-      <description>TODO
-What else do you need?
-my history </description>
     </item>
     
   </channel>
