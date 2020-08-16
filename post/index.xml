@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kurunpan09@gmail.com (Kurun / くるん)</managingEditor>
     <webMaster>kurunpan09@gmail.com (Kurun / くるん)</webMaster>
-    <lastBuildDate>Sun, 16 Aug 2020 18:00:01 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 17 Aug 2020 00:00:01 +0900</lastBuildDate>
     
 	<atom:link href="https://Kurun-pan.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>xv6のRISC-V版とそのビルド手順など</title>
+      <link>https://Kurun-pan.github.io/post/2020-08-17-riscv-tests/</link>
+      <pubDate>Mon, 17 Aug 2020 00:00:01 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/post/2020-08-17-riscv-tests/</guid>
+      <description>RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。 RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。
+riscv-tests ディレクトリ構造  riscv-testsには、isaとbenchmarksの2つが用意されています。isaが各命令のテストプログラムで、 benchmarksがdhrystoneやクイックソートなどのベンチマーク用のプログラムです。
+isaディレクトリ以下には 以下のようにテスト内容毎にディレクトリが分けられています。
+   ディレクトリ名 Bits Privilege 命令の種類     rv32mi 32 Machine RV32I (基本命令系)   rv32si 32 Supervisor RV32I (基本命令系)   rv32ua 32 User RV32A (アトミック命令系)   rv32uc 32 User RV32C (圧縮命令系)   rv32ud 32 User RV32D (倍精度 浮動小数点演算命令系)   rv32uf 32 User RV32F (単精度 浮動小数点演算命令系)   rv32ui 32 User RV32I (基本命令系)   rv32um 32 User RV32M (乗除命令系)   rv64mi 64 Machine RV64I (基本命令系)   rv64si 64 Supervisor RV64I (基本命令系)   rv64ua 64 User RV64A (アトミック命令系)   rv64uc 64 User RV64C (圧縮命令系)   rv64ud 64 User RV64D (倍精度 浮動小数点演算命令系)   rv64uf 64 User RV64F (単精度 浮動小数点演算命令系)   rv64ui 64 User RV64I (基本命令系)   rv64um 64 User RV64M (乗除命令系)    OK/NGの判定方法  Spike というRISC-V公式のRISC-V向けの命令セットシミュレータ(ISS)において、 Host Target Interface (HTIF) というハードウェアテスト用の通信仕様が定められています。</description>
+    </item>
     
     <item>
       <title>xv6のRISC-V版とそのビルド手順など</title>
