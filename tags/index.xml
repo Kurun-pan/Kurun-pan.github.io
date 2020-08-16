@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kurunpan09@gmail.com (Kurun / くるん)</managingEditor>
     <webMaster>kurunpan09@gmail.com (Kurun / くるん)</webMaster>
-    <lastBuildDate>Sun, 16 Aug 2020 06:38:27 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 16 Aug 2020 17:47:01 +0900</lastBuildDate>
     
 	<atom:link href="https://Kurun-pan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RISC-V</title>
+      <link>https://Kurun-pan.github.io/tags/risc-v/</link>
+      <pubDate>Sun, 16 Aug 2020 17:47:01 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/tags/risc-v/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>hugo</title>

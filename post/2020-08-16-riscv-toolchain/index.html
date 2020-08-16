@@ -7,9 +7,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>How to use Hugo - Kurun&#39;s Blog</title>
-  <meta name="description" content="Github Pages &#43; Hugoでブログを投稿するために最低限使うコマンドの備忘録です。 テンプレートとして利用しているテーマはBeautiful Hugoです。
-新しい記事を作成する $ hugo new content/post/{適当な文字列。何でも良い}.md 作成した記事を確認する $ hugo server -D リリース用データ (publicディレクトリ) を作成する $ hugo 参考   GitHub PagesとHugoでブログをつくった Hugoのテーマ一覧  ">
+  <title>RISC-V Toolchainのインストール手順 - Kurun&#39;s Blog</title>
+  <meta name="description" content="RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。 対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。
+インストール手順  必要なパッケージのインストール $ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat Toolchainのビルドとインストール makeコマンドを実行することで、インストールまで実行されます。 また、git cloneにも結構な時間を要します。ビルドも同様です。。
+configureのprefixオプションには、インストール先のパスを指定します。
+$ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain $ cd riscv-gnu-toolchain $ ./configure --prefix=/opt/riscv $ sudo make PATH追加 $export PATH=$PATH:/opt/riscv/bin 動作確認  $ /opt/riscv/bin/riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 Copyright (C) 2020 Free Software Foundation, Inc. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.">
   <meta name="author" content="Kurun / くるん"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -45,8 +47,8 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/Kurun-pan.github.io\/post\/2020-08-16-how-to-use-hugo\/",
-          "name": "How to use hugo"
+          "@id": "https:\/\/Kurun-pan.github.io\/post\/2020-08-16-riscv-toolchain\/",
+          "name": "R i s c v toolchainのインストール手順"
         }
     }]
 }
@@ -57,15 +59,15 @@
   "author": {
     "name" : "Kurun \/ くるん"
   },
-  "headline": "How to use Hugo",
-  "description" : "Github Pages \u002b Hugoでブログを投稿するために最低限使うコマンドの備忘録です。 テンプレートとして利用しているテーマはBeautiful Hugoです。\n新しい記事を作成する $ hugo new content\/post\/{適当な文字列。何でも良い}.md 作成した記事を確認する $ hugo server -D リリース用データ (publicディレクトリ) を作成する $ hugo 参考   GitHub PagesとHugoでブログをつくった Hugoのテーマ一覧  ",
+  "headline": "RISC-V Toolchainのインストール手順",
+  "description" : "RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。 対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。\nインストール手順  必要なパッケージのインストール $ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat Toolchainのビルドとインストール makeコマンドを実行することで、インストールまで実行されます。 また、git cloneにも結構な時間を要します。ビルドも同様です。。\nconfigureのprefixオプションには、インストール先のパスを指定します。\n$ git clone --recursive https:\/\/github.com\/riscv\/riscv-gnu-toolchain $ cd riscv-gnu-toolchain $ .\/configure --prefix=\/opt\/riscv $ sudo make PATH追加 $export PATH=$PATH:\/opt\/riscv\/bin 動作確認  $ \/opt\/riscv\/bin\/riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 Copyright (C) 2020 Free Software Foundation, Inc. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.",
   "inLanguage" : "en",
-  "wordCount":  25 ,
-  "datePublished" : "2020-08-16T06:38:27",
-  "dateModified" : "2020-08-16T06:38:27",
+  "wordCount":  82 ,
+  "datePublished" : "2020-08-16T17:47:01",
+  "dateModified" : "2020-08-16T17:47:01",
   "image" : "https:\/\/Kurun-pan.github.io\/images\/avatar-icon.png",
-  "keywords" : [ "hugo" ],
-  "mainEntityOfPage" : "https:\/\/Kurun-pan.github.io\/post\/2020-08-16-how-to-use-hugo\/",
+  "keywords" : [ "RISC-V" ],
+  "mainEntityOfPage" : "https:\/\/Kurun-pan.github.io\/post\/2020-08-16-riscv-toolchain\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/Kurun-pan.github.io",
@@ -79,17 +81,19 @@
 }
 </script>
 
-<meta property="og:title" content="How to use Hugo" />
-<meta property="og:description" content="Github Pages &#43; Hugoでブログを投稿するために最低限使うコマンドの備忘録です。 テンプレートとして利用しているテーマはBeautiful Hugoです。
-新しい記事を作成する $ hugo new content/post/{適当な文字列。何でも良い}.md 作成した記事を確認する $ hugo server -D リリース用データ (publicディレクトリ) を作成する $ hugo 参考   GitHub PagesとHugoでブログをつくった Hugoのテーマ一覧  ">
+<meta property="og:title" content="RISC-V Toolchainのインストール手順" />
+<meta property="og:description" content="RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。 対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。
+インストール手順  必要なパッケージのインストール $ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat Toolchainのビルドとインストール makeコマンドを実行することで、インストールまで実行されます。 また、git cloneにも結構な時間を要します。ビルドも同様です。。
+configureのprefixオプションには、インストール先のパスを指定します。
+$ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain $ cd riscv-gnu-toolchain $ ./configure --prefix=/opt/riscv $ sudo make PATH追加 $export PATH=$PATH:/opt/riscv/bin 動作確認  $ /opt/riscv/bin/riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 Copyright (C) 2020 Free Software Foundation, Inc. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.">
 <meta property="og:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
-<meta property="og:url" content="https://Kurun-pan.github.io/post/2020-08-16-how-to-use-hugo/" />
+<meta property="og:url" content="https://Kurun-pan.github.io/post/2020-08-16-riscv-toolchain/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kurun&#39;s Blog" />
 
-  <meta name="twitter:title" content="How to use Hugo" />
-  <meta name="twitter:description" content="Github Pages &#43; Hugoでブログを投稿するために最低限使うコマンドの備忘録です。 テンプレートとして利用しているテーマはBeautiful Hugoです。
-新しい記事を作成する $ hugo new content/post/{適当な文字列。何でも良い}.md 作成した記事を確認する $ hugo server -D リリース用データ (publicディレクトリ) を作成する $ …">
+  <meta name="twitter:title" content="RISC-V Toolchainのインストール手順" />
+  <meta name="twitter:description" content="RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。 対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。
+インストール手順  必要なパッケージのインストール $ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat Toolchainの …">
   <meta name="twitter:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kurun_pan" />
@@ -238,7 +242,7 @@
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
               <div class="post-heading">
-                <h1>How to use Hugo</h1>
+                <h1>RISC-V Toolchainのインストール手順</h1>
                   
                   
                     <span class="post-meta">
@@ -250,7 +254,7 @@
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;25&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;82&nbsp;words
   
   
     
@@ -275,7 +279,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>How to use Hugo</h1>
+                <h1>RISC-V Toolchainのインストール手順</h1>
               
               
               
@@ -289,7 +293,7 @@
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;25&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;82&nbsp;words
   
   
     
@@ -314,27 +318,42 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>Github Pages + Hugoでブログを投稿するために最低限使うコマンドの備忘録です。
-テンプレートとして利用しているテーマは<a href="https://themes.gohugo.io/beautifulhugo/"><code>Beautiful Hugo</code></a>です。</p>
-<h3 id="新しい記事を作成する">新しい記事を作成する</h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ hugo new content/post/{適当な文字列。何でも良い}.md
-</code></pre></div><h3 id="作成した記事を確認する">作成した記事を確認する</h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ hugo server -D
-</code></pre></div><h3 id="リリース用データ-publicディレクトリ-を作成する">リリース用データ (publicディレクトリ) を作成する</h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ hugo
+        <p>RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。
+対象OSは<code>macOS</code>ですが、基本的にLinux (Ubuntuなど) でも同じ手順です。</p>
+<h1 id="インストール手順">インストール手順</h1>
+<hr>
+<h3 id="必要なパッケージのインストール">必要なパッケージのインストール</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat
+</code></pre></div><h3 id="toolchainのビルドとインストール">Toolchainのビルドとインストール</h3>
+<p>makeコマンドを実行することで、インストールまで実行されます。
+また、git cloneにも結構な時間を要します。ビルドも同様です。。</p>
+<p><code>configure</code>の<code>prefix</code>オプションには、インストール先のパスを指定します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
+$ cd riscv-gnu-toolchain
+$ ./configure --prefix=/opt/riscv
+$ sudo make
+</code></pre></div><h3 id="path追加">PATH追加</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$export PATH=$PATH:/opt/riscv/bin
 </code></pre></div><!-- raw HTML omitted -->
-<h2 id="参考">参考</h2>
+<h1 id="動作確認">動作確認</h1>
+<hr>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ /opt/riscv/bin/riscv64-unknown-elf-gcc --version
+riscv64-unknown-elf-gcc (GCC) 10.1.0
+Copyright (C) 2020 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</code></pre></div><!-- raw HTML omitted -->
+<h1 id="参考文献">参考文献</h1>
 <hr>
 <ul>
-<li><a href="https://uzimihsr.github.io/post/2019-08-07-create-blog-1/">GitHub PagesとHugoでブログをつくった</a></li>
-<li><a href="https://themes.gohugo.io/">Hugoのテーマ一覧</a></li>
+<li><a href="https://github.com/riscv/riscv-gnu-toolchain">riscv-gnu-toolchain</a></li>
 </ul>
 
 
         
           <div class="blog-tags">
             
-              <a href="https://Kurun-pan.github.io/tags/hugo/">hugo</a>&nbsp;
+              <a href="https://Kurun-pan.github.io/tags/risc-v/">RISC-V</a>&nbsp;
             
           </div>
         
@@ -349,42 +368,42 @@
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-how-to-use-hugo%2f&amp;text=How%20to%20use%20Hugo&amp;via=kurun_pan" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f&amp;text=RISC-V%20Toolchain%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86&amp;via=kurun_pan" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-how-to-use-hugo%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-how-to-use-hugo%2f&amp;title=How%20to%20use%20Hugo" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f&amp;title=RISC-V%20Toolchain%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-how-to-use-hugo%2f&amp;title=How%20to%20use%20Hugo" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f&amp;title=RISC-V%20Toolchain%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-how-to-use-hugo%2f&amp;title=How%20to%20use%20Hugo" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f&amp;title=RISC-V%20Toolchain%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-how-to-use-hugo%2f&amp;description=How%20to%20use%20Hugo" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f&amp;description=RISC-V%20Toolchain%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -407,13 +426,9 @@
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://Kurun-pan.github.io/post/2020-08-15-first-post/" data-toggle="tooltip" data-placement="top" title="初めての投稿">&larr; Previous Post</a>
+              <a href="https://Kurun-pan.github.io/post/2020-08-16-how-to-use-hugo/" data-toggle="tooltip" data-placement="top" title="How to use Hugo">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://Kurun-pan.github.io/post/2020-08-16-riscv-toolchain/" data-toggle="tooltip" data-placement="top" title="RISC-V Toolchainのインストール手順">Next Post &rarr;</a>
-            </li>
           
         </ul>
       

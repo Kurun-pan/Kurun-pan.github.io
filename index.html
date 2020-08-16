@@ -46,7 +46,6 @@ Android, Linux, 組み込み, Flutter, C/C&#43;&#43;, Rust, RISC-Vなどの技�
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kurun_pan" />
   <meta name="twitter:creator" content="@kurun_pan" />
-  <link href='https://Kurun-pan.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta name="generator" content="Hugo 0.74.3" />
   <link rel="alternate" href="https://Kurun-pan.github.io/index.xml" type="application/rss+xml" title="Kurun&#39;s Blog"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -217,6 +216,56 @@ Android, Linux, 組み込み, Flutter, C/C&#43;&#43;, Rust, RISC-Vなどの技�
 
         <div class="posts-list">
           
+          
+            <article class="post-preview">
+    <a href="https://Kurun-pan.github.io/post/2020-08-16-riscv-toolchain/">
+        <h2 class="post-title">RISC-V Toolchainのインストール手順</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;82&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Kurun / くるん
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。 対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。
+インストール手順  必要なパッケージのインストール $ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat Toolchainのビルドとインストール makeコマンドを実行することで、インストールまで実行されます。 また、git cloneにも結構な時間を要します。ビルドも同様です。。
+configureのprefixオプションには、インストール先のパスを指定します。
+$ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain $ cd riscv-gnu-toolchain $ ./configure --prefix=/opt/riscv $ sudo make PATH追加 $export PATH=$PATH:/opt/riscv/bin 動作確認  $ /opt/riscv/bin/riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 Copyright (C) 2020 Free Software Foundation, Inc. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+        <a href="https://Kurun-pan.github.io/post/2020-08-16-riscv-toolchain/" class="post-read-more">[Read More]</a>
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://Kurun-pan.github.io/tags/risc-v/">RISC-V</a>&nbsp;
+        
+    </div>
+    
+
+</article>
           
             <article class="post-preview">
     <a href="https://Kurun-pan.github.io/post/2020-08-16-how-to-use-hugo/">
