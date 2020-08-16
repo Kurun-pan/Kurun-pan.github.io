@@ -199,6 +199,101 @@
         <div class="posts-list">
           
             <article class="post-preview">
+    <a href="https://Kurun-pan.github.io/post/2020-08-16-xv6-riscv/">
+        <h2 class="post-title">xv6のRISC-V版とそのビルド手順など</h2>
+        
+        
+        
+    </a>
+
+    <p class="post-meta">
+        <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;58&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Kurun / くるん
+    
+  
+  
+</span>
+
+
+    </p>
+    <div class="post-entry">
+        
+        
+<link rel="stylesheet" href="https://Kurun-pan.github.io/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/images/riscv.png" alt="/images/riscv.png"/>
+    </div>
+    <a href="/images/riscv.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<p>xv6という小さなOSのRISC-V版のビルド手順についてまとめました。</p>
+<h1 id="xv6とは">xv6とは？</h1>
+<hr>
+<p><code>MIT</code>が開発した<code>Unix</code>の思想をベースにした教育用途の小さなOSです。</p>
+<h2 id="ソースコード">ソースコード</h2>
+<p>公式オリジナルのソースコードは以下？<br>
+<a href="https://github.com/mit-pdos/xv6-public">https://github.com/mit-pdos/xv6-public</a></p>
+<h1 id="risc-v向けxv6のビルド手順">RISC-V向けxv6のビルド手順</h1>
+<hr>
+<p>RISC-Vかつ<code>QEMU</code>で動作するように向けにポーティングされたxv6のソースコードは
+以下にあります。<br>
+<a href="https://github.com/mit-pdos/xv6-riscv">https://github.com/mit-pdos/xv6-riscv</a></p>
+<p>教育用と言うだけあってソースコードの量もかなり少なく、ビルドもすぐに終わります。</p>
+<h3 id="事前準備">事前準備</h3>
+<p><a href="https://kurun-pan.github.io/post/2020-08-16-riscv-toolchain/">RISC-V Toolchainのインストール手順</a>の手順に従って、RISC-VのToolchainをインストールしておきます。</p>
+<h3 id="ソースコード取得">ソースコード取得</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git clone https://github.com/mit-pdos/xv6-riscv
+</code></pre></div><h3 id="カーネルのビルド">カーネルのビルド</h3>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ cd xv6-riscv
+$ make
+</code></pre></div><p>ビルドが成功すると<code>kernel/</code>ディレクトリに<code>kernel</code>ファイル (efl) が作成されています。
+これがxv6のカーネルのイメージです。エントリーポイントは0x8000_0000になっている様子です。</p>
+<h3 id="userlandプログラムのビルド">Userlandプログラムのビルド</h3>
+<p>Userland側のイメージをビルドして、ファイルシステム用のイメージデータを作成します。</p>
+<p>xv6カーネルは、ブート終盤にvirtio diskに格納されるこのファイルシステムをメインメモリにロードし、
+<code>cat</code>や<code>ls</code>といったユーザプログラムをシェルから使えるようにしてくれます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ make fs.img
+</code></pre></div><p>ビルドが成功すると、カレントディレクトリに<code>fs.img</code>ファイルが作成されているはずです。</p>
+<h1 id="xv6-for-risc-vの構成">xv6 for RISC-Vの構成</h1>
+<hr>
+<p>CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。</p>
+<p>ペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、
+メモリマップは<a href="https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/memlayout.h">memlayout.h</a>に定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。</p>
+<h1 id="参考文献">参考文献</h1>
+<hr>
+<ul>
+<li><a href="https://github.com/mit-pdos/xv6-riscv">mit-pdos/xv6-riscv</a></li>
+</ul>
+
+        
+    </div>
+
+    
+    <div class="blog-tags">
+        
+        <a href="https://Kurun-pan.github.io/tags/risc-v/">RISC-V</a>&nbsp;
+        
+    </div>
+    
+
+</article>
+          
+            <article class="post-preview">
     <a href="https://Kurun-pan.github.io/post/2020-08-16-riscv-toolchain/">
         <h2 class="post-title">RISC-V Toolchainのインストール手順</h2>
         
@@ -233,7 +328,7 @@
         RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。 対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。
 インストール手順  必要なパッケージのインストール $ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat Toolchainのビルドとインストール makeコマンドを実行することで、インストールまで実行されます。 また、git cloneにも結構な時間を要します。ビルドも同様です。。
 configureのprefixオプションには、インストール先のパスを指定します。
-$ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain $ cd riscv-gnu-toolchain $ ./configure --prefix=/opt/riscv $ sudo make PATH追加 $export PATH=$PATH:/opt/riscv/bin 動作確認  $ /opt/riscv/bin/riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 Copyright (C) 2020 Free Software Foundation, Inc. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+$ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain $ cd riscv-gnu-toolchain $ ./configure --prefix=/opt/riscv $ sudo make PATH追加 $export PATH=$PATH:/opt/riscv/bin 動作確認  $ /opt/riscv/bin/riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 Copyright (C) 2020 Free Software Foundation, Inc. This is free software; see the source for copying conditions.
         <a href="https://Kurun-pan.github.io/post/2020-08-16-riscv-toolchain/" class="post-read-more">[Read More]</a>
         
     </div>

@@ -7,7 +7,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Posts - Kurun&#39;s Blog</title>
+  <title>xv6のRISC-V版とそのビルド手順など - Kurun&#39;s Blog</title>
+  <meta name="description" content="     xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
+xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
+ソースコード 公式オリジナルのソースコードは以下？
+https://github.com/mit-pdos/xv6-public
+RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。
+https://github.com/mit-pdos/xv6-riscv
+教育用と言うだけあってソースコードの量もかなり少なく、ビルドもすぐに終わります。
+事前準備 RISC-V Toolchainのインストール手順の手順に従って、RISC-VのToolchainをインストールしておきます。
+ソースコード取得 $ git clone https://github.com/mit-pdos/xv6-riscv カーネルのビルド $ cd xv6-riscv $ make ビルドが成功するとkernel/ディレクトリにkernelファイル (efl) が作成されています。 これがxv6のカーネルのイメージです。エントリーポイントは0x8000_0000になっている様子です。
+Userlandプログラムのビルド Userland側のイメージをビルドして、ファイルシステム用のイメージデータを作成します。
+xv6カーネルは、ブート終盤にvirtio diskに格納されるこのファイルシステムをメインメモリにロードし、 catやlsといったユーザプログラムをシェルから使えるようにしてくれます。
+$ make fs.img ビルドが成功すると、カレントディレクトリにfs.imgファイルが作成されているはずです。
+xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。
+ペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。
+参考文献   mit-pdos/xv6-riscv  ">
   <meta name="author" content="Kurun / くるん"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -28,14 +43,82 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/Kurun-pan.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/Kurun-pan.github.io\/post\/2020-08-16-xv6-riscv\/",
+          "name": "Xv6の r i s c v版とそのビルド手順など"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Kurun \/ くるん"
+  },
+  "headline": "xv6のRISC-V版とそのビルド手順など",
+  "description" : "     xv6という小さなOSのRISC-V版のビルド手順についてまとめました。\nxv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。\nソースコード 公式オリジナルのソースコードは以下？\nhttps:\/\/github.com\/mit-pdos\/xv6-public\nRISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。\nhttps:\/\/github.com\/mit-pdos\/xv6-riscv\n教育用と言うだけあってソースコードの量もかなり少なく、ビルドもすぐに終わります。\n事前準備 RISC-V Toolchainのインストール手順の手順に従って、RISC-VのToolchainをインストールしておきます。\nソースコード取得 $ git clone https:\/\/github.com\/mit-pdos\/xv6-riscv カーネルのビルド $ cd xv6-riscv $ make ビルドが成功するとkernel\/ディレクトリにkernelファイル (efl) が作成されています。 これがxv6のカーネルのイメージです。エントリーポイントは0x8000_0000になっている様子です。\nUserlandプログラムのビルド Userland側のイメージをビルドして、ファイルシステム用のイメージデータを作成します。\nxv6カーネルは、ブート終盤にvirtio diskに格納されるこのファイルシステムをメインメモリにロードし、 catやlsといったユーザプログラムをシェルから使えるようにしてくれます。\n$ make fs.img ビルドが成功すると、カレントディレクトリにfs.imgファイルが作成されているはずです。\nxv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。\nペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。\n参考文献   mit-pdos\/xv6-riscv  ",
+  "inLanguage" : "en",
+  "wordCount":  58 ,
+  "datePublished" : "2020-08-16T18:00:01",
+  "dateModified" : "2020-08-16T18:00:01",
+  "image" : "https:\/\/Kurun-pan.github.io\/images\/avatar-icon.png",
+  "keywords" : [ "RISC-V" ],
+  "mainEntityOfPage" : "https:\/\/Kurun-pan.github.io\/post\/2020-08-16-xv6-riscv\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/Kurun-pan.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/Kurun-pan.github.io\/images\/avatar-icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="Posts" />
+<meta property="og:title" content="xv6のRISC-V版とそのビルド手順など" />
+<meta property="og:description" content="     xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
+xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
+ソースコード 公式オリジナルのソースコードは以下？
+https://github.com/mit-pdos/xv6-public
+RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。
+https://github.com/mit-pdos/xv6-riscv
+教育用と言うだけあってソースコードの量もかなり少なく、ビルドもすぐに終わります。
+事前準備 RISC-V Toolchainのインストール手順の手順に従って、RISC-VのToolchainをインストールしておきます。
+ソースコード取得 $ git clone https://github.com/mit-pdos/xv6-riscv カーネルのビルド $ cd xv6-riscv $ make ビルドが成功するとkernel/ディレクトリにkernelファイル (efl) が作成されています。 これがxv6のカーネルのイメージです。エントリーポイントは0x8000_0000になっている様子です。
+Userlandプログラムのビルド Userland側のイメージをビルドして、ファイルシステム用のイメージデータを作成します。
+xv6カーネルは、ブート終盤にvirtio diskに格納されるこのファイルシステムをメインメモリにロードし、 catやlsといったユーザプログラムをシェルから使えるようにしてくれます。
+$ make fs.img ビルドが成功すると、カレントディレクトリにfs.imgファイルが作成されているはずです。
+xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。
+ペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。
+参考文献   mit-pdos/xv6-riscv  ">
 <meta property="og:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
-<meta property="og:url" content="https://Kurun-pan.github.io/post/" />
+<meta property="og:url" content="https://Kurun-pan.github.io/post/2020-08-16-xv6-riscv/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kurun&#39;s Blog" />
 
-  <meta name="twitter:title" content="Posts" />
+  <meta name="twitter:title" content="xv6のRISC-V版とそのビルド手順など" />
+  <meta name="twitter:description" content="     xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
+xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
+ソースコード 公式オリジナルのソースコードは以下？
+https://github.com/mit-pdos/xv6-public
+RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングさ …">
   <meta name="twitter:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kurun_pan" />
@@ -167,8 +250,53 @@
 
 
   
+    <div id="header-big-imgs" data-num-img=1 
+      
+         
+          data-img-src-1="/img/sphere.jpg" 
+         
+         
+      ></div>
+  
 
-  <header class="header-section ">
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>xv6のRISC-V版とそのビルド手順など</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;58&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Kurun / くるん
+    
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
     
     <div class="intro-header no-img">
       <div class="container">
@@ -176,7 +304,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>Posts</h1>
+                <h1>xv6のRISC-V版とそのビルド手順など</h1>
               
               
               
@@ -187,10 +315,10 @@
   <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;0&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;58&nbsp;words
   
   
     
@@ -211,44 +339,10 @@
 
 
     
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        
-        <div class="posts-list">
-          
-            <article class="post-preview">
-    <a href="https://Kurun-pan.github.io/post/2020-08-16-xv6-riscv/">
-        <h2 class="post-title">xv6のRISC-V版とそのビルド手順など</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;58&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Kurun / くるん
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
         
 <link rel="stylesheet" href="https://Kurun-pan.github.io/css/hugo-easy-gallery.css" />
 <div class="box" >
@@ -299,186 +393,110 @@ $ make
 <li><a href="https://github.com/mit-pdos/xv6-riscv">mit-pdos/xv6-riscv</a></li>
 </ul>
 
-        
-    </div>
 
-    
-    <div class="blog-tags">
         
-        <a href="https://Kurun-pan.github.io/tags/risc-v/">RISC-V</a>&nbsp;
+          <div class="blog-tags">
+            
+              <a href="https://Kurun-pan.github.io/tags/risc-v/">RISC-V</a>&nbsp;
+            
+          </div>
         
-    </div>
-    
 
-</article>
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-xv6-riscv%2f&amp;text=xv6%e3%81%aeRISC-V%e7%89%88%e3%81%a8%e3%81%9d%e3%81%ae%e3%83%93%e3%83%ab%e3%83%89%e6%89%8b%e9%a0%86%e3%81%aa%e3%81%a9&amp;via=kurun_pan" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-xv6-riscv%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-xv6-riscv%2f&amp;title=xv6%e3%81%aeRISC-V%e7%89%88%e3%81%a8%e3%81%9d%e3%81%ae%e3%83%93%e3%83%ab%e3%83%89%e6%89%8b%e9%a0%86%e3%81%aa%e3%81%a9" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-xv6-riscv%2f&amp;title=xv6%e3%81%aeRISC-V%e7%89%88%e3%81%a8%e3%81%9d%e3%81%ae%e3%83%93%e3%83%ab%e3%83%89%e6%89%8b%e9%a0%86%e3%81%aa%e3%81%a9" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-xv6-riscv%2f&amp;title=xv6%e3%81%aeRISC-V%e7%89%88%e3%81%a8%e3%81%9d%e3%81%ae%e3%83%93%e3%83%ab%e3%83%89%e6%89%8b%e9%a0%86%e3%81%aa%e3%81%a9" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-xv6-riscv%2f&amp;description=xv6%e3%81%aeRISC-V%e7%89%88%e3%81%a8%e3%81%9d%e3%81%ae%e3%83%93%e3%83%ab%e3%83%89%e6%89%8b%e9%a0%86%e3%81%aa%e3%81%a9" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
           
-            <article class="post-preview">
-    <a href="https://Kurun-pan.github.io/post/2020-08-16-riscv-toolchain/">
-        <h2 class="post-title">RISC-V Toolchainのインストール手順</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;82&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Kurun / くるん
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。 対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。
-インストール手順  必要なパッケージのインストール $ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat Toolchainのビルドとインストール makeコマンドを実行することで、インストールまで実行されます。 また、git cloneにも結構な時間を要します。ビルドも同様です。。
-configureのprefixオプションには、インストール先のパスを指定します。
-$ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain $ cd riscv-gnu-toolchain $ ./configure --prefix=/opt/riscv $ sudo make PATH追加 $export PATH=$PATH:/opt/riscv/bin 動作確認  $ /opt/riscv/bin/riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 Copyright (C) 2020 Free Software Foundation, Inc. This is free software; see the source for copying conditions.
-        <a href="https://Kurun-pan.github.io/post/2020-08-16-riscv-toolchain/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://Kurun-pan.github.io/tags/risc-v/">RISC-V</a>&nbsp;
-        
-    </div>
-    
-
-</article>
+            
           
-            <article class="post-preview">
-    <a href="https://Kurun-pan.github.io/post/2020-08-16-how-to-use-hugo/">
-        <h2 class="post-title">How to use Hugo</h2>
-        
-        
-        
-    </a>
 
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;25&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Kurun / くるん
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <p>Github Pages + Hugoでブログを投稿するために最低限使うコマンドの備忘録です。
-テンプレートとして利用しているテーマは<a href="https://themes.gohugo.io/beautifulhugo/"><code>Beautiful Hugo</code></a>です。</p>
-<h3 id="新しい記事を作成する">新しい記事を作成する</h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ hugo new content/post/{適当な文字列。何でも良い}.md
-</code></pre></div><h3 id="作成した記事を確認する">作成した記事を確認する</h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ hugo server -D
-</code></pre></div><h3 id="リリース用データ-publicディレクトリ-を作成する">リリース用データ (publicディレクトリ) を作成する</h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ hugo
-</code></pre></div><!-- raw HTML omitted -->
-<h2 id="参考">参考</h2>
-<hr>
-<ul>
-<li><a href="https://uzimihsr.github.io/post/2019-08-07-create-blog-1/">GitHub PagesとHugoでブログをつくった</a></li>
-<li><a href="https://themes.gohugo.io/">Hugoのテーマ一覧</a></li>
-</ul>
-
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://Kurun-pan.github.io/tags/hugo/">hugo</a>&nbsp;
-        
-    </div>
-    
-
-</article>
           
-            <article class="post-preview">
-    <a href="https://Kurun-pan.github.io/post/2020-08-15-first-post/">
-        <h2 class="post-title">初めての投稿</h2>
-        
-        
-        
-    </a>
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="/post/2020-08-16-riscv-toolchain/">RISC-V Toolchainのインストール手順</a></li>
+                
+              </ul>
 
-    <p class="post-meta">
-        <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 15, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;7&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Kurun / くるん
-    
-  
-  
-</span>
-
-
-    </p>
-    <div class="post-entry">
-        
-        <h2 id="ブログ開設しました">ブログ開設しました</h2>
-<p>今までレンタルサーバーを借りてブログを運用したり、QiitaやMeduim, noteなどの無料の
-スペースを利用したりしていましたが、本日Github Pagesを利用したブログデビューしました。</p>
-<h2 id="何書くの">何書くの？</h2>
-<p>自分が学んだことのアウトプットを出す自由な場として、技術ネタ中心に記事を投稿しようと思います。</p>
-
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://Kurun-pan.github.io/tags/note/">note</a>&nbsp;
-        
-    </div>
-    
-
-</article>
           
-        </div>
         
-      </div>
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://Kurun-pan.github.io/post/2020-08-16-riscv-toolchain/" data-toggle="tooltip" data-placement="top" title="RISC-V Toolchainのインストール手順">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
     </div>
   </div>
+</div>
 
       
 <footer>
@@ -513,7 +531,7 @@ $ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain $ cd riscv-
               </li>
           
           <li>
-            <a href="/post/index.xml" title="RSS">
+            <a href="" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

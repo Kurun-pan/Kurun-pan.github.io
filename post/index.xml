@@ -7,10 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kurunpan09@gmail.com (Kurun / くるん)</managingEditor>
     <webMaster>kurunpan09@gmail.com (Kurun / くるん)</webMaster>
-    <lastBuildDate>Sun, 16 Aug 2020 17:47:01 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 16 Aug 2020 18:00:01 +0900</lastBuildDate>
     
 	<atom:link href="https://Kurun-pan.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>xv6のRISC-V版とそのビルド手順など</title>
+      <link>https://Kurun-pan.github.io/post/2020-08-16-xv6-riscv/</link>
+      <pubDate>Sun, 16 Aug 2020 18:00:01 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/post/2020-08-16-xv6-riscv/</guid>
+      <description>     xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
+xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
+ソースコード 公式オリジナルのソースコードは以下？
+https://github.com/mit-pdos/xv6-public
+RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。
+https://github.com/mit-pdos/xv6-riscv
+教育用と言うだけあってソースコードの量もかなり少なく、ビルドもすぐに終わります。
+事前準備 RISC-V Toolchainのインストール手順の手順に従って、RISC-VのToolchainをインストールしておきます。
+ソースコード取得 $ git clone https://github.com/mit-pdos/xv6-riscv カーネルのビルド $ cd xv6-riscv $ make ビルドが成功するとkernel/ディレクトリにkernelファイル (efl) が作成されています。 これがxv6のカーネルのイメージです。エントリーポイントは0x8000_0000になっている様子です。
+Userlandプログラムのビルド Userland側のイメージをビルドして、ファイルシステム用のイメージデータを作成します。
+xv6カーネルは、ブート終盤にvirtio diskに格納されるこのファイルシステムをメインメモリにロードし、 catやlsといったユーザプログラムをシェルから使えるようにしてくれます。
+$ make fs.img ビルドが成功すると、カレントディレクトリにfs.imgファイルが作成されているはずです。
+xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。
+ペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。
+参考文献   mit-pdos/xv6-riscv  </description>
+    </item>
     
     <item>
       <title>RISC-V Toolchainのインストール手順</title>
@@ -21,7 +44,7 @@
       <description>RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。 対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。
 インストール手順  必要なパッケージのインストール $ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat Toolchainのビルドとインストール makeコマンドを実行することで、インストールまで実行されます。 また、git cloneにも結構な時間を要します。ビルドも同様です。。
 configureのprefixオプションには、インストール先のパスを指定します。
-$ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain $ cd riscv-gnu-toolchain $ ./configure --prefix=/opt/riscv $ sudo make PATH追加 $export PATH=$PATH:/opt/riscv/bin 動作確認  $ /opt/riscv/bin/riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 Copyright (C) 2020 Free Software Foundation, Inc. This is free software; see the source for copying conditions. There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</description>
+$ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain $ cd riscv-gnu-toolchain $ ./configure --prefix=/opt/riscv $ sudo make PATH追加 $export PATH=$PATH:/opt/riscv/bin 動作確認  $ /opt/riscv/bin/riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 Copyright (C) 2020 Free Software Foundation, Inc. This is free software; see the source for copying conditions.</description>
     </item>
     
     <item>
