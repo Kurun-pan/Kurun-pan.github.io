@@ -13,7 +13,7 @@
     
     
     <item>
-      <title>xv6のRISC-V版とそのビルド手順など</title>
+      <title>RISC-V テストベクター (検証用プログラム) </title>
       <link>https://Kurun-pan.github.io/post/2020-08-17-riscv-tests/</link>
       <pubDate>Mon, 17 Aug 2020 00:00:01 +0900</pubDate>
       <author>kurunpan09@gmail.com (Kurun / くるん)</author>

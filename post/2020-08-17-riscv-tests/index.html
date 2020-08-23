@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>xv6のRISC-V版とそのビルド手順など - Kurun&#39;s Blog</title>
+  <title>RISC-V テストベクター (検証用プログラム)  - Kurun&#39;s Blog</title>
   <meta name="description" content="RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。 RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。
 riscv-tests ディレクトリ構造  riscv-testsには、isaとbenchmarksの2つが用意されています。isaが各命令のテストプログラムで、 benchmarksがdhrystoneやクイックソートなどのベンチマーク用のプログラムです。
 isaディレクトリ以下には 以下のようにテスト内容毎にディレクトリが分けられています。
@@ -48,7 +48,7 @@ isaディレクトリ以下には 以下のようにテスト内容毎にディ�
         "position": 3,
         "item": {
           "@id": "https:\/\/Kurun-pan.github.io\/post\/2020-08-17-riscv-tests\/",
-          "name": "Xv6の r i s c v版とそのビルド手順など"
+          "name": "R i s c v テストベクター (検証用プログラム) "
         }
     }]
 }
@@ -59,7 +59,7 @@ isaディレクトリ以下には 以下のようにテスト内容毎にディ�
   "author": {
     "name" : "Kurun \/ くるん"
   },
-  "headline": "xv6のRISC-V版とそのビルド手順など",
+  "headline": "RISC-V テストベクター (検証用プログラム) ",
   "description" : "RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。 RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。\nriscv-tests ディレクトリ構造  riscv-testsには、isaとbenchmarksの2つが用意されています。isaが各命令のテストプログラムで、 benchmarksがdhrystoneやクイックソートなどのベンチマーク用のプログラムです。\nisaディレクトリ以下には 以下のようにテスト内容毎にディレクトリが分けられています。\n   ディレクトリ名 Bits Privilege 命令の種類     rv32mi 32 Machine RV32I (基本命令系)   rv32si 32 Supervisor RV32I (基本命令系)   rv32ua 32 User RV32A (アトミック命令系)   rv32uc 32 User RV32C (圧縮命令系)   rv32ud 32 User RV32D (倍精度 浮動小数点演算命令系)   rv32uf 32 User RV32F (単精度 浮動小数点演算命令系)   rv32ui 32 User RV32I (基本命令系)   rv32um 32 User RV32M (乗除命令系)   rv64mi 64 Machine RV64I (基本命令系)   rv64si 64 Supervisor RV64I (基本命令系)   rv64ua 64 User RV64A (アトミック命令系)   rv64uc 64 User RV64C (圧縮命令系)   rv64ud 64 User RV64D (倍精度 浮動小数点演算命令系)   rv64uf 64 User RV64F (単精度 浮動小数点演算命令系)   rv64ui 64 User RV64I (基本命令系)   rv64um 64 User RV64M (乗除命令系)    OK\/NGの判定方法  Spike というRISC-V公式のRISC-V向けの命令セットシミュレータ(ISS)において、 Host Target Interface (HTIF) というハードウェアテスト用の通信仕様が定められています。",
   "inLanguage" : "en",
   "wordCount":  253 ,
@@ -81,7 +81,7 @@ isaディレクトリ以下には 以下のようにテスト内容毎にディ�
 }
 </script>
 
-<meta property="og:title" content="xv6のRISC-V版とそのビルド手順など" />
+<meta property="og:title" content="RISC-V テストベクター (検証用プログラム) " />
 <meta property="og:description" content="RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。 RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。
 riscv-tests ディレクトリ構造  riscv-testsには、isaとbenchmarksの2つが用意されています。isaが各命令のテストプログラムで、 benchmarksがdhrystoneやクイックソートなどのベンチマーク用のプログラムです。
 isaディレクトリ以下には 以下のようにテスト内容毎にディレクトリが分けられています。
@@ -91,7 +91,7 @@ isaディレクトリ以下には 以下のようにテスト内容毎にディ�
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kurun&#39;s Blog" />
 
-  <meta name="twitter:title" content="xv6のRISC-V版とそのビルド手順など" />
+  <meta name="twitter:title" content="RISC-V テストベクター (検証用プログラム) " />
   <meta name="twitter:description" content="RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。 RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。
 riscv-tests ディレクトリ構造  riscv-testsには、isaとbenchmarksの2つが用意されています。isaが各命令のテストプログラムで、 …">
   <meta name="twitter:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
@@ -242,7 +242,7 @@ riscv-tests ディレクトリ構造  riscv-testsには、isaとbenchmarksの2�
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
               <div class="post-heading">
-                <h1>xv6のRISC-V版とそのビルド手順など</h1>
+                <h1>RISC-V テストベクター (検証用プログラム) </h1>
                   
                   
                     <span class="post-meta">
@@ -279,7 +279,7 @@ riscv-tests ディレクトリ構造  riscv-testsには、isaとbenchmarksの2�
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>xv6のRISC-V版とそのビルド手順など</h1>
+                <h1>RISC-V テストベクター (検証用プログラム) </h1>
               
               
               
@@ -533,7 +533,7 @@ version 1 (SYSV), statically linked, not stripped
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-17-riscv-tests%2f&amp;text=xv6%e3%81%aeRISC-V%e7%89%88%e3%81%a8%e3%81%9d%e3%81%ae%e3%83%93%e3%83%ab%e3%83%89%e6%89%8b%e9%a0%86%e3%81%aa%e3%81%a9&amp;via=kurun_pan" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-17-riscv-tests%2f&amp;text=RISC-V%20%e3%83%86%e3%82%b9%e3%83%88%e3%83%99%e3%82%af%e3%82%bf%e3%83%bc%20%28%e6%a4%9c%e8%a8%bc%e7%94%a8%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%a0%29%20&amp;via=kurun_pan" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -547,28 +547,28 @@ version 1 (SYSV), statically linked, not stripped
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-17-riscv-tests%2f&amp;title=xv6%e3%81%aeRISC-V%e7%89%88%e3%81%a8%e3%81%9d%e3%81%ae%e3%83%93%e3%83%ab%e3%83%89%e6%89%8b%e9%a0%86%e3%81%aa%e3%81%a9" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-17-riscv-tests%2f&amp;title=RISC-V%20%e3%83%86%e3%82%b9%e3%83%88%e3%83%99%e3%82%af%e3%82%bf%e3%83%bc%20%28%e6%a4%9c%e8%a8%bc%e7%94%a8%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%a0%29%20" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-17-riscv-tests%2f&amp;title=xv6%e3%81%aeRISC-V%e7%89%88%e3%81%a8%e3%81%9d%e3%81%ae%e3%83%93%e3%83%ab%e3%83%89%e6%89%8b%e9%a0%86%e3%81%aa%e3%81%a9" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-17-riscv-tests%2f&amp;title=RISC-V%20%e3%83%86%e3%82%b9%e3%83%88%e3%83%99%e3%82%af%e3%82%bf%e3%83%bc%20%28%e6%a4%9c%e8%a8%bc%e7%94%a8%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%a0%29%20" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-17-riscv-tests%2f&amp;title=xv6%e3%81%aeRISC-V%e7%89%88%e3%81%a8%e3%81%9d%e3%81%ae%e3%83%93%e3%83%ab%e3%83%89%e6%89%8b%e9%a0%86%e3%81%aa%e3%81%a9" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-17-riscv-tests%2f&amp;title=RISC-V%20%e3%83%86%e3%82%b9%e3%83%88%e3%83%99%e3%82%af%e3%82%bf%e3%83%bc%20%28%e6%a4%9c%e8%a8%bc%e7%94%a8%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%a0%29%20" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-17-riscv-tests%2f&amp;description=xv6%e3%81%aeRISC-V%e7%89%88%e3%81%a8%e3%81%9d%e3%81%ae%e3%83%93%e3%83%ab%e3%83%89%e6%89%8b%e9%a0%86%e3%81%aa%e3%81%a9" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-17-riscv-tests%2f&amp;description=RISC-V%20%e3%83%86%e3%82%b9%e3%83%88%e3%83%99%e3%82%af%e3%82%bf%e3%83%bc%20%28%e6%a4%9c%e8%a8%bc%e7%94%a8%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%a0%29%20" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
