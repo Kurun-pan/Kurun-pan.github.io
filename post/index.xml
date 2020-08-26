@@ -38,10 +38,10 @@ find_package コマンド find_packageコマンドを利用すると、利用し
       <pubDate>Mon, 17 Aug 2020 00:00:01 +0900</pubDate>
       <author>kurunpan09@gmail.com (Kurun / くるん)</author>
       <guid>https://Kurun-pan.github.io/post/2020-08-17-riscv-tests/</guid>
-      <description>RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。 RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。
-riscv-tests ディレクトリ構造  riscv-testsには、isaとbenchmarksの2つが用意されています。isaが各命令のテストプログラムで、 benchmarksがdhrystoneやクイックソートなどのベンチマーク用のプログラムです。
+      <description>1. はじめに  RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。 RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。
+2. riscv-tests ディレクトリ構造  riscv-testsには、isaとbenchmarksの2つが用意されています。isaが各命令のテストプログラムで、 benchmarksがdhrystoneやクイックソートなどのベンチマーク用のプログラムです。
 isaディレクトリ以下には 以下のようにテスト内容毎にディレクトリが分けられています。
-   ディレクトリ名 Bits Privilege 命令の種類     rv32mi 32 Machine RV32I (基本命令系)   rv32si 32 Supervisor RV32I (基本命令系)   rv32ua 32 User RV32A (アトミック命令系)   rv32uc 32 User RV32C (圧縮命令系)   rv32ud 32 User RV32D (倍精度 浮動小数点演算命令系)   rv32uf 32 User RV32F (単精度 浮動小数点演算命令系)   rv32ui 32 User RV32I (基本命令系)   rv32um 32 User RV32M (乗除命令系)   rv64mi 64 Machine RV64I (基本命令系)   rv64si 64 Supervisor RV64I (基本命令系)   rv64ua 64 User RV64A (アトミック命令系)   rv64uc 64 User RV64C (圧縮命令系)   rv64ud 64 User RV64D (倍精度 浮動小数点演算命令系)   rv64uf 64 User RV64F (単精度 浮動小数点演算命令系)   rv64ui 64 User RV64I (基本命令系)   rv64um 64 User RV64M (乗除命令系)    OK/NGの判定方法  Spike というRISC-V公式のRISC-V向けの命令セットシミュレータ(ISS)において、 Host Target Interface (HTIF) というハードウェアテスト用の通信仕様が定められています。</description>
+   ディレクトリ名 Bits Privilege 命令の種類     rv32mi 32 Machine RV32I (基本命令系)   rv32si 32 Supervisor RV32I (基本命令系)   rv32ua 32 User RV32A (アトミック命令系)   rv32uc 32 User RV32C (圧縮命令系)   rv32ud 32 User RV32D (倍精度 浮動小数点演算命令系)   rv32uf 32 User RV32F (単精度 浮動小数点演算命令系)   rv32ui 32 User RV32I (基本命令系)   rv32um 32 User RV32M (乗除命令系)   rv64mi 64 Machine RV64I (基本命令系)   rv64si 64 Supervisor RV64I (基本命令系)   rv64ua 64 User RV64A (アトミック命令系)   rv64uc 64 User RV64C (圧縮命令系)   rv64ud 64 User RV64D (倍精度 浮動小数点演算命令系)   rv64uf 64 User RV64F (単精度 浮動小数点演算命令系)   rv64ui 64 User RV64I (基本命令系)   rv64um 64 User RV64M (乗除命令系)    3.</description>
     </item>
     
     <item>
@@ -50,11 +50,11 @@ isaディレクトリ以下には 以下のようにテスト内容毎にディ�
       <pubDate>Sun, 16 Aug 2020 18:00:01 +0900</pubDate>
       <author>kurunpan09@gmail.com (Kurun / くるん)</author>
       <guid>https://Kurun-pan.github.io/post/2020-08-16-xv6-riscv/</guid>
-      <description>     xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
-xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
+      <description>1. はじめに  xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
+2. xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
 ソースコード 公式オリジナルのソースコードは以下？
 https://github.com/mit-pdos/xv6-public
-RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。
+3. RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。
 https://github.com/mit-pdos/xv6-riscv
 教育用と言うだけあってソースコードの量もかなり少なく、ビルドもすぐに終わります。
 事前準備 RISC-V Toolchainのインストール手順の手順に従って、RISC-VのToolchainをインストールしておきます。
@@ -62,9 +62,8 @@ https://github.com/mit-pdos/xv6-riscv
 Userlandプログラムのビルド Userland側のイメージをビルドして、ファイルシステム用のイメージデータを作成します。
 xv6カーネルは、ブート終盤にvirtio diskに格納されるこのファイルシステムをメインメモリにロードし、 catやlsといったユーザプログラムをシェルから使えるようにしてくれます。
 $ make fs.img ビルドが成功すると、カレントディレクトリにfs.imgファイルが作成されているはずです。
-xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。
-ペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。
-参考文献   mit-pdos/xv6-riscv  </description>
+4. xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。
+ペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。</description>
     </item>
     
     <item>
@@ -73,11 +72,11 @@ xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様
       <pubDate>Sun, 16 Aug 2020 17:47:01 +0900</pubDate>
       <author>kurunpan09@gmail.com (Kurun / くるん)</author>
       <guid>https://Kurun-pan.github.io/post/2020-08-16-riscv-toolchain/</guid>
-      <description>RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。 対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。
-インストール手順  必要なパッケージのインストール $ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat Toolchainのビルドとインストール makeコマンドを実行することで、インストールまで実行されます。 また、git cloneにも結構な時間を要します。ビルドも同様です。。
+      <description>1. はじめに  RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。 対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。
+2. インストール手順  必要なパッケージのインストール $ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat Toolchainのビルドとインストール makeコマンドを実行することで、インストールまで実行されます。 また、git cloneにも結構な時間を要します。ビルドも同様です。。
 configureのprefixオプションには、インストール先のパスを指定します。
 $ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain $ cd riscv-gnu-toolchain $ ./configure --prefix=/opt/riscv $ sudo make PATH追加 $export PATH=$PATH:/opt/riscv/bin 
-動作確認  $ /opt/riscv/bin/riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 Copyright (C) 2020 Free Software Foundation, Inc. This is free software; see the source for copying conditions.</description>
+3. 動作確認  $ /opt/riscv/bin/riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 Copyright (C) 2020 Free Software Foundation, Inc. This is free software; see the source for copying conditions.</description>
     </item>
     
     <item>

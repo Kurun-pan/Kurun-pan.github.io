@@ -8,11 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>xv6のRISC-V版とそのビルド手順など - Kurun&#39;s Blog</title>
-  <meta name="description" content="     xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
-xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
+  <meta name="description" content="1. はじめに  xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
+2. xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
 ソースコード 公式オリジナルのソースコードは以下？
 https://github.com/mit-pdos/xv6-public
-RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。
+3. RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。
 https://github.com/mit-pdos/xv6-riscv
 教育用と言うだけあってソースコードの量もかなり少なく、ビルドもすぐに終わります。
 事前準備 RISC-V Toolchainのインストール手順の手順に従って、RISC-VのToolchainをインストールしておきます。
@@ -20,9 +20,8 @@ https://github.com/mit-pdos/xv6-riscv
 Userlandプログラムのビルド Userland側のイメージをビルドして、ファイルシステム用のイメージデータを作成します。
 xv6カーネルは、ブート終盤にvirtio diskに格納されるこのファイルシステムをメインメモリにロードし、 catやlsといったユーザプログラムをシェルから使えるようにしてくれます。
 $ make fs.img ビルドが成功すると、カレントディレクトリにfs.imgファイルが作成されているはずです。
-xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。
-ペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。
-参考文献   mit-pdos/xv6-riscv  ">
+4. xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。
+ペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。">
   <meta name="author" content="Kurun / くるん"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -71,9 +70,9 @@ xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様
     "name" : "Kurun \/ くるん"
   },
   "headline": "xv6のRISC-V版とそのビルド手順など",
-  "description" : "     xv6という小さなOSのRISC-V版のビルド手順についてまとめました。\nxv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。\nソースコード 公式オリジナルのソースコードは以下？\nhttps:\/\/github.com\/mit-pdos\/xv6-public\nRISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。\nhttps:\/\/github.com\/mit-pdos\/xv6-riscv\n教育用と言うだけあってソースコードの量もかなり少なく、ビルドもすぐに終わります。\n事前準備 RISC-V Toolchainのインストール手順の手順に従って、RISC-VのToolchainをインストールしておきます。\nソースコード取得 $ git clone https:\/\/github.com\/mit-pdos\/xv6-riscv カーネルのビルド $ cd xv6-riscv $ make ビルドが成功するとkernel\/ディレクトリにkernelファイル (efl) が作成されています。 これがxv6のカーネルのイメージです。エントリーポイントは0x8000_0000になっている様子です。\nUserlandプログラムのビルド Userland側のイメージをビルドして、ファイルシステム用のイメージデータを作成します。\nxv6カーネルは、ブート終盤にvirtio diskに格納されるこのファイルシステムをメインメモリにロードし、 catやlsといったユーザプログラムをシェルから使えるようにしてくれます。\n$ make fs.img ビルドが成功すると、カレントディレクトリにfs.imgファイルが作成されているはずです。\nxv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。\nペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。\n参考文献   mit-pdos\/xv6-riscv  ",
+  "description" : "1. はじめに  xv6という小さなOSのRISC-V版のビルド手順についてまとめました。\n2. xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。\nソースコード 公式オリジナルのソースコードは以下？\nhttps:\/\/github.com\/mit-pdos\/xv6-public\n3. RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。\nhttps:\/\/github.com\/mit-pdos\/xv6-riscv\n教育用と言うだけあってソースコードの量もかなり少なく、ビルドもすぐに終わります。\n事前準備 RISC-V Toolchainのインストール手順の手順に従って、RISC-VのToolchainをインストールしておきます。\nソースコード取得 $ git clone https:\/\/github.com\/mit-pdos\/xv6-riscv カーネルのビルド $ cd xv6-riscv $ make ビルドが成功するとkernel\/ディレクトリにkernelファイル (efl) が作成されています。 これがxv6のカーネルのイメージです。エントリーポイントは0x8000_0000になっている様子です。\nUserlandプログラムのビルド Userland側のイメージをビルドして、ファイルシステム用のイメージデータを作成します。\nxv6カーネルは、ブート終盤にvirtio diskに格納されるこのファイルシステムをメインメモリにロードし、 catやlsといったユーザプログラムをシェルから使えるようにしてくれます。\n$ make fs.img ビルドが成功すると、カレントディレクトリにfs.imgファイルが作成されているはずです。\n4. xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。\nペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。",
   "inLanguage" : "en",
-  "wordCount":  58 ,
+  "wordCount":  64 ,
   "datePublished" : "2020-08-16T18:00:01",
   "dateModified" : "2020-08-16T18:00:01",
   "image" : "https:\/\/Kurun-pan.github.io\/images\/avatar-icon.png",
@@ -93,11 +92,11 @@ xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様
 </script>
 
 <meta property="og:title" content="xv6のRISC-V版とそのビルド手順など" />
-<meta property="og:description" content="     xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
-xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
+<meta property="og:description" content="1. はじめに  xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
+2. xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
 ソースコード 公式オリジナルのソースコードは以下？
 https://github.com/mit-pdos/xv6-public
-RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。
+3. RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。
 https://github.com/mit-pdos/xv6-riscv
 教育用と言うだけあってソースコードの量もかなり少なく、ビルドもすぐに終わります。
 事前準備 RISC-V Toolchainのインストール手順の手順に従って、RISC-VのToolchainをインストールしておきます。
@@ -105,20 +104,19 @@ https://github.com/mit-pdos/xv6-riscv
 Userlandプログラムのビルド Userland側のイメージをビルドして、ファイルシステム用のイメージデータを作成します。
 xv6カーネルは、ブート終盤にvirtio diskに格納されるこのファイルシステムをメインメモリにロードし、 catやlsといったユーザプログラムをシェルから使えるようにしてくれます。
 $ make fs.img ビルドが成功すると、カレントディレクトリにfs.imgファイルが作成されているはずです。
-xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。
-ペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。
-参考文献   mit-pdos/xv6-riscv  ">
+4. xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。
+ペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。">
 <meta property="og:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
 <meta property="og:url" content="https://Kurun-pan.github.io/post/2020-08-16-xv6-riscv/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kurun&#39;s Blog" />
 
   <meta name="twitter:title" content="xv6のRISC-V版とそのビルド手順など" />
-  <meta name="twitter:description" content="     xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
-xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
+  <meta name="twitter:description" content="1. はじめに  xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
+2. xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
 ソースコード 公式オリジナルのソースコードは以下？
 https://github.com/mit-pdos/xv6-public
-RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングさ …">
+3. RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように …">
   <meta name="twitter:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kurun_pan" />
@@ -279,7 +277,7 @@ RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向�
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;58&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;64&nbsp;words
   
   
     
@@ -318,7 +316,7 @@ RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向�
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;58&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;64&nbsp;words
   
   
     
@@ -354,14 +352,18 @@ RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向�
   </figure>
 </div>
 
+<h2 id="1-はじめに">1. はじめに</h2>
+<hr>
 <p>xv6という小さなOSのRISC-V版のビルド手順についてまとめました。</p>
-<h1 id="xv6とは">xv6とは？</h1>
+<br>
+<h2 id="2-xv6とは">2. xv6とは？</h2>
 <hr>
 <p><code>MIT</code>が開発した<code>Unix</code>の思想をベースにした教育用途の小さなOSです。</p>
-<h2 id="ソースコード">ソースコード</h2>
+<h3 id="ソースコード">ソースコード</h3>
 <p>公式オリジナルのソースコードは以下？<br>
 <a href="https://github.com/mit-pdos/xv6-public">https://github.com/mit-pdos/xv6-public</a></p>
-<h1 id="risc-v向けxv6のビルド手順">RISC-V向けxv6のビルド手順</h1>
+<br>
+<h2 id="3-risc-v向けxv6のビルド手順">3. RISC-V向けxv6のビルド手順</h2>
 <hr>
 <p>RISC-Vかつ<code>QEMU</code>で動作するように向けにポーティングされたxv6のソースコードは
 以下にあります。<br>
@@ -382,12 +384,14 @@ $ make
 <code>cat</code>や<code>ls</code>といったユーザプログラムをシェルから使えるようにしてくれます。</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ make fs.img
 </code></pre></div><p>ビルドが成功すると、カレントディレクトリに<code>fs.img</code>ファイルが作成されているはずです。</p>
-<h1 id="xv6-for-risc-vの構成">xv6 for RISC-Vの構成</h1>
+<br>
+<h2 id="4-xv6-for-risc-vの構成">4. xv6 for RISC-Vの構成</h2>
 <hr>
 <p>CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。</p>
 <p>ペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、
 メモリマップは<a href="https://github.com/mit-pdos/xv6-riscv/blob/riscv/kernel/memlayout.h">memlayout.h</a>に定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。</p>
-<h1 id="参考文献">参考文献</h1>
+<br>
+<h2 id="5-参考文献">5. 参考文献</h2>
 <hr>
 <ul>
 <li><a href="https://github.com/mit-pdos/xv6-riscv">mit-pdos/xv6-riscv</a></li>
