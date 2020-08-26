@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>CMakeの基本的な使い方 - Kurun&#39;s Blog</title>
+  <meta name="description" content="1. はじめに  自分の備忘録として、CMakeの基本的な使い方をまとめておきます。 普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。
+作業スペースのカレントディレクトリにCMakeLists.txtを作成します。 ソースコードはsrcディレクトリ以下に配置しているものとします。
+├── CMakeLists.txt └── src/main.c └── src/hoge.cc まず、ごく基本的な例を以下に示します。
+cmake_minimum_required(VERSION 3.10) project(Project_name_free) set(CMAKE_CXX_STANDARD 14) find_package(PkgConfig) pkg_check_modules(EGL REQUIRED egl) add_executable(target_name src/main.c src/*.cc) target_include_directories(target_name PRIVATE ${EGL_INCLUDE_DIRS}) target_link_libraries(target_name PRIVATE ${EGL_LIBRARIES}) target_compile_options(target_name PUBLIC ${EGL_CFLAGS} &#34;-Wall&#34;) 
+2. プロジェクト設定  cmake_minimum_required コマンド ビルドを実行するHost PC環境で必要になるCMakeの最低バージョンを指定します。
+cmake_minimum_required(VERSION 3.10) 最新のCMakeの文法/コマンド等を利用していなければ、バージョン制約はほぼないと思います。 例えばUbuntu18.04のCMakeのバージョンが3.10のため、この辺のバージョンを指定しておけば良いと思います。
+project コマンド CMakeプロジェクト名を指定するために利用します。
+project(Project_name_free) 指定した文字列がPROJECT_NAMEにセットされます。 オプションとして、VERSIONやLANGUAGESがありますが単なる付加情報のため、 指定してもしなくても良いです。
+CMAKE_CXX_STANDARD プロパティ C&#43;&#43;の場合、以下の様にビルド時に指定するC&#43;&#43;標準バージョンを指定する事が出来ます。
+set(CMAKE_CXX_STANDARD 14) 
+3. PkgConfigの利用  ビルド時のヘッダーファイルのインクルードやライブラリリンクオプションを簡易化するために、 pkg-configはほぼ必須だと思います。これをCMakeで利用する方法について説明します。
+find_package コマンド find_packageコマンドを利用すると、利用したいライブラリ (パッケージ) のライブラリパスや インクルードファイルパスなどを取得する事が可能です。">
+  <meta name="author" content="Kurun / くるん"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Kurun\u0027s Blog",
+    
+    "url": "https:\/\/Kurun-pan.github.io"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/Kurun-pan.github.io"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/Kurun-pan.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/Kurun-pan.github.io\/post\/2020-08-25-how-to-cmake\/",
+          "name": "C makeの基本的な使い方"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Kurun \/ くるん"
+  },
+  "headline": "CMakeの基本的な使い方",
+  "description" : "1. はじめに  自分の備忘録として、CMakeの基本的な使い方をまとめておきます。 普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。\n作業スペースのカレントディレクトリにCMakeLists.txtを作成します。 ソースコードはsrcディレクトリ以下に配置しているものとします。\n├── CMakeLists.txt └── src\/main.c └── src\/hoge.cc まず、ごく基本的な例を以下に示します。\ncmake_minimum_required(VERSION 3.10) project(Project_name_free) set(CMAKE_CXX_STANDARD 14) find_package(PkgConfig) pkg_check_modules(EGL REQUIRED egl) add_executable(target_name src\/main.c src\/*.cc) target_include_directories(target_name PRIVATE ${EGL_INCLUDE_DIRS}) target_link_libraries(target_name PRIVATE ${EGL_LIBRARIES}) target_compile_options(target_name PUBLIC ${EGL_CFLAGS} \u0026#34;-Wall\u0026#34;) \n2. プロジェクト設定  cmake_minimum_required コマンド ビルドを実行するHost PC環境で必要になるCMakeの最低バージョンを指定します。\ncmake_minimum_required(VERSION 3.10) 最新のCMakeの文法\/コマンド等を利用していなければ、バージョン制約はほぼないと思います。 例えばUbuntu18.04のCMakeのバージョンが3.10のため、この辺のバージョンを指定しておけば良いと思います。\nproject コマンド CMakeプロジェクト名を指定するために利用します。\nproject(Project_name_free) 指定した文字列がPROJECT_NAMEにセットされます。 オプションとして、VERSIONやLANGUAGESがありますが単なる付加情報のため、 指定してもしなくても良いです。\nCMAKE_CXX_STANDARD プロパティ C\u002b\u002bの場合、以下の様にビルド時に指定するC\u002b\u002b標準バージョンを指定する事が出来ます。\nset(CMAKE_CXX_STANDARD 14) \n3. PkgConfigの利用  ビルド時のヘッダーファイルのインクルードやライブラリリンクオプションを簡易化するために、 pkg-configはほぼ必須だと思います。これをCMakeで利用する方法について説明します。\nfind_package コマンド find_packageコマンドを利用すると、利用したいライブラリ (パッケージ) のライブラリパスや インクルードファイルパスなどを取得する事が可能です。",
+  "inLanguage" : "en",
+  "wordCount":  199 ,
+  "datePublished" : "2020-08-25T00:00:00",
+  "dateModified" : "2020-08-25T00:00:00",
+  "image" : "https:\/\/Kurun-pan.github.io\/images\/avatar-icon.png",
+  "keywords" : [ "CMake" ],
+  "mainEntityOfPage" : "https:\/\/Kurun-pan.github.io\/post\/2020-08-25-how-to-cmake\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/Kurun-pan.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/Kurun-pan.github.io\/images\/avatar-icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="CMakeの基本的な使い方" />
+<meta property="og:description" content="1. はじめに  自分の備忘録として、CMakeの基本的な使い方をまとめておきます。 普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。
+作業スペースのカレントディレクトリにCMakeLists.txtを作成します。 ソースコードはsrcディレクトリ以下に配置しているものとします。
+├── CMakeLists.txt └── src/main.c └── src/hoge.cc まず、ごく基本的な例を以下に示します。
+cmake_minimum_required(VERSION 3.10) project(Project_name_free) set(CMAKE_CXX_STANDARD 14) find_package(PkgConfig) pkg_check_modules(EGL REQUIRED egl) add_executable(target_name src/main.c src/*.cc) target_include_directories(target_name PRIVATE ${EGL_INCLUDE_DIRS}) target_link_libraries(target_name PRIVATE ${EGL_LIBRARIES}) target_compile_options(target_name PUBLIC ${EGL_CFLAGS} &#34;-Wall&#34;) 
+2. プロジェクト設定  cmake_minimum_required コマンド ビルドを実行するHost PC環境で必要になるCMakeの最低バージョンを指定します。
+cmake_minimum_required(VERSION 3.10) 最新のCMakeの文法/コマンド等を利用していなければ、バージョン制約はほぼないと思います。 例えばUbuntu18.04のCMakeのバージョンが3.10のため、この辺のバージョンを指定しておけば良いと思います。
+project コマンド CMakeプロジェクト名を指定するために利用します。
+project(Project_name_free) 指定した文字列がPROJECT_NAMEにセットされます。 オプションとして、VERSIONやLANGUAGESがありますが単なる付加情報のため、 指定してもしなくても良いです。
+CMAKE_CXX_STANDARD プロパティ C&#43;&#43;の場合、以下の様にビルド時に指定するC&#43;&#43;標準バージョンを指定する事が出来ます。
+set(CMAKE_CXX_STANDARD 14) 
+3. PkgConfigの利用  ビルド時のヘッダーファイルのインクルードやライブラリリンクオプションを簡易化するために、 pkg-configはほぼ必須だと思います。これをCMakeで利用する方法について説明します。
+find_package コマンド find_packageコマンドを利用すると、利用したいライブラリ (パッケージ) のライブラリパスや インクルードファイルパスなどを取得する事が可能です。">
+<meta property="og:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
+<meta property="og:url" content="https://Kurun-pan.github.io/post/2020-08-25-how-to-cmake/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Kurun&#39;s Blog" />
+
+  <meta name="twitter:title" content="CMakeの基本的な使い方" />
+  <meta name="twitter:description" content="1. はじめに  自分の備忘録として、CMakeの基本的な使い方をまとめておきます。 普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。
+作業スペースのカレントディレクトリにCMakeLists.txtを作成します。 ソースコードはsrcディレクトリ以下に配置しているものとします。
+├── CMakeLists.txt └── …">
+  <meta name="twitter:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@kurun_pan" />
+  <meta name="twitter:creator" content="@kurun_pan" />
+  <meta name="generator" content="Hugo 0.74.3" />
+  <link rel="alternate" href="https://Kurun-pan.github.io/index.xml" type="application/rss+xml" title="Kurun&#39;s Blog"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://Kurun-pan.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://Kurun-pan.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://Kurun-pan.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://Kurun-pan.github.io">Kurun&#39;s Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Home" href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Profile" href="/page/about/">Profile</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Kurun&#39;s Blog" href="https://Kurun-pan.github.io">
+            <img class="avatar-img" src="https://Kurun-pan.github.io/images/avatar-icon.png" alt="Kurun&#39;s Blog" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 
+      
+         
+          data-img-src-1="/img/sphere.jpg" 
+         
+         
+      ></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>CMakeの基本的な使い方</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 25, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;199&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Kurun / くるん
+    
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>CMakeの基本的な使い方</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on August 25, 2020
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
+  
+  
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;199&nbsp;words
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Kurun / くるん
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <h2 id="1-はじめに">1. はじめに</h2>
+<hr>
+<p>自分の備忘録として、CMakeの基本的な使い方をまとめておきます。
+普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。</p>
+<p>作業スペースのカレントディレクトリに<code>CMakeLists.txt</code>を作成します。
+ソースコードは<code>src</code>ディレクトリ以下に配置しているものとします。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">├── CMakeLists.txt
+└── src/main.c
+└── src/hoge.cc
+</code></pre></div><p>まず、ごく基本的な例を以下に示します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cmake_minimum_required(VERSION 3.10)
+project(Project_name_free)
+set(CMAKE_CXX_STANDARD 14)
+
+find_package(PkgConfig)
+pkg_check_modules(EGL REQUIRED egl)
+
+add_executable(target_name src/main.c src/*.cc)
+target_include_directories(target_name PRIVATE ${EGL_INCLUDE_DIRS})
+target_link_libraries(target_name PRIVATE ${EGL_LIBRARIES})
+target_compile_options(target_name PUBLIC ${EGL_CFLAGS} &#34;-Wall&#34;)
+</code></pre></div><br>
+<h2 id="2-プロジェクト設定">2. プロジェクト設定</h2>
+<hr>
+<h3 id="cmake_minimum_requiredhttpscmakeorgcmakehelplatestcommandcmake_minimum_requiredhtml-コマンド"><a href="https://cmake.org/cmake/help/latest/command/cmake_minimum_required.html">cmake_minimum_required</a> コマンド</h3>
+<p>ビルドを実行するHost PC環境で必要になるCMakeの最低バージョンを指定します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">cmake_minimum_required(VERSION 3.10)
+</code></pre></div><p>最新のCMakeの文法/コマンド等を利用していなければ、バージョン制約はほぼないと思います。
+例えばUbuntu18.04のCMakeのバージョンが3.10のため、この辺のバージョンを指定しておけば良いと思います。</p>
+<br>
+<h3 id="projecthttpscmakeorgcmakehelplatestcommandprojecthtml-コマンド"><a href="https://cmake.org/cmake/help/latest/command/project.html">project</a> コマンド</h3>
+<p>CMakeプロジェクト名を指定するために利用します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">project(Project_name_free)
+</code></pre></div><p>指定した文字列が<code>PROJECT_NAME</code>にセットされます。
+オプションとして、<code>VERSION</code>や<code>LANGUAGES</code>がありますが単なる付加情報のため、
+指定してもしなくても良いです。</p>
+<br>
+<h3 id="cmake_cxx_standardhttpscmakeorgcmakehelpgit-mastervariablecmake_cxx_standardhtml-プロパティ"><a href="https://cmake.org/cmake/help/git-master/variable/CMAKE_CXX_STANDARD.html">CMAKE_CXX_STANDARD</a> プロパティ</h3>
+<p>C++の場合、以下の様にビルド時に指定するC++標準バージョンを指定する事が出来ます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">set(CMAKE_CXX_STANDARD 14)
+</code></pre></div><br>
+<h2 id="3-pkgconfigの利用">3. PkgConfigの利用</h2>
+<hr>
+<p>ビルド時のヘッダーファイルのインクルードやライブラリリンクオプションを簡易化するために、
+<code>pkg-config</code>はほぼ必須だと思います。これをCMakeで利用する方法について説明します。</p>
+<br>
+<h3 id="find_packagehttpscmakeorgcmakehelplatestcommandfind_packagehtml-コマンド"><a href="https://cmake.org/cmake/help/latest/command/find_package.html">find_package</a> コマンド</h3>
+<p><code>find_package</code>コマンドを利用すると、利用したいライブラリ (パッケージ) のライブラリパスや
+インクルードファイルパスなどを取得する事が可能です。</p>
+<p>下記を実行すると、<code>GTK2_INCLUDE_DIRS</code>にインクルードファイルのパス、<code>GTK2_LIBRARIES</code>に
+ライブラリパスが自動で設定されます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">find_package(GTK2)
+</code></pre></div><br>
+<p>利用可能なモジュールは、<code>cmake --help-module-list</code>コマンドで表示される一覧で確認が可能です。
+ただ、find_packageをサポートしているパッケージがまあまあない事があるので、その場合には後述の
+<code>pkg_check_modules</code>コマンドを利用します。</p>
+<p>なので、よくあるパターンとしては、以下の例の様に<code>find_package</code>コマンドはPkgConfigモジュールを
+指定してそれが提供する<code>pkg_check_modules</code>コマンドを利用するというやり方です。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">find_package(PkgConfig)
+</code></pre></div><br>
+<h3 id="pkg_check_moduleshttpscmakeorgcmakehelplatestmodulefindpkgconfightml-コマンド"><a href="https://cmake.org/cmake/help/latest/module/FindPkgConfig.html">pkg_check_modules</a> コマンド</h3>
+<p>実際にはこのコマンドを多用すると思います。上記の様に、<code>find_package(PkgConfig)</code>を実行しておけば、
+以下の様に<code>pkg-config</code>コマンドで取得できる情報を取得可能です。</p>
+<p>第一引数は、適当なプレフィックス (XPREFIX) します。
+第二引数は、<code>REQUIRED</code>か<code>QUIET</code>を指定し、パッケージが必須の場合には<code>REQUIRED</code>を指定し、
+見つからなかった場合にエラーで止まる様にします。
+第三引数は、利用したいpkg-configで指定するパッケージ名です。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">pkg_check_modules(EGL REQUIRED egl)
+</code></pre></div><br>
+<p>コマンド実行で設定される変数は以下です。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;XPREFIX&gt;_FOUND          ... set to 1 if module(s) exist
+&lt;XPREFIX&gt;_LIBRARIES      ... only the libraries (w/o the &#39;-l&#39;)
+&lt;XPREFIX&gt;_LIBRARY_DIRS   ... the paths of the libraries (w/o the &#39;-L&#39;)
+&lt;XPREFIX&gt;_LDFLAGS        ... all required linker flags
+&lt;XPREFIX&gt;_LDFLAGS_OTHER  ... all other linker flags
+&lt;XPREFIX&gt;_INCLUDE_DIRS   ... the &#39;-I&#39; preprocessor flags (w/o the &#39;-I&#39;)
+&lt;XPREFIX&gt;_CFLAGS         ... all required cflags
+&lt;XPREFIX&gt;_CFLAGS_OTHER   ... the other compiler flags
+</code></pre></div><br>
+<h2 id="4-ターゲットの指定">4. ターゲットの指定</h2>
+<hr>
+<h3 id="ソースコード">ソースコード</h3>
+<p><a href="https://cmake.org/cmake/help/latest/command/add_executable.html"><code>add_executable</code></a>コマンドを利用します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">add_executable(target_name src/main.c src/*.cc)
+</code></pre></div><br>
+<p>第一引数は、実行バイナリの名前を指定します。
+第二引数以降に、ソースコードを指定します。ワイルドカード (*) も利用可能です。
+なお、ソースコードのパスはCMakeLists.txtファイルが置いてあるパスからの相対パスとなります。</p>
+<br>
+<h3 id="インクルードファイル">インクルードファイル</h3>
+<p><a href="https://cmake.org/cmake/help/latest/command/target_include_directories.html"><code>target_include_directories</code></a>コマンドを利用します。
+コンパイラに指定する<code>-I</code>に繋がるコマンドです。</p>
+<p>第一引数は、実行バイナリの名前を指定します。
+第二引数は、PRIVATE/PUBLIC/INTERFACEのいずれかを指定します。
+第三引数は、対象のインクルードファイルのパスを指定します。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">target_include_directories(target_name PRIVATE ${EGL_INCLUDE_DIRS})
+</code></pre></div><br>
+<p>ところで、第二引数に指定している<code>PRIVATE</code>, <code>PUBLIC</code>, <code>INTERFACE</code>は何でしょうか？
+非常に分かり辛いですが、以下の様な感じで基本的に多いのはPRIVATEだと思います。</p>
+<br>
+<h4 id="private">PRIVATE</h4>
+<p>ターゲットのみが必要とする場合に指定</p>
+<h4 id="public">PUBLIC</h4>
+<p>ターゲットとターゲットが依存するライブラリが必要とする場合に指定</p>
+<h4 id="interface">INTERFACE</h4>
+<p>ターゲットが依存するライブラリのみ必要とする場合に指定</p>
+<br>
+<h3 id="ライブラリ">ライブラリ</h3>
+<p><a href="https://cmake.org/cmake/help/latest/command/target_link_libraries.html"><code>target_link_libraries</code></a>コマンドを利用します。
+コンパイラに指定する<code>-l</code>に繋がるコマンドです。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">target_link_libraries(target_name PRIVATE ${EGL_LIBRARIES})
+</code></pre></div><br>
+<h2 id="5-ビルドオプションの指定">5. ビルドオプションの指定</h2>
+<hr>
+<p>コンパイラに渡すオプションを<a href="https://cmake.org/cmake/help/latest/command/target_compile_options.html">target_compile_options</a>を利用して指定する事が出来ます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">target_compile_options(target_name PUBLIC ${EGL_CFLAGS} &#34;-Wall&#34;)
+</code></pre></div><br>
+<h2 id="6-リンク">6. リンク</h2>
+<hr>
+<ul>
+<li><a href="https://qiita.com/shohirose/items/5b406f060cd5557814e9">https://qiita.com/shohirose/items/5b406f060cd5557814e9</a></li>
+<li><a href="https://qiita.com/tchofu/items/69dacfb93908525e5b0b">https://qiita.com/tchofu/items/69dacfb93908525e5b0b</a></li>
+<li><a href="https://gitlab.kitware.com/cmake/cmake">https://gitlab.kitware.com/cmake/cmake</a>
+<ul>
+<li>CMakeはgitlabで管理されており、C++で書かれている様子です。</li>
+</ul>
+</li>
+</ul>
+
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://Kurun-pan.github.io/tags/cmake/">CMake</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-25-how-to-cmake%2f&amp;text=CMake%e3%81%ae%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9&amp;via=kurun_pan" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-25-how-to-cmake%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-25-how-to-cmake%2f&amp;title=CMake%e3%81%ae%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-25-how-to-cmake%2f&amp;title=CMake%e3%81%ae%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-25-how-to-cmake%2f&amp;title=CMake%e3%81%ae%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-25-how-to-cmake%2f&amp;description=CMake%e3%81%ae%e5%9f%ba%e6%9c%ac%e7%9a%84%e3%81%aa%e4%bd%bf%e3%81%84%e6%96%b9" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://Kurun-pan.github.io/post/2020-08-17-riscv-tests/" data-toggle="tooltip" data-placement="top" title="RISC-V テストベクター (検証用プログラム) ">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:kurunpan09@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Kurun-pan" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/kurun_pan" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Kurun / くるん
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://Kurun-pan.github.io">Kurun&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.74.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://Kurun-pan.github.io/js/main.js"></script>
+<script src="https://Kurun-pan.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://Kurun-pan.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
