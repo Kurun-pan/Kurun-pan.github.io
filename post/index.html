@@ -187,10 +187,6 @@
   <i class="fas fa-calendar"></i>&nbsp;Posted on August 25, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;0&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;0&nbsp;words
   
   
     
@@ -232,10 +228,6 @@
   <i class="fas fa-calendar"></i>&nbsp;Posted on August 25, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;199&nbsp;words
   
   
     
@@ -249,18 +241,10 @@
     </p>
     <div class="post-entry">
         
-        1. はじめに  自分の備忘録として、CMakeの基本的な使い方をまとめておきます。 普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。
-作業スペースのカレントディレクトリにCMakeLists.txtを作成します。 ソースコードはsrcディレクトリ以下に配置しているものとします。
-├── CMakeLists.txt └── src/main.c └── src/hoge.cc まず、ごく基本的な例を以下に示します。
-cmake_minimum_required(VERSION 3.10) project(Project_name_free) set(CMAKE_CXX_STANDARD 14) find_package(PkgConfig) pkg_check_modules(EGL REQUIRED egl) add_executable(target_name src/main.c src/*.cc) target_include_directories(target_name PRIVATE ${EGL_INCLUDE_DIRS}) target_link_libraries(target_name PRIVATE ${EGL_LIBRARIES}) target_compile_options(target_name PUBLIC ${EGL_CFLAGS} &#34;-Wall&#34;) 
-2. プロジェクト設定  cmake_minimum_required コマンド ビルドを実行するHost PC環境で必要になるCMakeの最低バージョンを指定します。
-cmake_minimum_required(VERSION 3.10) 最新のCMakeの文法/コマンド等を利用していなければ、バージョン制約はほぼないと思います。 例えばUbuntu18.04のCMakeのバージョンが3.10のため、この辺のバージョンを指定しておけば良いと思います。
-project コマンド CMakeプロジェクト名を指定するために利用します。
-project(Project_name_free) 指定した文字列がPROJECT_NAMEにセットされます。 オプションとして、VERSIONやLANGUAGESがありますが単なる付加情報のため、 指定してもしなくても良いです。
-CMAKE_CXX_STANDARD プロパティ C++の場合、以下の様にビルド時に指定するC++標準バージョンを指定する事が出来ます。
-set(CMAKE_CXX_STANDARD 14) 
-3. PkgConfigの利用  ビルド時のヘッダーファイルのインクルードやライブラリリンクオプションを簡易化するために、 pkg-configはほぼ必須だと思います。これをCMakeで利用する方法について説明します。
-find_package コマンド find_packageコマンドを利用すると、利用したいライブラリ (パッケージ) のライブラリパスや インクルードファイルパスなどを取得する事が可能です。
+        <h2 id="1-はじめに">1. はじめに</h2>
+<hr>
+<p>自分の備忘録として、CMakeの基本的な使い方をまとめておきます。
+普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。</p>
         <a href="https://Kurun-pan.github.io/post/2020-08-25-how-to-cmake/" class="post-read-more">[Read More]</a>
         
     </div>
@@ -290,10 +274,6 @@ find_package コマンド find_packageコマンドを利用すると、利用し
   <i class="fas fa-calendar"></i>&nbsp;Posted on August 17, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;259&nbsp;words
   
   
     
@@ -307,10 +287,20 @@ find_package コマンド find_packageコマンドを利用すると、利用し
     </p>
     <div class="post-entry">
         
-        1. はじめに  RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。 RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。
-2. riscv-tests ディレクトリ構造  riscv-testsには、isaとbenchmarksの2つが用意されています。isaが各命令のテストプログラムで、 benchmarksがdhrystoneやクイックソートなどのベンチマーク用のプログラムです。
-isaディレクトリ以下には 以下のようにテスト内容毎にディレクトリが分けられています。
-   ディレクトリ名 Bits Privilege 命令の種類     rv32mi 32 Machine RV32I (基本命令系)   rv32si 32 Supervisor RV32I (基本命令系)   rv32ua 32 User RV32A (アトミック命令系)   rv32uc 32 User RV32C (圧縮命令系)   rv32ud 32 User RV32D (倍精度 浮動小数点演算命令系)   rv32uf 32 User RV32F (単精度 浮動小数点演算命令系)   rv32ui 32 User RV32I (基本命令系)   rv32um 32 User RV32M (乗除命令系)   rv64mi 64 Machine RV64I (基本命令系)   rv64si 64 Supervisor RV64I (基本命令系)   rv64ua 64 User RV64A (アトミック命令系)   rv64uc 64 User RV64C (圧縮命令系)   rv64ud 64 User RV64D (倍精度 浮動小数点演算命令系)   rv64uf 64 User RV64F (単精度 浮動小数点演算命令系)   rv64ui 64 User RV64I (基本命令系)   rv64um 64 User RV64M (乗除命令系)    3.
+        <link rel="stylesheet" href="https://Kurun-pan.github.io/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/images/riscv.png" alt="/images/riscv.png"/>
+    </div>
+    <a href="/images/riscv.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<h2 id="1-はじめに">1. はじめに</h2>
+<hr>
+<p>RISC-Vの検証用テストプログラムである<a href="https://github.com/riscv/riscv-tests"><code>riscv-tests</code></a>について情報をまとめました。
+RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。</p>
         <a href="https://Kurun-pan.github.io/post/2020-08-17-riscv-tests/" class="post-read-more">[Read More]</a>
         
     </div>
@@ -340,10 +330,6 @@ isaディレクトリ以下には 以下のようにテスト内容毎にディ�
   <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;64&nbsp;words
   
   
     
@@ -357,20 +343,19 @@ isaディレクトリ以下には 以下のようにテスト内容毎にディ�
     </p>
     <div class="post-entry">
         
-        1. はじめに  xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
-2. xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
-ソースコード 公式オリジナルのソースコードは以下？
-https://github.com/mit-pdos/xv6-public
-3. RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。
-https://github.com/mit-pdos/xv6-riscv
-教育用と言うだけあってソースコードの量もかなり少なく、ビルドもすぐに終わります。
-事前準備 RISC-V Toolchainのインストール手順の手順に従って、RISC-VのToolchainをインストールしておきます。
-ソースコード取得 $ git clone https://github.com/mit-pdos/xv6-riscv カーネルのビルド $ cd xv6-riscv $ make ビルドが成功するとkernel/ディレクトリにkernelファイル (efl) が作成されています。 これがxv6のカーネルのイメージです。エントリーポイントは0x8000_0000になっている様子です。
-Userlandプログラムのビルド Userland側のイメージをビルドして、ファイルシステム用のイメージデータを作成します。
-xv6カーネルは、ブート終盤にvirtio diskに格納されるこのファイルシステムをメインメモリにロードし、 catやlsといったユーザプログラムをシェルから使えるようにしてくれます。
-$ make fs.img ビルドが成功すると、カレントディレクトリにfs.imgファイルが作成されているはずです。
-4. xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。
-ペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。
+        <link rel="stylesheet" href="https://Kurun-pan.github.io/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/images/riscv.png" alt="/images/riscv.png"/>
+    </div>
+    <a href="/images/riscv.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<h2 id="1-はじめに">1. はじめに</h2>
+<hr>
+<p>xv6という小さなOSのRISC-V版のビルド手順についてまとめました。</p>
         <a href="https://Kurun-pan.github.io/post/2020-08-16-xv6-riscv/" class="post-read-more">[Read More]</a>
         
     </div>
@@ -400,10 +385,6 @@ $ make fs.img ビルドが成功すると、カレントディレクトリにfs.
   <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;87&nbsp;words
   
   
     
@@ -417,11 +398,20 @@ $ make fs.img ビルドが成功すると、カレントディレクトリにfs.
     </p>
     <div class="post-entry">
         
-        1. はじめに  RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。 対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。
-2. インストール手順  必要なパッケージのインストール $ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat Toolchainのビルドとインストール makeコマンドを実行することで、インストールまで実行されます。 また、git cloneにも結構な時間を要します。ビルドも同様です。。
-configureのprefixオプションには、インストール先のパスを指定します。
-$ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain $ cd riscv-gnu-toolchain $ ./configure --prefix=/opt/riscv $ sudo make PATH追加 $export PATH=$PATH:/opt/riscv/bin 
-3. 動作確認  $ /opt/riscv/bin/riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 Copyright (C) 2020 Free Software Foundation, Inc. This is free software; see the source for copying conditions.
+        <link rel="stylesheet" href="https://Kurun-pan.github.io/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/images/riscv.png" alt="/images/riscv.png"/>
+    </div>
+    <a href="/images/riscv.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<h2 id="1-はじめに">1. はじめに</h2>
+<hr>
+<p>RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。
+対象OSは<code>macOS</code>ですが、基本的にLinux (Ubuntuなど) でも同じ手順です。</p>
         <a href="https://Kurun-pan.github.io/post/2020-08-16-riscv-toolchain/" class="post-read-more">[Read More]</a>
         
     </div>
@@ -451,10 +441,6 @@ $ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain $ cd riscv-
   <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;25&nbsp;words
   
   
     
@@ -470,20 +456,7 @@ $ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain $ cd riscv-
         
         <p>Github Pages + Hugoでブログを投稿するために最低限使うコマンドの備忘録です。
 テンプレートとして利用しているテーマは<a href="https://themes.gohugo.io/beautifulhugo/"><code>Beautiful Hugo</code></a>です。</p>
-<h3 id="新しい記事を作成する">新しい記事を作成する</h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ hugo new content/post/{適当な文字列。何でも良い}.md
-</code></pre></div><h3 id="作成した記事を確認する">作成した記事を確認する</h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ hugo server -D
-</code></pre></div><h3 id="リリース用データ-publicディレクトリ-を作成する">リリース用データ (publicディレクトリ) を作成する</h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ hugo
-</code></pre></div><br>
-<h2 id="参考">参考</h2>
-<hr>
-<ul>
-<li><a href="https://uzimihsr.github.io/post/2019-08-07-create-blog-1/">GitHub PagesとHugoでブログをつくった</a></li>
-<li><a href="https://themes.gohugo.io/">Hugoのテーマ一覧</a></li>
-</ul>
-
+        <a href="https://Kurun-pan.github.io/post/2020-08-16-how-to-use-hugo/" class="post-read-more">[Read More]</a>
         
     </div>
 
@@ -512,10 +485,6 @@ $ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain $ cd riscv-
   <i class="fas fa-calendar"></i>&nbsp;Posted on August 15, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;7&nbsp;words
   
   
     
@@ -532,9 +501,7 @@ $ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain $ cd riscv-
         <h2 id="ブログ開設しました">ブログ開設しました</h2>
 <p>今までレンタルサーバーを借りてブログを運用したり、QiitaやMeduim, noteなどの無料の
 スペースを利用したりしていましたが、本日Github Pagesを利用したブログデビューしました。</p>
-<h2 id="何書くの">何書くの？</h2>
-<p>自分が学んだことのアウトプットを出す自由な場として、技術ネタ中心に記事を投稿しようと思います。</p>
-
+        <a href="https://Kurun-pan.github.io/post/2020-08-15-first-post/" class="post-read-more">[Read More]</a>
         
     </div>
 

@@ -18,18 +18,10 @@
       <pubDate>Tue, 25 Aug 2020 00:00:00 +0900</pubDate>
       <author>kurunpan09@gmail.com (Kurun / くるん)</author>
       <guid>https://Kurun-pan.github.io/post/2020-08-25-how-to-cmake/</guid>
-      <description>1. はじめに  自分の備忘録として、CMakeの基本的な使い方をまとめておきます。 普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。
-作業スペースのカレントディレクトリにCMakeLists.txtを作成します。 ソースコードはsrcディレクトリ以下に配置しているものとします。
-├── CMakeLists.txt └── src/main.c └── src/hoge.cc まず、ごく基本的な例を以下に示します。
-cmake_minimum_required(VERSION 3.10) project(Project_name_free) set(CMAKE_CXX_STANDARD 14) find_package(PkgConfig) pkg_check_modules(EGL REQUIRED egl) add_executable(target_name src/main.c src/*.cc) target_include_directories(target_name PRIVATE ${EGL_INCLUDE_DIRS}) target_link_libraries(target_name PRIVATE ${EGL_LIBRARIES}) target_compile_options(target_name PUBLIC ${EGL_CFLAGS} &amp;#34;-Wall&amp;#34;) 
-2. プロジェクト設定  cmake_minimum_required コマンド ビルドを実行するHost PC環境で必要になるCMakeの最低バージョンを指定します。
-cmake_minimum_required(VERSION 3.10) 最新のCMakeの文法/コマンド等を利用していなければ、バージョン制約はほぼないと思います。 例えばUbuntu18.04のCMakeのバージョンが3.10のため、この辺のバージョンを指定しておけば良いと思います。
-project コマンド CMakeプロジェクト名を指定するために利用します。
-project(Project_name_free) 指定した文字列がPROJECT_NAMEにセットされます。 オプションとして、VERSIONやLANGUAGESがありますが単なる付加情報のため、 指定してもしなくても良いです。
-CMAKE_CXX_STANDARD プロパティ C++の場合、以下の様にビルド時に指定するC++標準バージョンを指定する事が出来ます。
-set(CMAKE_CXX_STANDARD 14) 
-3. PkgConfigの利用  ビルド時のヘッダーファイルのインクルードやライブラリリンクオプションを簡易化するために、 pkg-configはほぼ必須だと思います。これをCMakeで利用する方法について説明します。
-find_package コマンド find_packageコマンドを利用すると、利用したいライブラリ (パッケージ) のライブラリパスや インクルードファイルパスなどを取得する事が可能です。</description>
+      <description>&lt;h2 id=&#34;1-はじめに&#34;&gt;1. はじめに&lt;/h2&gt;
+&lt;hr&gt;
+&lt;p&gt;自分の備忘録として、CMakeの基本的な使い方をまとめておきます。
+普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。&lt;/p&gt;</description>
     </item>
     
   </channel>

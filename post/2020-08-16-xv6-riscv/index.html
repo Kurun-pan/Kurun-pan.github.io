@@ -8,20 +8,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>xv6のRISC-V版とそのビルド手順など - Kurun&#39;s Blog</title>
-  <meta name="description" content="1. はじめに  xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
-2. xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
-ソースコード 公式オリジナルのソースコードは以下？
-https://github.com/mit-pdos/xv6-public
-3. RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。
-https://github.com/mit-pdos/xv6-riscv
-教育用と言うだけあってソースコードの量もかなり少なく、ビルドもすぐに終わります。
-事前準備 RISC-V Toolchainのインストール手順の手順に従って、RISC-VのToolchainをインストールしておきます。
-ソースコード取得 $ git clone https://github.com/mit-pdos/xv6-riscv カーネルのビルド $ cd xv6-riscv $ make ビルドが成功するとkernel/ディレクトリにkernelファイル (efl) が作成されています。 これがxv6のカーネルのイメージです。エントリーポイントは0x8000_0000になっている様子です。
-Userlandプログラムのビルド Userland側のイメージをビルドして、ファイルシステム用のイメージデータを作成します。
-xv6カーネルは、ブート終盤にvirtio diskに格納されるこのファイルシステムをメインメモリにロードし、 catやlsといったユーザプログラムをシェルから使えるようにしてくれます。
-$ make fs.img ビルドが成功すると、カレントディレクトリにfs.imgファイルが作成されているはずです。
-4. xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。
-ペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。">
+  <meta name="description" content="
+
+  
+    
+      
+    
+    
+  
+
+
+1. はじめに
+
+xv6という小さなOSのRISC-V版のビルド手順についてまとめました。">
   <meta name="author" content="Kurun / くるん"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -70,7 +69,7 @@ $ make fs.img ビルドが成功すると、カレントディレクトリにfs.
     "name" : "Kurun \/ くるん"
   },
   "headline": "xv6のRISC-V版とそのビルド手順など",
-  "description" : "1. はじめに  xv6という小さなOSのRISC-V版のビルド手順についてまとめました。\n2. xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。\nソースコード 公式オリジナルのソースコードは以下？\nhttps:\/\/github.com\/mit-pdos\/xv6-public\n3. RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。\nhttps:\/\/github.com\/mit-pdos\/xv6-riscv\n教育用と言うだけあってソースコードの量もかなり少なく、ビルドもすぐに終わります。\n事前準備 RISC-V Toolchainのインストール手順の手順に従って、RISC-VのToolchainをインストールしておきます。\nソースコード取得 $ git clone https:\/\/github.com\/mit-pdos\/xv6-riscv カーネルのビルド $ cd xv6-riscv $ make ビルドが成功するとkernel\/ディレクトリにkernelファイル (efl) が作成されています。 これがxv6のカーネルのイメージです。エントリーポイントは0x8000_0000になっている様子です。\nUserlandプログラムのビルド Userland側のイメージをビルドして、ファイルシステム用のイメージデータを作成します。\nxv6カーネルは、ブート終盤にvirtio diskに格納されるこのファイルシステムをメインメモリにロードし、 catやlsといったユーザプログラムをシェルから使えるようにしてくれます。\n$ make fs.img ビルドが成功すると、カレントディレクトリにfs.imgファイルが作成されているはずです。\n4. xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。\nペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。",
+  "description" : "    1. はじめに  xv6という小さなOSのRISC-V版のビルド手順についてまとめました。\n",
   "inLanguage" : "en",
   "wordCount":  64 ,
   "datePublished" : "2020-08-16T18:00:01",
@@ -92,31 +91,38 @@ $ make fs.img ビルドが成功すると、カレントディレクトリにfs.
 </script>
 
 <meta property="og:title" content="xv6のRISC-V版とそのビルド手順など" />
-<meta property="og:description" content="1. はじめに  xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
-2. xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
-ソースコード 公式オリジナルのソースコードは以下？
-https://github.com/mit-pdos/xv6-public
-3. RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように向けにポーティングされたxv6のソースコードは 以下にあります。
-https://github.com/mit-pdos/xv6-riscv
-教育用と言うだけあってソースコードの量もかなり少なく、ビルドもすぐに終わります。
-事前準備 RISC-V Toolchainのインストール手順の手順に従って、RISC-VのToolchainをインストールしておきます。
-ソースコード取得 $ git clone https://github.com/mit-pdos/xv6-riscv カーネルのビルド $ cd xv6-riscv $ make ビルドが成功するとkernel/ディレクトリにkernelファイル (efl) が作成されています。 これがxv6のカーネルのイメージです。エントリーポイントは0x8000_0000になっている様子です。
-Userlandプログラムのビルド Userland側のイメージをビルドして、ファイルシステム用のイメージデータを作成します。
-xv6カーネルは、ブート終盤にvirtio diskに格納されるこのファイルシステムをメインメモリにロードし、 catやlsといったユーザプログラムをシェルから使えるようにしてくれます。
-$ make fs.img ビルドが成功すると、カレントディレクトリにfs.imgファイルが作成されているはずです。
-4. xv6 for RISC-Vの構成  CPU2コアで動作するように作られている様子ですが、1コアだけでも動作します。
-ペリフェラルは、UART 1ch, PLIC (割り込みコントローラ), CLINT (TImer), Virtio (ディスク)の4つを想定しており、 メモリマップはmemlayout.hに定義されています。割り込みはUart (ID=1) と Virtio (ID=10) の2つだけです。">
+<meta property="og:description" content="
+
+  
+    
+      
+    
+    
+  
+
+
+1. はじめに
+
+xv6という小さなOSのRISC-V版のビルド手順についてまとめました。">
 <meta property="og:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
 <meta property="og:url" content="https://Kurun-pan.github.io/post/2020-08-16-xv6-riscv/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kurun&#39;s Blog" />
 
   <meta name="twitter:title" content="xv6のRISC-V版とそのビルド手順など" />
-  <meta name="twitter:description" content="1. はじめに  xv6という小さなOSのRISC-V版のビルド手順についてまとめました。
-2. xv6とは？  MITが開発したUnixの思想をベースにした教育用途の小さなOSです。
-ソースコード 公式オリジナルのソースコードは以下？
-https://github.com/mit-pdos/xv6-public
-3. RISC-V向けxv6のビルド手順  RISC-VかつQEMUで動作するように …">
+  <meta name="twitter:description" content="
+
+  
+    
+      
+    
+    
+  
+
+
+1. はじめに
+
+xv6という小さなOSのRISC-V版のビルド手順についてまとめました。">
   <meta name="twitter:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kurun_pan" />
@@ -274,10 +280,6 @@ https://github.com/mit-pdos/xv6-public
   <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;64&nbsp;words
   
   
     
@@ -313,10 +315,6 @@ https://github.com/mit-pdos/xv6-public
   <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;64&nbsp;words
   
   
     
@@ -341,8 +339,7 @@ https://github.com/mit-pdos/xv6-public
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        
-<link rel="stylesheet" href="https://Kurun-pan.github.io/css/hugo-easy-gallery.css" />
+        <link rel="stylesheet" href="https://Kurun-pan.github.io/css/hugo-easy-gallery.css" />
 <div class="box" >
   <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
     <div class="img">
@@ -396,7 +393,6 @@ $ make
 <ul>
 <li><a href="https://github.com/mit-pdos/xv6-riscv">mit-pdos/xv6-riscv</a></li>
 </ul>
-
 
         
           <div class="blog-tags">

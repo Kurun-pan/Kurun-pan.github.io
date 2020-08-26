@@ -18,9 +18,8 @@
       <pubDate>Sun, 16 Aug 2020 06:38:27 +0900</pubDate>
       <author>kurunpan09@gmail.com (Kurun / くるん)</author>
       <guid>https://Kurun-pan.github.io/post/2020-08-16-how-to-use-hugo/</guid>
-      <description>Github Pages + Hugoでブログを投稿するために最低限使うコマンドの備忘録です。 テンプレートとして利用しているテーマはBeautiful Hugoです。
-新しい記事を作成する $ hugo new content/post/{適当な文字列。何でも良い}.md 作成した記事を確認する $ hugo server -D リリース用データ (publicディレクトリ) を作成する $ hugo 
-参考   GitHub PagesとHugoでブログをつくった Hugoのテーマ一覧  </description>
+      <description>&lt;p&gt;Github Pages + Hugoでブログを投稿するために最低限使うコマンドの備忘録です。
+テンプレートとして利用しているテーマは&lt;a href=&#34;https://themes.gohugo.io/beautifulhugo/&#34;&gt;&lt;code&gt;Beautiful Hugo&lt;/code&gt;&lt;/a&gt;です。&lt;/p&gt;</description>
     </item>
     
   </channel>

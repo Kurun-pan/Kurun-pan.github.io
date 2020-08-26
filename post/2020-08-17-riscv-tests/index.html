@@ -8,10 +8,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>RISC-V テストベクター (検証用プログラム)  - Kurun&#39;s Blog</title>
-  <meta name="description" content="1. はじめに  RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。 RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。
-2. riscv-tests ディレクトリ構造  riscv-testsには、isaとbenchmarksの2つが用意されています。isaが各命令のテストプログラムで、 benchmarksがdhrystoneやクイックソートなどのベンチマーク用のプログラムです。
-isaディレクトリ以下には 以下のようにテスト内容毎にディレクトリが分けられています。
-   ディレクトリ名 Bits Privilege 命令の種類     rv32mi 32 Machine RV32I (基本命令系)   rv32si 32 Supervisor RV32I (基本命令系)   rv32ua 32 User RV32A (アトミック命令系)   rv32uc 32 User RV32C (圧縮命令系)   rv32ud 32 User RV32D (倍精度 浮動小数点演算命令系)   rv32uf 32 User RV32F (単精度 浮動小数点演算命令系)   rv32ui 32 User RV32I (基本命令系)   rv32um 32 User RV32M (乗除命令系)   rv64mi 64 Machine RV64I (基本命令系)   rv64si 64 Supervisor RV64I (基本命令系)   rv64ua 64 User RV64A (アトミック命令系)   rv64uc 64 User RV64C (圧縮命令系)   rv64ud 64 User RV64D (倍精度 浮動小数点演算命令系)   rv64uf 64 User RV64F (単精度 浮動小数点演算命令系)   rv64ui 64 User RV64I (基本命令系)   rv64um 64 User RV64M (乗除命令系)    3.">
+  <meta name="description" content="
+
+  
+    
+      
+    
+    
+  
+
+
+1. はじめに
+
+RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。
+RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。">
   <meta name="author" content="Kurun / くるん"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -60,7 +70,7 @@ isaディレクトリ以下には 以下のようにテスト内容毎にディ�
     "name" : "Kurun \/ くるん"
   },
   "headline": "RISC-V テストベクター (検証用プログラム) ",
-  "description" : "1. はじめに  RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。 RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。\n2. riscv-tests ディレクトリ構造  riscv-testsには、isaとbenchmarksの2つが用意されています。isaが各命令のテストプログラムで、 benchmarksがdhrystoneやクイックソートなどのベンチマーク用のプログラムです。\nisaディレクトリ以下には 以下のようにテスト内容毎にディレクトリが分けられています。\n   ディレクトリ名 Bits Privilege 命令の種類     rv32mi 32 Machine RV32I (基本命令系)   rv32si 32 Supervisor RV32I (基本命令系)   rv32ua 32 User RV32A (アトミック命令系)   rv32uc 32 User RV32C (圧縮命令系)   rv32ud 32 User RV32D (倍精度 浮動小数点演算命令系)   rv32uf 32 User RV32F (単精度 浮動小数点演算命令系)   rv32ui 32 User RV32I (基本命令系)   rv32um 32 User RV32M (乗除命令系)   rv64mi 64 Machine RV64I (基本命令系)   rv64si 64 Supervisor RV64I (基本命令系)   rv64ua 64 User RV64A (アトミック命令系)   rv64uc 64 User RV64C (圧縮命令系)   rv64ud 64 User RV64D (倍精度 浮動小数点演算命令系)   rv64uf 64 User RV64F (単精度 浮動小数点演算命令系)   rv64ui 64 User RV64I (基本命令系)   rv64um 64 User RV64M (乗除命令系)    3.",
+  "description" : "    1. はじめに  RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。 RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。\n",
   "inLanguage" : "en",
   "wordCount":  259 ,
   "datePublished" : "2020-08-17T00:00:01",
@@ -82,18 +92,40 @@ isaディレクトリ以下には 以下のようにテスト内容毎にディ�
 </script>
 
 <meta property="og:title" content="RISC-V テストベクター (検証用プログラム) " />
-<meta property="og:description" content="1. はじめに  RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。 RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。
-2. riscv-tests ディレクトリ構造  riscv-testsには、isaとbenchmarksの2つが用意されています。isaが各命令のテストプログラムで、 benchmarksがdhrystoneやクイックソートなどのベンチマーク用のプログラムです。
-isaディレクトリ以下には 以下のようにテスト内容毎にディレクトリが分けられています。
-   ディレクトリ名 Bits Privilege 命令の種類     rv32mi 32 Machine RV32I (基本命令系)   rv32si 32 Supervisor RV32I (基本命令系)   rv32ua 32 User RV32A (アトミック命令系)   rv32uc 32 User RV32C (圧縮命令系)   rv32ud 32 User RV32D (倍精度 浮動小数点演算命令系)   rv32uf 32 User RV32F (単精度 浮動小数点演算命令系)   rv32ui 32 User RV32I (基本命令系)   rv32um 32 User RV32M (乗除命令系)   rv64mi 64 Machine RV64I (基本命令系)   rv64si 64 Supervisor RV64I (基本命令系)   rv64ua 64 User RV64A (アトミック命令系)   rv64uc 64 User RV64C (圧縮命令系)   rv64ud 64 User RV64D (倍精度 浮動小数点演算命令系)   rv64uf 64 User RV64F (単精度 浮動小数点演算命令系)   rv64ui 64 User RV64I (基本命令系)   rv64um 64 User RV64M (乗除命令系)    3.">
+<meta property="og:description" content="
+
+  
+    
+      
+    
+    
+  
+
+
+1. はじめに
+
+RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。
+RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。">
 <meta property="og:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
 <meta property="og:url" content="https://Kurun-pan.github.io/post/2020-08-17-riscv-tests/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kurun&#39;s Blog" />
 
   <meta name="twitter:title" content="RISC-V テストベクター (検証用プログラム) " />
-  <meta name="twitter:description" content="1. はじめに  RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。 RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。
-2. riscv-tests ディレクトリ構造  riscv-testsには、isaとbenchmarksの2つが用意されています。isaが各命令のテストプ …">
+  <meta name="twitter:description" content="
+
+  
+    
+      
+    
+    
+  
+
+
+1. はじめに
+
+RISC-Vの検証用テストプログラムであるriscv-testsについて情報をまとめました。
+RISC-Vエミュレータ開発においても、このテストプログラムがPASSするようにテスト駆動型開発 (TDD) を基本に進めました。">
   <meta name="twitter:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kurun_pan" />
@@ -251,10 +283,6 @@ isaディレクトリ以下には 以下のようにテスト内容毎にディ�
   <i class="fas fa-calendar"></i>&nbsp;Posted on August 17, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;259&nbsp;words
   
   
     
@@ -290,10 +318,6 @@ isaディレクトリ以下には 以下のようにテスト内容毎にディ�
   <i class="fas fa-calendar"></i>&nbsp;Posted on August 17, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;2&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;259&nbsp;words
   
   
     
@@ -318,8 +342,7 @@ isaディレクトリ以下には 以下のようにテスト内容毎にディ�
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        
-<link rel="stylesheet" href="https://Kurun-pan.github.io/css/hugo-easy-gallery.css" />
+        <link rel="stylesheet" href="https://Kurun-pan.github.io/css/hugo-easy-gallery.css" />
 <div class="box" >
   <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
     <div class="img">
@@ -519,7 +542,6 @@ version 1 (SYSV), statically linked, not stripped
 <li><a href="https://msyksphinz.hatenablog.com/entry/2015/05/20/020000">RISC-Vの命令セットテストベンチはどのようになっているのか</a></li>
 <li><a href="https://riscv.org/wp-content/uploads/2015/01/riscv-software-stack-bootcamp-jan2015.pdf">Structure of the RISC-V Software Stack</a></li>
 </ul>
-
 
         
           <div class="blog-tags">

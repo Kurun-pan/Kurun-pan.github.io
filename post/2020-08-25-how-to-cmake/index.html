@@ -8,18 +8,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <title>CMakeの基本的な使い方 - Kurun&#39;s Blog</title>
-  <meta name="description" content="1. はじめに  自分の備忘録として、CMakeの基本的な使い方をまとめておきます。 普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。
-作業スペースのカレントディレクトリにCMakeLists.txtを作成します。 ソースコードはsrcディレクトリ以下に配置しているものとします。
-├── CMakeLists.txt └── src/main.c └── src/hoge.cc まず、ごく基本的な例を以下に示します。
-cmake_minimum_required(VERSION 3.10) project(Project_name_free) set(CMAKE_CXX_STANDARD 14) find_package(PkgConfig) pkg_check_modules(EGL REQUIRED egl) add_executable(target_name src/main.c src/*.cc) target_include_directories(target_name PRIVATE ${EGL_INCLUDE_DIRS}) target_link_libraries(target_name PRIVATE ${EGL_LIBRARIES}) target_compile_options(target_name PUBLIC ${EGL_CFLAGS} &#34;-Wall&#34;) 
-2. プロジェクト設定  cmake_minimum_required コマンド ビルドを実行するHost PC環境で必要になるCMakeの最低バージョンを指定します。
-cmake_minimum_required(VERSION 3.10) 最新のCMakeの文法/コマンド等を利用していなければ、バージョン制約はほぼないと思います。 例えばUbuntu18.04のCMakeのバージョンが3.10のため、この辺のバージョンを指定しておけば良いと思います。
-project コマンド CMakeプロジェクト名を指定するために利用します。
-project(Project_name_free) 指定した文字列がPROJECT_NAMEにセットされます。 オプションとして、VERSIONやLANGUAGESがありますが単なる付加情報のため、 指定してもしなくても良いです。
-CMAKE_CXX_STANDARD プロパティ C&#43;&#43;の場合、以下の様にビルド時に指定するC&#43;&#43;標準バージョンを指定する事が出来ます。
-set(CMAKE_CXX_STANDARD 14) 
-3. PkgConfigの利用  ビルド時のヘッダーファイルのインクルードやライブラリリンクオプションを簡易化するために、 pkg-configはほぼ必須だと思います。これをCMakeで利用する方法について説明します。
-find_package コマンド find_packageコマンドを利用すると、利用したいライブラリ (パッケージ) のライブラリパスや インクルードファイルパスなどを取得する事が可能です。">
+  <meta name="description" content="1. はじめに
+
+自分の備忘録として、CMakeの基本的な使い方をまとめておきます。
+普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。">
   <meta name="author" content="Kurun / くるん"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -68,7 +60,7 @@ find_package コマンド find_packageコマンドを利用すると、利用し
     "name" : "Kurun \/ くるん"
   },
   "headline": "CMakeの基本的な使い方",
-  "description" : "1. はじめに  自分の備忘録として、CMakeの基本的な使い方をまとめておきます。 普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。\n作業スペースのカレントディレクトリにCMakeLists.txtを作成します。 ソースコードはsrcディレクトリ以下に配置しているものとします。\n├── CMakeLists.txt └── src\/main.c └── src\/hoge.cc まず、ごく基本的な例を以下に示します。\ncmake_minimum_required(VERSION 3.10) project(Project_name_free) set(CMAKE_CXX_STANDARD 14) find_package(PkgConfig) pkg_check_modules(EGL REQUIRED egl) add_executable(target_name src\/main.c src\/*.cc) target_include_directories(target_name PRIVATE ${EGL_INCLUDE_DIRS}) target_link_libraries(target_name PRIVATE ${EGL_LIBRARIES}) target_compile_options(target_name PUBLIC ${EGL_CFLAGS} \u0026#34;-Wall\u0026#34;) \n2. プロジェクト設定  cmake_minimum_required コマンド ビルドを実行するHost PC環境で必要になるCMakeの最低バージョンを指定します。\ncmake_minimum_required(VERSION 3.10) 最新のCMakeの文法\/コマンド等を利用していなければ、バージョン制約はほぼないと思います。 例えばUbuntu18.04のCMakeのバージョンが3.10のため、この辺のバージョンを指定しておけば良いと思います。\nproject コマンド CMakeプロジェクト名を指定するために利用します。\nproject(Project_name_free) 指定した文字列がPROJECT_NAMEにセットされます。 オプションとして、VERSIONやLANGUAGESがありますが単なる付加情報のため、 指定してもしなくても良いです。\nCMAKE_CXX_STANDARD プロパティ C\u002b\u002bの場合、以下の様にビルド時に指定するC\u002b\u002b標準バージョンを指定する事が出来ます。\nset(CMAKE_CXX_STANDARD 14) \n3. PkgConfigの利用  ビルド時のヘッダーファイルのインクルードやライブラリリンクオプションを簡易化するために、 pkg-configはほぼ必須だと思います。これをCMakeで利用する方法について説明します。\nfind_package コマンド find_packageコマンドを利用すると、利用したいライブラリ (パッケージ) のライブラリパスや インクルードファイルパスなどを取得する事が可能です。",
+  "description" : "1. はじめに  自分の備忘録として、CMakeの基本的な使い方をまとめておきます。 普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。\n",
   "inLanguage" : "en",
   "wordCount":  199 ,
   "datePublished" : "2020-08-25T00:00:00",
@@ -90,27 +82,20 @@ find_package コマンド find_packageコマンドを利用すると、利用し
 </script>
 
 <meta property="og:title" content="CMakeの基本的な使い方" />
-<meta property="og:description" content="1. はじめに  自分の備忘録として、CMakeの基本的な使い方をまとめておきます。 普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。
-作業スペースのカレントディレクトリにCMakeLists.txtを作成します。 ソースコードはsrcディレクトリ以下に配置しているものとします。
-├── CMakeLists.txt └── src/main.c └── src/hoge.cc まず、ごく基本的な例を以下に示します。
-cmake_minimum_required(VERSION 3.10) project(Project_name_free) set(CMAKE_CXX_STANDARD 14) find_package(PkgConfig) pkg_check_modules(EGL REQUIRED egl) add_executable(target_name src/main.c src/*.cc) target_include_directories(target_name PRIVATE ${EGL_INCLUDE_DIRS}) target_link_libraries(target_name PRIVATE ${EGL_LIBRARIES}) target_compile_options(target_name PUBLIC ${EGL_CFLAGS} &#34;-Wall&#34;) 
-2. プロジェクト設定  cmake_minimum_required コマンド ビルドを実行するHost PC環境で必要になるCMakeの最低バージョンを指定します。
-cmake_minimum_required(VERSION 3.10) 最新のCMakeの文法/コマンド等を利用していなければ、バージョン制約はほぼないと思います。 例えばUbuntu18.04のCMakeのバージョンが3.10のため、この辺のバージョンを指定しておけば良いと思います。
-project コマンド CMakeプロジェクト名を指定するために利用します。
-project(Project_name_free) 指定した文字列がPROJECT_NAMEにセットされます。 オプションとして、VERSIONやLANGUAGESがありますが単なる付加情報のため、 指定してもしなくても良いです。
-CMAKE_CXX_STANDARD プロパティ C&#43;&#43;の場合、以下の様にビルド時に指定するC&#43;&#43;標準バージョンを指定する事が出来ます。
-set(CMAKE_CXX_STANDARD 14) 
-3. PkgConfigの利用  ビルド時のヘッダーファイルのインクルードやライブラリリンクオプションを簡易化するために、 pkg-configはほぼ必須だと思います。これをCMakeで利用する方法について説明します。
-find_package コマンド find_packageコマンドを利用すると、利用したいライブラリ (パッケージ) のライブラリパスや インクルードファイルパスなどを取得する事が可能です。">
+<meta property="og:description" content="1. はじめに
+
+自分の備忘録として、CMakeの基本的な使い方をまとめておきます。
+普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。">
 <meta property="og:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
 <meta property="og:url" content="https://Kurun-pan.github.io/post/2020-08-25-how-to-cmake/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kurun&#39;s Blog" />
 
   <meta name="twitter:title" content="CMakeの基本的な使い方" />
-  <meta name="twitter:description" content="1. はじめに  自分の備忘録として、CMakeの基本的な使い方をまとめておきます。 普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。
-作業スペースのカレントディレクトリにCMakeLists.txtを作成します。 ソースコードはsrcディレクトリ以下に配置しているものとします。
-├── CMakeLists.txt └── …">
+  <meta name="twitter:description" content="1. はじめに
+
+自分の備忘録として、CMakeの基本的な使い方をまとめておきます。
+普段利用するものの頻繁に書くものではないため、ゼロから書こうとするとあれ？って忘れている事が多いので。">
   <meta name="twitter:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kurun_pan" />
@@ -268,10 +253,6 @@ find_package コマンド find_packageコマンドを利用すると、利用し
   <i class="fas fa-calendar"></i>&nbsp;Posted on August 25, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;199&nbsp;words
   
   
     
@@ -307,10 +288,6 @@ find_package コマンド find_packageコマンドを利用すると、利用し
   <i class="fas fa-calendar"></i>&nbsp;Posted on August 25, 2020
   
   
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;1&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;199&nbsp;words
   
   
     
@@ -463,7 +440,6 @@ target_compile_options(target_name PUBLIC ${EGL_CFLAGS} &#34;-Wall&#34;)
 </ul>
 </li>
 </ul>
-
 
         
           <div class="blog-tags">
