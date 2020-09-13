@@ -7,21 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>RISC-V Toolchainのインストール手順 - Kurun&#39;s Blog</title>
-  <meta name="description" content="
-
-  
-    
-      
-    
-    
-  
-
-
-1. はじめに
-
-RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。
-対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。">
+  <title>Zephyr OSをRISC-V向けにビルドして動かしてみる - Kurun&#39;s Blog</title>
+  <meta name="description" content="Zephyr OSをRISC-V向けにビルドする手順をまとめています。作業環境はLinux Ubuntu 20.04です。
+macOSではビルドエラーになることと、CMakeのバージョンが割と新しいのを求められることからUbuntu 20.04で確認しました。">
   <meta name="author" content="Kurun / くるん"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -57,8 +45,8 @@ RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインス�
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/Kurun-pan.github.io\/post\/2020-08-16-riscv-toolchain\/",
-          "name": "R i s c v toolchainのインストール手順"
+          "@id": "https:\/\/Kurun-pan.github.io\/post\/2020-09-13\/",
+          "name": "Zephyr o sを r i s c v向けにビルドして動かしてみる"
         }
     }]
 }
@@ -69,15 +57,15 @@ RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインス�
   "author": {
     "name" : "Kurun \/ くるん"
   },
-  "headline": "RISC-V Toolchainのインストール手順",
-  "description" : "    1. はじめに  RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。 対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。\n",
+  "headline": "Zephyr OSをRISC-V向けにビルドして動かしてみる",
+  "description" : "Zephyr OSをRISC-V向けにビルドする手順をまとめています。作業環境はLinux Ubuntu 20.04です。 macOSではビルドエラーになることと、CMakeのバージョンが割と新しいのを求められることからUbuntu 20.04で確認しました。\n",
   "inLanguage" : "en",
-  "wordCount":  87 ,
-  "datePublished" : "2020-08-16T17:47:01",
-  "dateModified" : "2020-08-16T17:47:01",
+  "wordCount":  251 ,
+  "datePublished" : "2020-09-13T00:00:00",
+  "dateModified" : "2020-09-13T00:00:00",
   "image" : "https:\/\/Kurun-pan.github.io\/images\/avatar-icon.png",
-  "keywords" : [ "RISC-V" ],
-  "mainEntityOfPage" : "https:\/\/Kurun-pan.github.io\/post\/2020-08-16-riscv-toolchain\/",
+  "keywords" : [ "Zephyr, RISC-V" ],
+  "mainEntityOfPage" : "https:\/\/Kurun-pan.github.io\/post\/2020-09-13\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/Kurun-pan.github.io",
@@ -91,41 +79,17 @@ RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインス�
 }
 </script>
 
-<meta property="og:title" content="RISC-V Toolchainのインストール手順" />
-<meta property="og:description" content="
-
-  
-    
-      
-    
-    
-  
-
-
-1. はじめに
-
-RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。
-対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。">
+<meta property="og:title" content="Zephyr OSをRISC-V向けにビルドして動かしてみる" />
+<meta property="og:description" content="Zephyr OSをRISC-V向けにビルドする手順をまとめています。作業環境はLinux Ubuntu 20.04です。
+macOSではビルドエラーになることと、CMakeのバージョンが割と新しいのを求められることからUbuntu 20.04で確認しました。">
 <meta property="og:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
-<meta property="og:url" content="https://Kurun-pan.github.io/post/2020-08-16-riscv-toolchain/" />
+<meta property="og:url" content="https://Kurun-pan.github.io/post/2020-09-13/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kurun&#39;s Blog" />
 
-  <meta name="twitter:title" content="RISC-V Toolchainのインストール手順" />
-  <meta name="twitter:description" content="
-
-  
-    
-      
-    
-    
-  
-
-
-1. はじめに
-
-RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。
-対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。">
+  <meta name="twitter:title" content="Zephyr OSをRISC-V向けにビルドして動かしてみる" />
+  <meta name="twitter:description" content="Zephyr OSをRISC-V向けにビルドする手順をまとめています。作業環境はLinux Ubuntu 20.04です。
+macOSではビルドエラーになることと、CMakeのバージョンが割と新しいのを求められることからUbuntu 20.04で確認しました。">
   <meta name="twitter:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kurun_pan" />
@@ -274,13 +238,13 @@ RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインス�
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
               <div class="post-heading">
-                <h1>RISC-V Toolchainのインストール手順</h1>
+                <h1>Zephyr OSをRISC-V向けにビルドして動かしてみる</h1>
                   
                   
                     <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on September 13, 2020
   
   
   
@@ -307,7 +271,7 @@ RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインス�
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>RISC-V Toolchainのインストール手順</h1>
+                <h1>Zephyr OSをRISC-V向けにビルドして動かしてみる</h1>
               
               
               
@@ -315,7 +279,7 @@ RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインス�
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on September 13, 2020
   
   
   
@@ -342,52 +306,100 @@ RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインス�
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <link rel="stylesheet" href="https://Kurun-pan.github.io/css/hugo-easy-gallery.css" />
+        <p>Zephyr OSをRISC-V向けにビルドする手順をまとめています。作業環境はLinux Ubuntu 20.04です。
+macOSではビルドエラーになることと、CMakeのバージョンが割と新しいのを求められることからUbuntu 20.04で確認しました。</p>
+<h2 id="1-what-is-zephyr">1. What is Zephyr?</h2>
+<hr>
+
+<link rel="stylesheet" href="https://Kurun-pan.github.io/css/hugo-easy-gallery.css" />
 <div class="box" >
   <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
     <div class="img">
-      <img itemprop="thumbnail" src="/images/riscv.png" alt="/images/riscv.png"/>
+      <img itemprop="thumbnail" src="./Zephyr-logo.png" alt="./Zephyr-logo.png"/>
     </div>
-    <a href="/images/riscv.png" itemprop="contentUrl"></a>
+    <a href="./Zephyr-logo.png" itemprop="contentUrl"></a>
   </figure>
 </div>
 
-<h2 id="1-はじめに">1. はじめに</h2>
-<hr>
-<p>RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。
-対象OSは<code>macOS</code>ですが、基本的にLinux (Ubuntuなど) でも同じ手順です。</p>
+<p><a href="https://www.zephyrproject.org/">Zephyr</a>とは、VxWorksからforkして2015年から開発されているRTOSの一つらしいです。
+Linux Foundationのプロジェクトの一つとのことですが、全く知らなかった…。</p>
 <br>
-<h2 id="2-インストール手順">2. インストール手順</h2>
+<h2 id="2-installing">2. Installing</h2>
 <hr>
-<h3 id="必要なパッケージのインストール">必要なパッケージのインストール</h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat
-</code></pre></div><h3 id="toolchainのビルドとインストール">Toolchainのビルドとインストール</h3>
-<p>makeコマンドを実行することで、インストールまで実行されます。
-また、git cloneにも結構な時間を要します。ビルドも同様です。。</p>
-<p><code>configure</code>の<code>prefix</code>オプションには、インストール先のパスを指定します。</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
-$ cd riscv-gnu-toolchain
-$ ./configure --prefix=/opt/riscv
-$ sudo make
-</code></pre></div><h3 id="path追加">PATH追加</h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$export PATH=$PATH:/opt/riscv/bin
+<p>以下のパッケージをインストールしておきます。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ sudo apt install --no-install-recommends git cmake ninja-build gperf \
+  ccache dfu-util device-tree-compiler wget python3-pip python3-setuptools \
+  python3-wheel xz-utils file make gcc gcc-multilib \
+  python3-dev libglib2.0-dev libpixman-1-dev
 </code></pre></div><br>
-<h1 id="3-動作確認">3. 動作確認</h1>
+<h2 id="3-getting-zephyr-source-code">3. Getting Zephyr source code</h2>
 <hr>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ /opt/riscv/bin/riscv64-unknown-elf-gcc --version
-riscv64-unknown-elf-gcc (GCC) 10.1.0
-Copyright (C) 2020 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git clone https://github.com/zephyrproject-rtos/zephyr
+</code></pre></div><p>依存パッケージをインストールします。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ cd zephyr
+$ pip3 install --user -r scripts/requirements.txt
+</code></pre></div><p>環境設定を行います。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ export ZEPHYR_TOOLCHAIN_VARIANT=zephyr
+$ export ZEPHYR_SDK_INSTALL_DIR=&#34;/opt/zephyr-sdk/&#34;
+$ . ./zephyr-env.sh
 </code></pre></div><br>
-<h1 id="4-参考文献">4. 参考文献</h1>
+<h2 id="4-install-zephyr-sdk">4. Install Zephyr SDK</h2>
+<hr>
+<p>SDKのダウンロードが結構遅くて時間がかかります…。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ wget https://github.com/zephyrproject-rtos/sdk-ng/releases/download/v0.11.3/zephyr-sdk-0.11.3-setup.run
+$ sudo sh zephyr-sdk-0.11.3-setup.run -- -d $ZEPHYR_SDK_INSTALL_DIR
+</code></pre></div><br>
+<h2 id="5-building-sample-project">5. Building sample project</h2>
+<hr>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ mkdir build-example
+$ cd build-example
+$ cmake -DBOARD=qemu_riscv32 $ZEPHYR_BASE/samples/hello_world
+$ make -j 4
+</code></pre></div><p>ビルドが成功すると<code>zephyr/zephyr.elf</code>が生成されているはずです。</p>
+<br>
+<h2 id="6-executing">6. Executing</h2>
+<hr>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ make run
+[  3%] Built target parse_syscalls_target
+[  4%] Built target kobj_types_h_target
+[  7%] Built target syscall_list_h_target
+[ 10%] Built target driver_validation_h_target
+[ 10%] Built target offsets
+[ 11%] Built target offsets_h
+[ 11%] Built target zephyr_generated_headers
+[ 33%] Built target kernel
+[ 34%] Built target app
+[ 61%] Built target zephyr
+[ 62%] Built target linker_script_target
+[ 64%] Built target isr_tables
+[ 66%] Built target arch__common
+[ 73%] Built target arch__riscv__core
+[ 87%] Built target lib__libc__minimal
+[ 89%] Built target lib__posix
+[ 91%] Built target drivers__gpio
+[ 92%] Built target drivers__serial
+[ 94%] Built target zephyr_prebuilt
+[ 95%] Built target linker_pass_final_script_target
+[ 98%] Built target zephyr_final
+Scanning dependencies of target run
+[100%] 
+To exit from QEMU enter: &#39;CTRL+a, x&#39;
+[QEMU] CPU: riscv32
+*** Booting Zephyr OS build v2.4.0-rc1-87-g61819f23f97c  ***
+Hello World! qemu_riscv32
+QEMU: Terminated
+[100%] Built target run
+</code></pre></div><br>
+<h2 id="7-references">7. References</h2>
 <hr>
 <ul>
-<li><a href="https://github.com/riscv/riscv-gnu-toolchain">riscv-gnu-toolchain</a></li>
+<li><a href="https://risc-v-getting-started-guide.readthedocs.io/en/latest/zephyr-introduction.html">https://risc-v-getting-started-guide.readthedocs.io/en/latest/zephyr-introduction.html</a></li>
 </ul>
 
         
           <div class="blog-tags">
+            
+              <a href="https://Kurun-pan.github.io/tags/zephyr/">Zephyr</a>&nbsp;
             
               <a href="https://Kurun-pan.github.io/tags/risc-v/">RISC-V</a>&nbsp;
             
@@ -404,42 +416,42 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f&amp;text=RISC-V%20Toolchain%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86&amp;via=kurun_pan" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-09-13%2f&amp;text=Zephyr%20OS%e3%82%92RISC-V%e5%90%91%e3%81%91%e3%81%ab%e3%83%93%e3%83%ab%e3%83%89%e3%81%97%e3%81%a6%e5%8b%95%e3%81%8b%e3%81%97%e3%81%a6%e3%81%bf%e3%82%8b&amp;via=kurun_pan" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-09-13%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f&amp;title=RISC-V%20Toolchain%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-09-13%2f&amp;title=Zephyr%20OS%e3%82%92RISC-V%e5%90%91%e3%81%91%e3%81%ab%e3%83%93%e3%83%ab%e3%83%89%e3%81%97%e3%81%a6%e5%8b%95%e3%81%8b%e3%81%97%e3%81%a6%e3%81%bf%e3%82%8b" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f&amp;title=RISC-V%20Toolchain%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-09-13%2f&amp;title=Zephyr%20OS%e3%82%92RISC-V%e5%90%91%e3%81%91%e3%81%ab%e3%83%93%e3%83%ab%e3%83%89%e3%81%97%e3%81%a6%e5%8b%95%e3%81%8b%e3%81%97%e3%81%a6%e3%81%bf%e3%82%8b" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f&amp;title=RISC-V%20Toolchain%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-09-13%2f&amp;title=Zephyr%20OS%e3%82%92RISC-V%e5%90%91%e3%81%91%e3%81%ab%e3%83%93%e3%83%ab%e3%83%89%e3%81%97%e3%81%a6%e5%8b%95%e3%81%8b%e3%81%97%e3%81%a6%e3%81%bf%e3%82%8b" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f&amp;description=RISC-V%20Toolchain%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-09-13%2f&amp;description=Zephyr%20OS%e3%82%92RISC-V%e5%90%91%e3%81%91%e3%81%ab%e3%83%93%e3%83%ab%e3%83%89%e3%81%97%e3%81%a6%e5%8b%95%e3%81%8b%e3%81%97%e3%81%a6%e3%81%bf%e3%82%8b" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -461,11 +473,11 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
                   <ul>
                 
                 
-                    <li><a href="/post/2020-09-13/">Zephyr OSをRISC-V向けにビルドして動かしてみる</a></li>
-                
                     <li><a href="/post/2020-08-17-riscv-tests/">RISC-V テストベクター (検証用プログラム) </a></li>
                 
                     <li><a href="/post/2020-08-16-xv6-riscv/">xv6のRISC-V版とそのビルド手順など</a></li>
+                
+                    <li><a href="/post/2020-08-16-riscv-toolchain/">RISC-V Toolchainのインストール手順</a></li>
                 
               </ul>
 
@@ -477,13 +489,9 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://Kurun-pan.github.io/post/2020-08-16-how-to-use-hugo/" data-toggle="tooltip" data-placement="top" title="How to use Hugo">&larr; Previous Post</a>
+              <a href="https://Kurun-pan.github.io/post/2020-09-06/" data-toggle="tooltip" data-placement="top" title="Amazon FreeRTOSのRISC-V向けビルド方法とエミュレータ上での動かし方">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://Kurun-pan.github.io/post/2020-08-16-xv6-riscv/" data-toggle="tooltip" data-placement="top" title="xv6のRISC-V版とそのビルド手順など">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
