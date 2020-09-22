@@ -61,7 +61,7 @@
   "headline": "Zephyr OSを自作RISC-Vで動かした話",
   "description" : "Zephyr OSをRustで書いた自作RISC-Vエミュレータで 動かすことに成功したのでその内容をまとめています。 基本的には何か新しいことはしておらず、NuttX OSを動かした時の実装そのままで動きました。\n",
   "inLanguage" : "en",
-  "wordCount":  37 ,
+  "wordCount":  38 ,
   "datePublished" : "2020-09-22T00:00:00",
   "dateModified" : "2020-09-22T00:00:00",
   "image" : "https:\/\/Kurun-pan.github.io\/images\/avatar-icon.png",
@@ -334,11 +334,22 @@
 <br>
 <h2 id="自作エミュレータで動かしてみる">自作エミュレータで動かしてみる</h2>
 <hr>
+<p>LinuxやNuttXのようなシェルはないので、地味ですが。</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git clone https://github.com/Kurun-pan/riscv-emu.git
 $ cd riscv-emu
 $ cargo run --release
 $ ./target/release/riscv-emu -k ./artifacts/zephyr/zephyr.elf -m SiFive_e
-</code></pre></div><p><img src="https://github.com/Kurun-pan/riscv-emu/blob/master/demo/zephyr.gif" alt="animation"></p>
+</code></pre></div>
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="./zephyr.gif" alt="./zephyr.gif"/>
+    </div>
+    <a href="./zephyr.gif" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
 <br>
 
         
