@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kurunpan09@gmail.com (Kurun / くるん)</managingEditor>
     <webMaster>kurunpan09@gmail.com (Kurun / くるん)</webMaster>
-    <lastBuildDate>Sun, 13 Sep 2020 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2020 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://Kurun-pan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Zephyr OSを自作RISC-Vで動かした話</title>
+      <link>https://Kurun-pan.github.io/post/2020-09-22/</link>
+      <pubDate>Tue, 22 Sep 2020 00:00:00 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/post/2020-09-22/</guid>
+      <description>&lt;p&gt;Zephyr OSをRustで書いた&lt;a href=&#34;https://github.com/Kurun-pan/riscv-emu&#34;&gt;自作RISC-Vエミュレータ&lt;/a&gt;で
+動かすことに成功したのでその内容をまとめています。
+基本的には何か新しいことはしておらず、NuttX OSを動かした時の実装そのままで動きました。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Zephyr OSをRISC-V向けにビルドして動かしてみる</title>
@@ -139,7 +150,7 @@ RISC-Vエミュレータ開発においても、このテストプログラム�
       <guid>https://Kurun-pan.github.io/page/about/</guid>
       <description>Who are you? ソフトウェアエンジニア@都内某メーカー勤務です。 仕事では下回りのシステムソフトウェアの経験が主ですが、ミドルウェア以下を幅広く担当しています。 最近はGUI周りのソフトウェア開発やってます。
 プライベートでは、Androidアプリを開発および配信したり、最近ではRust言語で RISC-V CPUのエミュレータを開発してxv6やLinuxなどのOSをそのエミュレータ 上で動かそうとしていたり、技術書典向けにいくつかの書籍を執筆しているなど、 マルチに活動しています。
-専門分野  Embedded System &amp;amp; Software Linux, Android SoC (System on Chip) - 数年のLSI開発経験あり  Computer Skills  C/C++ Dart (Flutter) Rust Java Kotlin (少しだけ) Docker / コンテナランタイム (runcなど) Linux  Hardware Skills  ARM64 RISC-V Intel X64 FPGA VerilogとかLSI開発関連のツールなど  開発に何らか関わった製品 以下の商品の開発に携わり、自分が書いたソースコードを搭載した製品群を世の中にリリースしています。 良かったら買ってください (何を？) 。
+専門分野  Embedded System &amp;amp; Software Linux, Android SoC (System on Chip) - 数年LSI開発経験あり  Computer Skills  C/C++ Dart (Flutter) Rust Java Kotlin (少しだけ) Docker / コンテナランタイム (runcなど) Linux  Hardware Skills  ARM64 RISC-V Intel X64 FPGA VerilogとかLSI開発関連のツールなど  開発に何らか関わった製品 以下の商品の開発に携わり、自分が書いたソースコードを搭載した製品群を世の中にリリースしています。 良かったら買ってください (何を？) 。
  Digital TV 4K Projector DVD/BD disk drive Video game console Consumer Printer &amp;amp; Scanner Medical equipments Automotive (HEV/PHEV/EV)  その他メディア  Twitter: https://twitter.</description>
     </item>
     

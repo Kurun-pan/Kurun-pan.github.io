@@ -7,7 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Zephyr - Kurun&#39;s Blog</title>
+  <title>Zephyr OSを自作RISC-Vで動かした話 - Kurun&#39;s Blog</title>
+  <meta name="description" content="Zephyr OSをRustで書いた自作RISC-Vエミュレータで
+動かすことに成功したのでその内容をまとめています。
+基本的には何か新しいことはしておらず、NuttX OSを動かした時の実装そのままで動きました。">
   <meta name="author" content="Kurun / くるん"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -28,14 +31,68 @@
   
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/Kurun-pan.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/Kurun-pan.github.io\/post\/2020-09-22\/",
+          "name": "Zephyr o sを自作 r i s c vで動かした話"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Kurun \/ くるん"
+  },
+  "headline": "Zephyr OSを自作RISC-Vで動かした話",
+  "description" : "Zephyr OSをRustで書いた自作RISC-Vエミュレータで 動かすことに成功したのでその内容をまとめています。 基本的には何か新しいことはしておらず、NuttX OSを動かした時の実装そのままで動きました。\n",
+  "inLanguage" : "en",
+  "wordCount":  37 ,
+  "datePublished" : "2020-09-22T00:00:00",
+  "dateModified" : "2020-09-22T00:00:00",
+  "image" : "https:\/\/Kurun-pan.github.io\/images\/avatar-icon.png",
+  "keywords" : [ "Zephyr, RISC-V, Rust" ],
+  "mainEntityOfPage" : "https:\/\/Kurun-pan.github.io\/post\/2020-09-22\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/Kurun-pan.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/Kurun-pan.github.io\/images\/avatar-icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
 
-<meta property="og:title" content="Zephyr" />
+<meta property="og:title" content="Zephyr OSを自作RISC-Vで動かした話" />
+<meta property="og:description" content="Zephyr OSをRustで書いた自作RISC-Vエミュレータで
+動かすことに成功したのでその内容をまとめています。
+基本的には何か新しいことはしておらず、NuttX OSを動かした時の実装そのままで動きました。">
 <meta property="og:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
-<meta property="og:url" content="https://Kurun-pan.github.io/tags/zephyr/" />
+<meta property="og:url" content="https://Kurun-pan.github.io/post/2020-09-22/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kurun&#39;s Blog" />
 
-  <meta name="twitter:title" content="Zephyr" />
+  <meta name="twitter:title" content="Zephyr OSを自作RISC-Vで動かした話" />
+  <meta name="twitter:description" content="Zephyr OSをRustで書いた自作RISC-Vエミュレータで
+動かすことに成功したのでその内容をまとめています。
+基本的には何か新しいことはしておらず、NuttX OSを動かした時の実装そのままで動きました。">
   <meta name="twitter:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kurun_pan" />
@@ -167,47 +224,27 @@
 
 
   
+    <div id="header-big-imgs" data-num-img=1 
+      
+         
+          data-img-src-1="/img/sphere.jpg" 
+         
+         
+      ></div>
+  
 
-  <header class="header-section ">
+  <header class="header-section has-img">
     
-    <div class="intro-header no-img">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="tags-heading">
-              
-                <h1>Zephyr</h1>
-              
-              
-                <hr class="small">
-              
-              
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-
-    
-  <div class="container" role="main">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="intro-header big-img">
         
-        <div class="posts-list">
-          
-            <article class="post-preview">
-    <a href="https://Kurun-pan.github.io/post/2020-09-22/">
-        <h2 class="post-title">Zephyr OSを自作RISC-Vで動かした話</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>Zephyr OSを自作RISC-Vで動かした話</h1>
+                  
+                  
+                    <span class="post-meta">
   
   
   <i class="fas fa-calendar"></i>&nbsp;Posted on September 22, 2020
@@ -223,43 +260,29 @@
 </span>
 
 
-    </p>
-    <div class="post-entry">
-        
-        <p>Zephyr OSをRustで書いた<a href="https://github.com/Kurun-pan/riscv-emu">自作RISC-Vエミュレータ</a>で
-動かすことに成功したのでその内容をまとめています。
-基本的には何か新しいことはしておらず、NuttX OSを動かした時の実装そのままで動きました。</p>
-        <a href="https://Kurun-pan.github.io/post/2020-09-22/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
     
-    <div class="blog-tags">
-        
-        <a href="https://Kurun-pan.github.io/tags/zephyr/">Zephyr</a>&nbsp;
-        
-        <a href="https://Kurun-pan.github.io/tags/risc-v/">RISC-V</a>&nbsp;
-        
-        <a href="https://Kurun-pan.github.io/tags/rust/">Rust</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
-            <article class="post-preview">
-    <a href="https://Kurun-pan.github.io/post/2020-09-13/">
-        <h2 class="post-title">Zephyr OSをRISC-V向けにビルドして動かしてみる</h2>
-        
-        
-        
-    </a>
-
-    <p class="post-meta">
-        <span class="post-meta">
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Zephyr OSを自作RISC-Vで動かした話</h1>
+              
+              
+              
+              
+                <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on September 13, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on September 22, 2020
   
   
   
@@ -272,32 +295,165 @@
 </span>
 
 
-    </p>
-    <div class="post-entry">
-        
-        <p>Zephyr OSをRISC-V向けにビルドする手順をまとめています。作業環境はLinux Ubuntu 20.04です。
-macOSではビルドエラーになることと、CMakeのバージョンが割と新しいのを求められることからUbuntu 20.04で確認しました。</p>
-        <a href="https://Kurun-pan.github.io/post/2020-09-13/" class="post-read-more">[Read More]</a>
-        
-    </div>
-
-    
-    <div class="blog-tags">
-        
-        <a href="https://Kurun-pan.github.io/tags/zephyr/">Zephyr</a>&nbsp;
-        
-        <a href="https://Kurun-pan.github.io/tags/risc-v/">RISC-V</a>&nbsp;
-        
-    </div>
-    
-
-</article>
-          
+              
+            </div>
+          </div>
         </div>
-        
       </div>
     </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Zephyr OSをRustで書いた<a href="https://github.com/Kurun-pan/riscv-emu">自作RISC-Vエミュレータ</a>で
+動かすことに成功したのでその内容をまとめています。
+基本的には何か新しいことはしておらず、NuttX OSを動かした時の実装そのままで動きました。</p>
+<link rel="stylesheet" href="https://Kurun-pan.github.io/css/hugo-easy-gallery.css" />
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="./zephyr-logo.png" alt="./zephyr-logo.png"/>
+    </div>
+    <a href="./zephyr-logo.png" itemprop="contentUrl"></a>
+  </figure>
+</div>
+
+<h2 id="zephyr-osのビルド">Zephyr OSのビルド</h2>
+<hr>
+<p><a href="https://kurun-pan.github.io/post/2020-09-13/">ここ</a>にまとめている手順でZephyr OSをビルドし、<code>zephyr.elf</code>を生成します。</p>
+<br>
+<h3 id="zephyr-osのターゲットハードウェア">Zephyr OSのターゲットハードウェア</h3>
+<p>SiFive Freedom E310 (FE310) がターゲットハードウェアです。<a href="https://sifive.cdn.prismic.io/sifive/4d063bf8-3ae6-4db6-9843-ee9076ebadf7_fe310-g000.pdf">ここ</a>にハードウェア仕様があり、自作エミュレータのメモリマップや
+ペリフェラルなど、この仕様書をベースに作成しました。</p>
+<p>PWMやSPIなどはOSが起動するためには不要であるため、未実装です。GPIOやPLLはブート時にアクセスしていたため、
+レジスタだけ用意している感じです。</p>
+<br>
+<h2 id="自作エミュレータで動かしてみる">自作エミュレータで動かしてみる</h2>
+<hr>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git clone https://github.com/Kurun-pan/riscv-emu.git
+$ cd riscv-emu
+$ cargo run --release
+$ ./target/release/riscv-emu -k ./artifacts/zephyr/zephyr.elf -m SiFive_e
+</code></pre></div><p><img src="https://github.com/Kurun-pan/riscv-emu/blob/master/demo/zephyr.gif" alt="animation"></p>
+<br>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://Kurun-pan.github.io/tags/zephyr/">Zephyr</a>&nbsp;
+            
+              <a href="https://Kurun-pan.github.io/tags/risc-v/">RISC-V</a>&nbsp;
+            
+              <a href="https://Kurun-pan.github.io/tags/rust/">Rust</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-09-22%2f&amp;text=Zephyr%20OS%e3%82%92%e8%87%aa%e4%bd%9cRISC-V%e3%81%a7%e5%8b%95%e3%81%8b%e3%81%97%e3%81%9f%e8%a9%b1&amp;via=kurun_pan" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-09-22%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-09-22%2f&amp;title=Zephyr%20OS%e3%82%92%e8%87%aa%e4%bd%9cRISC-V%e3%81%a7%e5%8b%95%e3%81%8b%e3%81%97%e3%81%9f%e8%a9%b1" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-09-22%2f&amp;title=Zephyr%20OS%e3%82%92%e8%87%aa%e4%bd%9cRISC-V%e3%81%a7%e5%8b%95%e3%81%8b%e3%81%97%e3%81%9f%e8%a9%b1" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-09-22%2f&amp;title=Zephyr%20OS%e3%82%92%e8%87%aa%e4%bd%9cRISC-V%e3%81%a7%e5%8b%95%e3%81%8b%e3%81%97%e3%81%9f%e8%a9%b1" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-09-22%2f&amp;description=Zephyr%20OS%e3%82%92%e8%87%aa%e4%bd%9cRISC-V%e3%81%a7%e5%8b%95%e3%81%8b%e3%81%97%e3%81%9f%e8%a9%b1" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
   </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="/post/2020-09-13/">Zephyr OSをRISC-V向けにビルドして動かしてみる</a></li>
+                
+                    <li><a href="/post/2020-08-17-riscv-tests/">RISC-V テストベクター (検証用プログラム) </a></li>
+                
+                    <li><a href="/post/2020-08-16-xv6-riscv/">xv6のRISC-V版とそのビルド手順など</a></li>
+                
+                    <li><a href="/post/2020-08-16-riscv-toolchain/">RISC-V Toolchainのインストール手順</a></li>
+                
+              </ul>
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://Kurun-pan.github.io/post/2020-09-13/" data-toggle="tooltip" data-placement="top" title="Zephyr OSをRISC-V向けにビルドして動かしてみる">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
 
       
 <footer>
@@ -332,7 +488,7 @@ macOSではビルドエラーになることと、CMakeのバージョンが割�
               </li>
           
           <li>
-            <a href="/tags/zephyr/index.xml" title="RSS">
+            <a href="" title="RSS">
               <span class="fa-stack fa-lg">
                 <i class="fas fa-circle fa-stack-2x"></i>
                 <i class="fas fa-rss fa-stack-1x fa-inverse"></i>

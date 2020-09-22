@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Zephyr on Kurun&#39;s Blog</title>
-    <link>https://Kurun-pan.github.io/tags/zephyr/</link>
-    <description>Recent content in Zephyr on Kurun&#39;s Blog</description>
+    <title>Rust on Kurun&#39;s Blog</title>
+    <link>https://Kurun-pan.github.io/tags/rust/</link>
+    <description>Recent content in Rust on Kurun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kurunpan09@gmail.com (Kurun / くるん)</managingEditor>
     <webMaster>kurunpan09@gmail.com (Kurun / くるん)</webMaster>
     <lastBuildDate>Tue, 22 Sep 2020 00:00:00 +0900</lastBuildDate>
     
-	<atom:link href="https://Kurun-pan.github.io/tags/zephyr/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://Kurun-pan.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -21,16 +21,6 @@
       <description>&lt;p&gt;Zephyr OSをRustで書いた&lt;a href=&#34;https://github.com/Kurun-pan/riscv-emu&#34;&gt;自作RISC-Vエミュレータ&lt;/a&gt;で
 動かすことに成功したのでその内容をまとめています。
 基本的には何か新しいことはしておらず、NuttX OSを動かした時の実装そのままで動きました。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Zephyr OSをRISC-V向けにビルドして動かしてみる</title>
-      <link>https://Kurun-pan.github.io/post/2020-09-13/</link>
-      <pubDate>Sun, 13 Sep 2020 00:00:00 +0900</pubDate>
-      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
-      <guid>https://Kurun-pan.github.io/post/2020-09-13/</guid>
-      <description>&lt;p&gt;Zephyr OSをRISC-V向けにビルドする手順をまとめています。作業環境はLinux Ubuntu 20.04です。
-macOSではビルドエラーになることと、CMakeのバージョンが割と新しいのを求められることからUbuntu 20.04で確認しました。&lt;/p&gt;</description>
     </item>
     
   </channel>
