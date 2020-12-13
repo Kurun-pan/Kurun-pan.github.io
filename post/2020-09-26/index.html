@@ -60,7 +60,7 @@
   "headline": "RISC-V向けブートローダおよびLinuxカーネルのビルド手順",
   "description" : "RISC-V向けLinuxカーネルとブートローダのビルド手順についてまとめています。 ※本記事ではLinuxのrootfs (BusyBoxなど) のビルドは対象外です。\n",
   "inLanguage" : "en",
-  "wordCount":  2711 ,
+  "wordCount":  2713 ,
   "datePublished" : "2020-09-26T00:00:00",
   "dateModified" : "2020-09-26T00:00:00",
   "image" : "https:\/\/Kurun-pan.github.io\/images\/avatar-icon.png",
@@ -370,7 +370,7 @@ $ cd opensbi
 <br>
 <h2 id="6-qemu-で実行">6. QEMU で実行</h2>
 <hr>
-<p>事前にQEMUのビルドやインストールが必要です！</p>
+<p>事前にQEMUのビルドやインストールが必要です！また、今回はrootfsを用意していないので、rootfsをマウントするところでエラーになります（意図通り）。</p>
 <h3 id="opensbi-の場合">OpenSBI の場合</h3>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ cd opensbi
 $ qemu-system-riscv64 -M virt -m 256M -nographic -bios build/platform/qemu/virt/firmware/fw_payload.bin
@@ -704,7 +704,9 @@ rrrrrrrrrrrrrrrrrrrrrr  rrrrrrrrrrrrrrrrrrrrrr
 <ul>
 <li><a href="https://risc-v-getting-started-guide.readthedocs.io/en/latest/linux-introduction.html">https://risc-v-getting-started-guide.readthedocs.io/en/latest/linux-introduction.html</a></li>
 <li><a href="https://github.com/riscv/opensbi/blob/master/docs/platform/sifive_fu540.md">https://github.com/riscv/opensbi/blob/master/docs/platform/sifive_fu540.md</a></li>
+<li><a href="https://msyksphinz.hatenablog.com/entry/2020/05/11/040000">https://msyksphinz.hatenablog.com/entry/2020/05/11/040000</a></li>
 <li><a href="https://msyksphinz.hatenablog.com/entry/2018/05/08/040000">https://msyksphinz.hatenablog.com/entry/2018/05/08/040000</a></li>
+<li><a href="https://cstmize.hatenablog.jp/entry/2019/10/14/_QEMU%2BOpenSBI%28boot_loader%29%E3%81%A7linux_kernel%E3%81%AE%E8%B5%B7%E5%8B%95">https://cstmize.hatenablog.jp/entry/2019/10/14/_QEMU%2BOpenSBI%28boot_loader%29%E3%81%A7linux_kernel%E3%81%AE%E8%B5%B7%E5%8B%95</a></li>
 </ul>
 
         
