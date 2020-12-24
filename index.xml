@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kurunpan09@gmail.com (Kurun / くるん)</managingEditor>
     <webMaster>kurunpan09@gmail.com (Kurun / くるん)</webMaster>
-    <lastBuildDate>Sat, 26 Sep 2020 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 24 Dec 2020 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://Kurun-pan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Appleのインタビューを受けた話</title>
+      <link>https://Kurun-pan.github.io/post/2020-12-24/</link>
+      <pubDate>Thu, 24 Dec 2020 00:00:00 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/post/2020-12-24/</guid>
+      <description>&lt;p&gt;以前、Apple Japanのインタビューを受ける機会があったので、その時の内容を記事にまとめています。
+Appleの転職に関する情報が少なかったので、Appleへの転職を考えられている方の参考になるかと思い、記事を書くことにしました。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>RISC-V向けブートローダおよびLinuxカーネルのビルド手順</title>
