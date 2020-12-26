@@ -7,21 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>RISC-V Toolchainのインストール手順 - Kurun&#39;s Blog</title>
-  <meta name="description" content="
-
-  
-    
-      
-    
-    
-  
-
-
-1. はじめに
-
-RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。
-対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。">
+  <title>Linux Device Treeは難しい - Kurun&#39;s Blog</title>
+  <meta name="description" content="Linuxのデバイスツリーは難しいというお話。">
   <meta name="author" content="Kurun / くるん"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -57,8 +44,8 @@ RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインス�
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/Kurun-pan.github.io\/post\/2020-08-16-riscv-toolchain\/",
-          "name": "R i s c v toolchainのインストール手順"
+          "@id": "https:\/\/Kurun-pan.github.io\/post\/2020-12-26\/",
+          "name": "Linux device treeは難しい"
         }
     }]
 }
@@ -69,15 +56,15 @@ RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインス�
   "author": {
     "name" : "Kurun \/ くるん"
   },
-  "headline": "RISC-V Toolchainのインストール手順",
-  "description" : "    1. はじめに  RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。 対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。\n",
+  "headline": "Linux Device Treeは難しい",
+  "description" : "Linuxのデバイスツリーは難しいというお話。\n",
   "inLanguage" : "en",
-  "wordCount":  87 ,
-  "datePublished" : "2020-08-16T17:47:01",
-  "dateModified" : "2020-08-16T17:47:01",
+  "wordCount":  356 ,
+  "datePublished" : "2020-12-26T00:00:00",
+  "dateModified" : "2020-12-26T00:00:00",
   "image" : "https:\/\/Kurun-pan.github.io\/images\/avatar-icon.png",
-  "keywords" : [ "RISC-V" ],
-  "mainEntityOfPage" : "https:\/\/Kurun-pan.github.io\/post\/2020-08-16-riscv-toolchain\/",
+  "keywords" : [ "Linux, RISC-V, Device Tree" ],
+  "mainEntityOfPage" : "https:\/\/Kurun-pan.github.io\/post\/2020-12-26\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/Kurun-pan.github.io",
@@ -91,41 +78,15 @@ RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインス�
 }
 </script>
 
-<meta property="og:title" content="RISC-V Toolchainのインストール手順" />
-<meta property="og:description" content="
-
-  
-    
-      
-    
-    
-  
-
-
-1. はじめに
-
-RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。
-対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。">
+<meta property="og:title" content="Linux Device Treeは難しい" />
+<meta property="og:description" content="Linuxのデバイスツリーは難しいというお話。">
 <meta property="og:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
-<meta property="og:url" content="https://Kurun-pan.github.io/post/2020-08-16-riscv-toolchain/" />
+<meta property="og:url" content="https://Kurun-pan.github.io/post/2020-12-26/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kurun&#39;s Blog" />
 
-  <meta name="twitter:title" content="RISC-V Toolchainのインストール手順" />
-  <meta name="twitter:description" content="
-
-  
-    
-      
-    
-    
-  
-
-
-1. はじめに
-
-RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。
-対象OSはmacOSですが、基本的にLinux (Ubuntuなど) でも同じ手順です。">
+  <meta name="twitter:title" content="Linux Device Treeは難しい" />
+  <meta name="twitter:description" content="Linuxのデバイスツリーは難しいというお話。">
   <meta name="twitter:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kurun_pan" />
@@ -274,13 +235,13 @@ RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインス�
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
               <div class="post-heading">
-                <h1>RISC-V Toolchainのインストール手順</h1>
+                <h1>Linux Device Treeは難しい</h1>
                   
                   
                     <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 26, 2020
   
   
   
@@ -307,7 +268,7 @@ RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインス�
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>RISC-V Toolchainのインストール手順</h1>
+                <h1>Linux Device Treeは難しい</h1>
               
               
               
@@ -315,7 +276,7 @@ RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインス�
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on August 16, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 26, 2020
   
   
   
@@ -342,54 +303,167 @@ RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインス�
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <link rel="stylesheet" href="https://Kurun-pan.github.io/css/hugo-easy-gallery.css" />
-<div class="box" >
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img">
-      <img itemprop="thumbnail" src="/images/riscv.png" alt="/images/riscv.png"/>
-    </div>
-    <a href="/images/riscv.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
+        <p>Linuxのデバイスツリーは難しいというお話。</p>
+<h2 id="device-treeは謎が多い">Device Treeは謎が多い</h2>
+<hr>
+<p><a href="https://github.com/Kurun-pan/riscv-emu">RISC-Vエミュ</a> でLinuxカーネルを動かすためにデバイスツリーを作成しているのですが、
+UARTの割り込みIDがデバイスツリーで指定した値にならなくてハマりました。</p>
+<p>問題がないデバイスツリーのファイルは<a href="https://github.com/Kurun-pan/riscv-emu/blob/master/artifacts/linux/dtb/qemu_virtio.dts">githubにコミットしているファイル</a>で、以下の通りです。</p>
+<h4 id="正しい内容">正しい内容</h4>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">/dts-v1/;
 
-<h2 id="1-はじめに">1. はじめに</h2>
-<hr>
-<p>RISC-Vプロセッサ向けのToolchain (クロスコンパイラ) のインストール手順を解説します。
-対象OSは<code>macOS</code>ですが、基本的にLinux (Ubuntuなど) でも同じ手順です。</p>
-<br>
-<h2 id="2-インストール手順">2. インストール手順</h2>
-<hr>
-<h3 id="必要なパッケージのインストール">必要なパッケージのインストール</h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ brew install python3 gawk gnu-sed gmp mpfr libmpc isl zlib expat
-</code></pre></div><h3 id="toolchainのビルドとインストール">Toolchainのビルドとインストール</h3>
-<p>makeコマンドを実行することで、インストールまで実行されます。
-また、git cloneにも結構な時間を要します。ビルドも同様です。。</p>
-<p><code>configure</code>の<code>prefix</code>オプションには、インストール先のパスを指定します。</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ git clone --recursive https://github.com/riscv/riscv-gnu-toolchain
-$ cd riscv-gnu-toolchain
-$ ./configure --prefix=/opt/riscv
-$ sudo make
-</code></pre></div><h3 id="path追加">PATH追加</h3>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$export PATH=$PATH:/opt/riscv/bin
+/ {
+    #address-cells = &lt;2&gt;;
+    #size-cells = &lt;2&gt;;
+    compatible = &#34;riscv-virtio&#34;;
+    model = &#34;RISCV Qemu Virtio&#34;;
+
+    chosen {
+        bootargs = &#34;root=/dev/vda rw ttyS0&#34;;
+        stdout-path = &#34;/uart@10000000&#34;;
+    };
+
+    uart@10000000 {
+        compatible = &#34;ns16550a&#34;;
+        reg = &lt;0x0 0x10000000 0x0 0x100&gt;;
+        clock-frequency = &lt;0x384000&gt;;
+        interrupts = &lt;10&gt;;
+        interrupt-parent = &lt;&amp;intc&gt;;
+    };
+
+    virtio_mmio@10001000 {
+        compatible = &#34;virtio,mmio&#34;;
+        reg = &lt;0x0 0x10001000 0x0 0x1000&gt;;
+        interrupts = &lt;1&gt;;
+        interrupt-parent = &lt;&amp;intc&gt;;
+    };
+
+    cpus {
+        #address-cells = &lt;1&gt;;
+        #size-cells = &lt;0&gt;;
+        timebase-frequency = &lt;1000000&gt;;
+        cpu@0 {
+            device_type = &#34;cpu&#34;;
+            compatible = &#34;riscv&#34;;
+			riscv,isa = &#34;rv64abcdfimnsu&#34;;
+            mmu-type = &#34;riscv,sv39&#34;;
+            reg = &lt;0&gt;;
+			clock-frequency = &lt;0&gt;;
+            status = &#34;okay&#34;;
+            vic: interrupt-controller {
+                compatible = &#34;riscv,cpu-intc&#34;;
+                #interrupt-cells = &lt;1&gt;;
+                interrupt-controller;
+            };
+        };
+    };
+
+    intc: intc@c000000 {
+        compatible = &#34;riscv,plic0&#34;;
+        #interrupt-cells = &lt;1&gt;;
+        interrupt-controller;
+        reg = &lt;0x0 0xc000000 0x0 0x4000000&gt;;
+        interrupts-extended = &lt;&amp;vic 11 &amp;vic 9&gt;;
+        riscv,ndev = &lt;0x35&gt;;
+    };
+
+    memory@80000000 {
+        device_type = &#34;memory&#34;;
+        reg = &lt;0x0 0x80000000 0x0 0x8000000&gt;;
+    };
+
+    clint@2000000 {
+        compatible = &#34;riscv,clint0&#34;;
+        reg = &lt;0x0 0x2000000 0x0 0x10000&gt;;
+        interrupts-extended = &lt;&amp;vic 3 &amp;vic 7&gt;;
+    };
+};
 </code></pre></div><br>
-<h1 id="3-動作確認">3. 動作確認</h1>
-<hr>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">$ /opt/riscv/bin/riscv64-unknown-elf-gcc --version
-riscv64-unknown-elf-gcc (GCC) 10.1.0
-Copyright (C) 2020 Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.  There is NO
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+<h4 id="正しくない内容割り込み番号が指定した値にならない">正しくない内容（割り込み番号が指定した値にならない）</h4>
+<p>上記を以下のように、<code>uart@10000000</code>と<code>virtio_mmio@10001000</code>の位置をファイルの下の方に移動させると、
+<code>interrupts</code>で指定した割り込み番号が設定値通りになりませんでした。
+dtsのコンパイル時には何もワーニング等は何も出てきませんが、記述の順序にルールがあるのかなぁ。。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">/dts-v1/;
+
+/ {
+    #address-cells = &lt;2&gt;;
+    #size-cells = &lt;2&gt;;
+    compatible = &#34;riscv-virtio&#34;;
+    model = &#34;RISCV Qemu Virtio&#34;;
+
+    chosen {
+        bootargs = &#34;root=/dev/vda rw ttyS0&#34;;
+        stdout-path = &#34;/uart@10000000&#34;;
+    };
+
+    cpus {
+        #address-cells = &lt;1&gt;;
+        #size-cells = &lt;0&gt;;
+        timebase-frequency = &lt;1000000&gt;;
+        cpu@0 {
+            device_type = &#34;cpu&#34;;
+            compatible = &#34;riscv&#34;;
+			riscv,isa = &#34;rv64abcdfimnsu&#34;;
+            mmu-type = &#34;riscv,sv39&#34;;
+            reg = &lt;0&gt;;
+			clock-frequency = &lt;0&gt;;
+            status = &#34;okay&#34;;
+            vic: interrupt-controller {
+                compatible = &#34;riscv,cpu-intc&#34;;
+                #interrupt-cells = &lt;1&gt;;
+                interrupt-controller;
+            };
+        };
+    };
+
+    intc: intc@c000000 {
+        compatible = &#34;riscv,plic0&#34;;
+        #interrupt-cells = &lt;1&gt;;
+        interrupt-controller;
+        reg = &lt;0x0 0xc000000 0x0 0x4000000&gt;;
+        interrupts-extended = &lt;&amp;vic 11 &amp;vic 9&gt;;
+        riscv,ndev = &lt;0x35&gt;;
+    };
+
+    memory@80000000 {
+        device_type = &#34;memory&#34;;
+        reg = &lt;0x0 0x80000000 0x0 0x8000000&gt;;
+    };
+
+    clint@2000000 {
+        compatible = &#34;riscv,clint0&#34;;
+        reg = &lt;0x0 0x2000000 0x0 0x10000&gt;;
+        interrupts-extended = &lt;&amp;vic 3 &amp;vic 7&gt;;
+    };
+
+    uart@10000000 {
+        compatible = &#34;ns16550a&#34;;
+        reg = &lt;0x0 0x10000000 0x0 0x100&gt;;
+        clock-frequency = &lt;0x384000&gt;;
+        interrupts = &lt;10&gt;;
+        interrupt-parent = &lt;&amp;intc&gt;;
+    };
+
+    virtio_mmio@10001000 {
+        compatible = &#34;virtio,mmio&#34;;
+        reg = &lt;0x0 0x10001000 0x0 0x1000&gt;;
+        interrupts = &lt;1&gt;;
+        interrupt-parent = &lt;&amp;intc&gt;;
+    };
+};
 </code></pre></div><br>
-<h1 id="4-参考文献">4. 参考文献</h1>
+<h2 id="まとめ">まとめ</h2>
 <hr>
-<ul>
-<li><a href="https://github.com/riscv/riscv-gnu-toolchain">riscv-gnu-toolchain</a></li>
-</ul>
+<p>デバイスツリーの記述はよく分からん。</p>
 
         
           <div class="blog-tags">
             
+              <a href="https://Kurun-pan.github.io/tags/linux/">Linux</a>&nbsp;
+            
               <a href="https://Kurun-pan.github.io/tags/risc-v/">RISC-V</a>&nbsp;
+            
+              <a href="https://Kurun-pan.github.io/tags/device-tree/">Device Tree</a>&nbsp;
             
           </div>
         
@@ -404,42 +478,42 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f&amp;text=RISC-V%20Toolchain%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86&amp;via=kurun_pan" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-26%2f&amp;text=Linux%20Device%20Tree%e3%81%af%e9%9b%a3%e3%81%97%e3%81%84&amp;via=kurun_pan" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-26%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f&amp;title=RISC-V%20Toolchain%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-26%2f&amp;title=Linux%20Device%20Tree%e3%81%af%e9%9b%a3%e3%81%97%e3%81%84" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f&amp;title=RISC-V%20Toolchain%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-26%2f&amp;title=Linux%20Device%20Tree%e3%81%af%e9%9b%a3%e3%81%97%e3%81%84" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f&amp;title=RISC-V%20Toolchain%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-26%2f&amp;title=Linux%20Device%20Tree%e3%81%af%e9%9b%a3%e3%81%97%e3%81%84" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-08-16-riscv-toolchain%2f&amp;description=RISC-V%20Toolchain%e3%81%ae%e3%82%a4%e3%83%b3%e3%82%b9%e3%83%88%e3%83%bc%e3%83%ab%e6%89%8b%e9%a0%86" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-26%2f&amp;description=Linux%20Device%20Tree%e3%81%af%e9%9b%a3%e3%81%97%e3%81%84" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -461,8 +535,6 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
                   <ul>
                 
                 
-                    <li><a href="/post/2020-12-26/">Linux Device Treeは難しい</a></li>
-                
                     <li><a href="/post/2020-09-26/">RISC-V向けブートローダおよびLinuxカーネルのビルド手順</a></li>
                 
                     <li><a href="/post/2020-09-22/">Zephyr OSを自作RISC-Vで動かした話</a></li>
@@ -470,6 +542,8 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
                     <li><a href="/post/2020-09-13/">Zephyr OSをRISC-V向けにビルドして動かしてみる</a></li>
                 
                     <li><a href="/post/2020-08-17-riscv-tests/">RISC-V テストベクター (検証用プログラム) </a></li>
+                
+                    <li><a href="/post/2020-08-16-xv6-riscv/">xv6のRISC-V版とそのビルド手順など</a></li>
                 
               </ul>
 
@@ -481,13 +555,9 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://Kurun-pan.github.io/post/2020-08-16-how-to-use-hugo/" data-toggle="tooltip" data-placement="top" title="How to use Hugo">&larr; Previous Post</a>
+              <a href="https://Kurun-pan.github.io/post/2020-12-25/" data-toggle="tooltip" data-placement="top" title="編集距離 / 2つの文字列の類似度に関する問題">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://Kurun-pan.github.io/post/2020-08-16-xv6-riscv/" data-toggle="tooltip" data-placement="top" title="xv6のRISC-V版とそのビルド手順など">Next Post &rarr;</a>
-            </li>
           
         </ul>
       

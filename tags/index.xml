@@ -7,10 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kurunpan09@gmail.com (Kurun / くるん)</managingEditor>
     <webMaster>kurunpan09@gmail.com (Kurun / くるん)</webMaster>
-    <lastBuildDate>Fri, 25 Dec 2020 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 26 Dec 2020 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://Kurun-pan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Device Tree</title>
+      <link>https://Kurun-pan.github.io/tags/device-tree/</link>
+      <pubDate>Sat, 26 Dec 2020 00:00:00 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/tags/device-tree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://Kurun-pan.github.io/tags/linux/</link>
+      <pubDate>Sat, 26 Dec 2020 00:00:00 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RISC-V</title>
+      <link>https://Kurun-pan.github.io/tags/risc-v/</link>
+      <pubDate>Sat, 26 Dec 2020 00:00:00 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/tags/risc-v/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>競技プログラミング</title>
@@ -40,29 +67,11 @@
     </item>
     
     <item>
-      <title>Linux</title>
-      <link>https://Kurun-pan.github.io/tags/linux/</link>
-      <pubDate>Sat, 26 Sep 2020 00:00:00 +0900</pubDate>
-      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
-      <guid>https://Kurun-pan.github.io/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>OpenSBI</title>
       <link>https://Kurun-pan.github.io/tags/opensbi/</link>
       <pubDate>Sat, 26 Sep 2020 00:00:00 +0900</pubDate>
       <author>kurunpan09@gmail.com (Kurun / くるん)</author>
       <guid>https://Kurun-pan.github.io/tags/opensbi/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>RISC-V</title>
-      <link>https://Kurun-pan.github.io/tags/risc-v/</link>
-      <pubDate>Sat, 26 Sep 2020 00:00:00 +0900</pubDate>
-      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
-      <guid>https://Kurun-pan.github.io/tags/risc-v/</guid>
       <description></description>
     </item>
     

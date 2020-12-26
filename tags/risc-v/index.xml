@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kurunpan09@gmail.com (Kurun / くるん)</managingEditor>
     <webMaster>kurunpan09@gmail.com (Kurun / くるん)</webMaster>
-    <lastBuildDate>Sat, 26 Sep 2020 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 26 Dec 2020 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://Kurun-pan.github.io/tags/risc-v/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux Device Treeは難しい</title>
+      <link>https://Kurun-pan.github.io/post/2020-12-26/</link>
+      <pubDate>Sat, 26 Dec 2020 00:00:00 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/post/2020-12-26/</guid>
+      <description>&lt;p&gt;Linuxのデバイスツリーは難しいというお話。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>RISC-V向けブートローダおよびLinuxカーネルのビルド手順</title>
