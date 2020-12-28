@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kurunpan09@gmail.com (Kurun / くるん)</managingEditor>
     <webMaster>kurunpan09@gmail.com (Kurun / くるん)</webMaster>
-    <lastBuildDate>Sat, 26 Dec 2020 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 28 Dec 2020 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://Kurun-pan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>プログラミングトレーニング(12/28/20)</title>
+      <link>https://Kurun-pan.github.io/post/2020-12-28/</link>
+      <pubDate>Mon, 28 Dec 2020 00:00:00 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/post/2020-12-28/</guid>
+      <description>&lt;p&gt;今日解いた問題。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Linux Device Treeは難しい</title>
@@ -196,7 +205,7 @@ RISC-Vエミュレータ開発においても、このテストプログラム�
       <guid>https://Kurun-pan.github.io/page/about/</guid>
       <description>Who are you? 仕事では、システムソフトウェア開発やミドルウェアなどのOSSを触ったりしています。
 プライベートでは、Androidアプリを開発および配信したり、最近ではRust言語で RISC-V CPUのエミュレータを開発してxv6やLinuxなどのOSをそのエミュレータ上で動かそうとしていたり、 技術書典向けにいくつかの書籍を執筆しているなど、マルチに活動しています。
-専門分野  Embedded System &amp;amp; Software Linux, Android SoC (System on Chip) - 数年LSI開発経験あり  Computer Skills  C/C++ Dart (Flutter) Rust Java Kotlin (少しだけ) Docker / コンテナランタイム (runcなど) Linux  Hardware Skills  ARM64 RISC-V Intel X64 FPGA VerilogとかLSI開発関連のツールなど  開発に何らか関わった製品 以下のような商品の開発に携わり、自分が書いたソースコードを搭載した製品群を世の中にリリースしています。
+専門分野  Embedded Systems &amp;amp; Software Linux, Android OS, RTOS SoC (System on Chip) - 数年のLSI開発経験あり  Computer Skills  C/C++ Rust Java Dart (Flutter。FlutterのOSSコントリビュータです) Kotlin (少しだけ) Docker / コンテナランタイム (runcなど) Linux全般  Hardware Skills  ARM64 Intel x86_64 RISC-V FPGA VerilogとかLSI開発関連のツールなど  開発に何らか関わった製品 以下のような商品の開発に携わり、自分が書いたソースコードを搭載した製品群を世の中にリリースしています。
  Digital TV 4K Projector DVD/BD disk drive Video game console Consumer Printer &amp;amp; Scanner Medical equipments Automotive (HEV/PHEV/EV)  その他メディア  Twitter: https://twitter.</description>
     </item>
     

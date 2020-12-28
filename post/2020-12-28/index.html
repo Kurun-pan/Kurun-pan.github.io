@@ -7,8 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>編集距離 / 2つの文字列の類似度に関する問題 - Kurun&#39;s Blog</title>
-  <meta name="description" content="DP (Dynamic Programming) を利用した典型的な問題である、2つの文字列の編集距離（類似度）に関連するお勉強ログです。">
+  <title>プログラミングトレーニング(12/28/20) - Kurun&#39;s Blog</title>
+  <meta name="description" content="今日解いた問題。">
   <meta name="author" content="Kurun / くるん"/><script type="application/ld+json">
 {
     "@context": "http://schema.org",
@@ -44,8 +44,8 @@
         "@type": "ListItem",
         "position": 3,
         "item": {
-          "@id": "https:\/\/Kurun-pan.github.io\/post\/2020-12-25\/",
-          "name": "編集距離 \/ 2つの文字列の類似度に関する問題"
+          "@id": "https:\/\/Kurun-pan.github.io\/post\/2020-12-28\/",
+          "name": "プログラミングトレーニング(12\/28\/20)"
         }
     }]
 }
@@ -56,15 +56,15 @@
   "author": {
     "name" : "Kurun \/ くるん"
   },
-  "headline": "編集距離 \/ 2つの文字列の類似度に関する問題",
-  "description" : "DP (Dynamic Programming) を利用した典型的な問題である、2つの文字列の編集距離（類似度）に関連するお勉強ログです。\n",
+  "headline": "プログラミングトレーニング(12\/28\/20)",
+  "description" : "今日解いた問題。\n",
   "inLanguage" : "en",
-  "wordCount":  262 ,
-  "datePublished" : "2020-12-25T00:00:00",
-  "dateModified" : "2020-12-25T00:00:00",
+  "wordCount":  150 ,
+  "datePublished" : "2020-12-28T00:00:00",
+  "dateModified" : "2020-12-28T00:00:00",
   "image" : "https:\/\/Kurun-pan.github.io\/images\/avatar-icon.png",
   "keywords" : [ "競技プログラミング" ],
-  "mainEntityOfPage" : "https:\/\/Kurun-pan.github.io\/post\/2020-12-25\/",
+  "mainEntityOfPage" : "https:\/\/Kurun-pan.github.io\/post\/2020-12-28\/",
   "publisher" : {
     "@type": "Organization",
     "name" : "https:\/\/Kurun-pan.github.io",
@@ -78,15 +78,15 @@
 }
 </script>
 
-<meta property="og:title" content="編集距離 / 2つの文字列の類似度に関する問題" />
-<meta property="og:description" content="DP (Dynamic Programming) を利用した典型的な問題である、2つの文字列の編集距離（類似度）に関連するお勉強ログです。">
+<meta property="og:title" content="プログラミングトレーニング(12/28/20)" />
+<meta property="og:description" content="今日解いた問題。">
 <meta property="og:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
-<meta property="og:url" content="https://Kurun-pan.github.io/post/2020-12-25/" />
+<meta property="og:url" content="https://Kurun-pan.github.io/post/2020-12-28/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Kurun&#39;s Blog" />
 
-  <meta name="twitter:title" content="編集距離 / 2つの文字列の類似度に関する問題" />
-  <meta name="twitter:description" content="DP (Dynamic Programming) を利用した典型的な問題である、2つの文字列の編集距離（類似度）に関連するお勉強ログです。">
+  <meta name="twitter:title" content="プログラミングトレーニング(12/28/20)" />
+  <meta name="twitter:description" content="今日解いた問題。">
   <meta name="twitter:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="@kurun_pan" />
@@ -237,13 +237,13 @@
           <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
               <div class="post-heading">
-                <h1>編集距離 / 2つの文字列の類似度に関する問題</h1>
+                <h1>プログラミングトレーニング(12/28/20)</h1>
                   
                   
                     <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 25, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 28, 2020
   
   
   
@@ -270,7 +270,7 @@
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
               
-                <h1>編集距離 / 2つの文字列の類似度に関する問題</h1>
+                <h1>プログラミングトレーニング(12/28/20)</h1>
               
               
               
@@ -278,7 +278,7 @@
                 <span class="post-meta">
   
   
-  <i class="fas fa-calendar"></i>&nbsp;Posted on December 25, 2020
+  <i class="fas fa-calendar"></i>&nbsp;Posted on December 28, 2020
   
   
   
@@ -305,138 +305,64 @@
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p>DP (Dynamic Programming) を利用した典型的な問題である、2つの文字列の編集距離（類似度）に関連するお勉強ログです。</p>
-<h2 id="編集距離とは">編集距離とは</h2>
+        <p>今日解いた問題。</p>
+<h2 id="medium-754-reach-a-number">(Medium) 754. Reach a Number</h2>
 <hr>
-<p>2つの文字列の<a href="https://ja.wikipedia.org/wiki/%E3%83%AC%E3%83%BC%E3%83%99%E3%83%B3%E3%82%B7%E3%83%A5%E3%82%BF%E3%82%A4%E3%83%B3%E8%B7%9D%E9%9B%A2">編集距離</a>とは、ある文字列Aに対して、1文字の挿入・削除・変換によって、もう一方の文字列Bに変換するのに必要な手順の最小回数です。</p>
-<p>では、今回お勉強するLeedCodeの問題は以下です。</p>
-<ul>
-<li><a href="https://leetcode.com/problems/maximum-length-of-repeated-subarray/">718. Maximum Length of Repeated Subarray</a></li>
-<li><a href="https://leetcode.com/problems/longest-common-subsequence/">1143. Longest Common Subsequence</a></li>
-</ul>
-<br>
-<h2 id="718-maximum-length-of-repeated-subarray">718. Maximum Length of Repeated Subarray</h2>
-<hr>
-<h4 id="問題文">問題文</h4>
-<p>これは編集距離とは直接は関係ありませんが、2つの文字列の共通の部分文字列の最大の長さを計算する問題です。</p>
-
-<link rel="stylesheet" href="https://Kurun-pan.github.io/css/hugo-easy-gallery.css" />
-<div class="box" >
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img">
-      <img itemprop="thumbnail" src="./leetcode-question-719.png" alt="./leetcode-question-719.png"/>
-    </div>
-    <a href="./leetcode-question-719.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
-
-<br>
-<h4 id="考え方">考え方</h4>
-<p>まず文字列Aと文字列Bの2つを以下のようにDPのマトリックスを取ります。
-
-
-<div class="box" >
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img">
-      <img itemprop="thumbnail" src="./leetcode-question-719-description.png" alt="./leetcode-question-719-description.png"/>
-    </div>
-    <a href="./leetcode-question-719-description.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
-</p>
-<p>文字列A（もしくはB）の各文字に対して、もう一方の文字列の各文字が一致しているかどうかを見ていき、
-もし文字が一致していればその時点で部分文字列の最低文字数が1が確定します。
-この時に、一つ前の文字がさらに一致していれば、部分文字列の長さは一つ前のdpの値+1となります。
-つまり式にすると以下のようになります。</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">if A[i] == B[j] then
-    dp[i][j] = dp[i - 1][j - 1] + 1
-else
-    dp[i][j] = 0
-endif
-</code></pre></div><p>あとはdpの中の最大値が答え（部分文字列の最大長）となります。文字列Aの長さをN, 文字列Bの長さをMとすると、Time complexity: O(NM), Space complexity: O(NM)</p>
-<br>
-<h4 id="解答">解答</h4>
+<p><a href="https://leetcode.com/problems/reach-a-number/">https://leetcode.com/problems/reach-a-number/</a></p>
+<p>普通にアルゴリズムを思い付かなくて解けなかったです。Solution見て理解しましたが、AtCoderっぽい数学が少し絡んだ問題でした。</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">class Solution {
 public:
-    int findLength(vector&lt;int&gt;&amp; A, vector&lt;int&gt;&amp; B) {
-        int M = A.size();
-        int N = B.size();
-        vector&lt;vector&lt;int&gt;&gt; dp(M + 1, vector&lt;int&gt;(N + 1, 0));
-        int res = 0;
+    int reachNumber(int target) {
+        target = abs(target);
+        int k = 0;
+        while (target &gt; 0)
+            target -= ++k;
 
-        for (int i = 1; i &lt;= M; i++) {
-            for (int j = 1; j &lt;= N; j++) {
-                if (A[i - 1] == B[j - 1]) {
-                    dp[i][j] = dp[i - 1][j - 1] + 1;
-                    res = max(res, dp[i][j]);
-                }
-            }
-        }
+        return target % 2 == 0 ? k : k + 1 + k % 2;
+
+        /* 上記returnを分かり易く愚直に分解すると以下
+        if (target % 2 == 0)
+            return k;
         
-        return res;
+        if ((target - (k + 1)) % 2 == 0)
+            return k + 1;
+        
+        return k + 2;
+        */
     }
 };
 </code></pre></div><br>
-<h2 id="1143-longest-common-subsequence">1143. Longest Common Subsequence</h2>
+<h2 id="medium-1602-find-nearest-right-node-in-binary-tree">(Medium) 1602. Find Nearest Right Node in Binary Tree</h2>
 <hr>
-<h4 id="問題文-1">問題文</h4>
-<p>先程の問題の応用でこれが編集距離の問題です。先程の問題との違いですが、必ずしも各文字同士が隣り合っている必要がないという点です。
-つまり、各文字の間に適当な文字を挿入したり削除したりしても良いわけです。</p>
-
-
-<div class="box" >
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img">
-      <img itemprop="thumbnail" src="./leetcode-question-1143.png" alt="./leetcode-question-1143.png"/>
-    </div>
-    <a href="./leetcode-question-1143.png" itemprop="contentUrl"></a>
-  </figure>
-</div>
-
-<br>
-<h4 id="考え方-1">考え方</h4>
-<p><a href="https://qiita.com/_rdtr/items/c49aa20f8d48fbea8bd2">アルゴリズム1000本ノック #3. Longest common subsequence</a>にとても詳しく解説があるのでこれを参考にしてください。</p>
-<p>式にすると以下です。</p>
-<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">if A[i] == B[j] then
-    dp[i][j] = dp[i - 1][j - 1] + 1
-else
-    dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
-endif
-</code></pre></div><br>
-<h4 id="解答-1">解答</h4>
+<p><a href="https://leetcode.com/problems/find-nearest-right-node-in-binary-tree/">https://leetcode.com/problems/find-nearest-right-node-in-binary-tree/</a></p>
+<p>キューを使ったBFSのアプローチで解けました。同じ深さのレベルという点に注意して、同じ深さのレベルの中でターゲットの値のノードが来たら、その一つ前のノードをリターンすれば良いだけですね。</p>
 <div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">class Solution {
 public:
-    int longestCommonSubsequence(string text1, string text2) {
-        int M = text1.size();
-        int N = text2.size();
-        vector&lt;vector&lt;int&gt;&gt; dp(M + 1, vector&lt;int&gt;(N + 1, 0));
+    TreeNode* findNearestRightNode(TreeNode* root, TreeNode* u) {
+        queue&lt;TreeNode*&gt; q;
+        q.push(root);
 
-        for (int i = 1; i &lt;= M; i++) {
-            for (int j = 1; j &lt;= N; j++) {
-                if (text1[i - 1] == text2[j - 1]) {
-                    dp[i][j] = dp[i - 1][j - 1] + 1;
-                } else {
-                    dp[i][j] = max(dp[i - 1][j], dp[i][j - 1]);
-                }
+        while (!q.empty()) {
+            int sz = q.size();
+            TreeNode* prev = nullptr;
+            for (int i = 0; i &lt; sz; i++) {
+                TreeNode* node = q.front();
+                q.pop();
+
+                if (node-&gt;left)
+                    q.push(node-&gt;left);
+                if (node-&gt;right)
+                    q.push(node-&gt;right);
+
+                if (prev &amp;&amp; prev-&gt;val == u-&gt;val)
+                    return node;
+                prev = node;
             }
         }
-
-        return dp[M][N];
+        return nullptr;
     }
 };
-</code></pre></div><br>
-<h2 id="参考書">参考書</h2>
-<hr>
-<p>競技プログラミングやデータ構造アルゴリズムの学習本としてかなりお勧めな以下の本の5.5章でも解説があります。</p>
-<div style="margin: 2em 0;">
-<a style="display: inline-block;" target="_blank" href="https://www.amazon.co.jp/gp/product/4065128447/?tag=reconfmatsu-22">
-<img border="0" src="//ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&MarketPlace=JP&ASIN=4065128447&ServiceVersion=20070822&ID=AsinImage&WS=1&Format=_SL160_&tag=reconfmatsu-22" >
-</a>
-<br>
-<a target="_blank" href="https://www.amazon.co.jp/gp/product/4065128447/?tag=reconfmatsu-22">
-問題解決力を鍛える!アルゴリズムとデータ構造 (KS情報科学専門書)
-</a>
-</div>
+</code></pre></div>
 
         
           <div class="blog-tags">
@@ -456,42 +382,42 @@ public:
     <ul class="share">
       
       <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-25%2f&amp;text=%e7%b7%a8%e9%9b%86%e8%b7%9d%e9%9b%a2%20%2f%202%e3%81%a4%e3%81%ae%e6%96%87%e5%ad%97%e5%88%97%e3%81%ae%e9%a1%9e%e4%bc%bc%e5%ba%a6%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e5%95%8f%e9%a1%8c&amp;via=kurun_pan" target="_blank" title="Share on Twitter">
+        <a href="//twitter.com/share?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-28%2f&amp;text=%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%83%88%e3%83%ac%e3%83%bc%e3%83%8b%e3%83%b3%e3%82%b0%2812%2f28%2f20%29&amp;via=kurun_pan" target="_blank" title="Share on Twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-25%2f" target="_blank" title="Share on Facebook">
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-28%2f" target="_blank" title="Share on Facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-25%2f&amp;title=%e7%b7%a8%e9%9b%86%e8%b7%9d%e9%9b%a2%20%2f%202%e3%81%a4%e3%81%ae%e6%96%87%e5%ad%97%e5%88%97%e3%81%ae%e9%a1%9e%e4%bc%bc%e5%ba%a6%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e5%95%8f%e9%a1%8c" target="_blank" title="Share on Reddit">
+        <a href="//reddit.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-28%2f&amp;title=%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%83%88%e3%83%ac%e3%83%bc%e3%83%8b%e3%83%b3%e3%82%b0%2812%2f28%2f20%29" target="_blank" title="Share on Reddit">
           <i class="fab fa-reddit"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-25%2f&amp;title=%e7%b7%a8%e9%9b%86%e8%b7%9d%e9%9b%a2%20%2f%202%e3%81%a4%e3%81%ae%e6%96%87%e5%ad%97%e5%88%97%e3%81%ae%e9%a1%9e%e4%bc%bc%e5%ba%a6%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e5%95%8f%e9%a1%8c" target="_blank" title="Share on LinkedIn">
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-28%2f&amp;title=%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%83%88%e3%83%ac%e3%83%bc%e3%83%8b%e3%83%b3%e3%82%b0%2812%2f28%2f20%29" target="_blank" title="Share on LinkedIn">
           <i class="fab fa-linkedin"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-25%2f&amp;title=%e7%b7%a8%e9%9b%86%e8%b7%9d%e9%9b%a2%20%2f%202%e3%81%a4%e3%81%ae%e6%96%87%e5%ad%97%e5%88%97%e3%81%ae%e9%a1%9e%e4%bc%bc%e5%ba%a6%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e5%95%8f%e9%a1%8c" target="_blank" title="Share on StumbleUpon">
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-28%2f&amp;title=%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%83%88%e3%83%ac%e3%83%bc%e3%83%8b%e3%83%b3%e3%82%b0%2812%2f28%2f20%29" target="_blank" title="Share on StumbleUpon">
           <i class="fab fa-stumbleupon"></i>
         </a>
       </li>
   
       
       <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-25%2f&amp;description=%e7%b7%a8%e9%9b%86%e8%b7%9d%e9%9b%a2%20%2f%202%e3%81%a4%e3%81%ae%e6%96%87%e5%ad%97%e5%88%97%e3%81%ae%e9%a1%9e%e4%bc%bc%e5%ba%a6%e3%81%ab%e9%96%a2%e3%81%99%e3%82%8b%e5%95%8f%e9%a1%8c" target="_blank" title="Share on Pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2020-12-28%2f&amp;description=%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%83%88%e3%83%ac%e3%83%bc%e3%83%8b%e3%83%b3%e3%82%b0%2812%2f28%2f20%29" target="_blank" title="Share on Pinterest">
           <i class="fab fa-pinterest"></i>
         </a>
       </li>
@@ -513,7 +439,7 @@ public:
                   <ul>
                 
                 
-                    <li><a href="/post/2020-12-28/">プログラミングトレーニング(12/28/20)</a></li>
+                    <li><a href="/post/2020-12-25/">編集距離 / 2つの文字列の類似度に関する問題</a></li>
                 
               </ul>
 
@@ -525,13 +451,9 @@ public:
         <ul class="pager blog-pager">
           
             <li class="previous">
-              <a href="https://Kurun-pan.github.io/post/2020-12-24/" data-toggle="tooltip" data-placement="top" title="Appleのインタビューを受けた話">&larr; Previous Post</a>
+              <a href="https://Kurun-pan.github.io/post/2020-12-26/" data-toggle="tooltip" data-placement="top" title="Linux Device Treeは難しい">&larr; Previous Post</a>
             </li>
           
-          
-            <li class="next">
-              <a href="https://Kurun-pan.github.io/post/2020-12-26/" data-toggle="tooltip" data-placement="top" title="Linux Device Treeは難しい">Next Post &rarr;</a>
-            </li>
           
         </ul>
       
