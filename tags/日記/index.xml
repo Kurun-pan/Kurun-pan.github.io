@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>日記 on Kurun&#39;s Blog</title>
+    <link>https://Kurun-pan.github.io/tags/%E6%97%A5%E8%A8%98/</link>
+    <description>Recent content in 日記 on Kurun&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>kurunpan09@gmail.com (Kurun / くるん)</managingEditor>
+    <webMaster>kurunpan09@gmail.com (Kurun / くるん)</webMaster>
+    <lastBuildDate>Thu, 31 Dec 2020 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://Kurun-pan.github.io/tags/%E6%97%A5%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2020年を振り返る</title>
+      <link>https://Kurun-pan.github.io/post/2020-12-31/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/post/2020-12-31/</guid>
+      <description>&lt;p&gt;もはや記憶が曖昧ですが、2020年の振り返り日記です。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

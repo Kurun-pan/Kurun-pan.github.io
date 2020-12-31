@@ -7,13 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kurunpan09@gmail.com (Kurun / くるん)</managingEditor>
     <webMaster>kurunpan09@gmail.com (Kurun / くるん)</webMaster>
-    <lastBuildDate>Wed, 30 Dec 2020 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 31 Dec 2020 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://Kurun-pan.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>プログラミングトレーニング(12/30/20)</title>
+      <title>2020年を振り返る</title>
+      <link>https://Kurun-pan.github.io/post/2020-12-31/</link>
+      <pubDate>Thu, 31 Dec 2020 00:00:00 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/post/2020-12-31/</guid>
+      <description>&lt;p&gt;もはや記憶が曖昧ですが、2020年の振り返り日記です。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>プログラミングトレーニング(12/30/2020)</title>
       <link>https://Kurun-pan.github.io/post/2020-12-30/</link>
       <pubDate>Wed, 30 Dec 2020 00:00:00 +0900</pubDate>
       <author>kurunpan09@gmail.com (Kurun / くるん)</author>
@@ -22,7 +31,7 @@
     </item>
     
     <item>
-      <title>プログラミングトレーニング(12/28/20)</title>
+      <title>プログラミングトレーニング(12/28/2020)</title>
       <link>https://Kurun-pan.github.io/post/2020-12-28/</link>
       <pubDate>Mon, 28 Dec 2020 00:00:00 +0900</pubDate>
       <author>kurunpan09@gmail.com (Kurun / くるん)</author>
