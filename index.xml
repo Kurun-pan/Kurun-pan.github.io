@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kurunpan09@gmail.com (Kurun / くるん)</managingEditor>
     <webMaster>kurunpan09@gmail.com (Kurun / くるん)</webMaster>
-    <lastBuildDate>Sun, 03 Jan 2021 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 11 Jan 2021 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://Kurun-pan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>プログラミングトレーニング(01/11/2021)</title>
+      <link>https://Kurun-pan.github.io/post/2021-01-11/</link>
+      <pubDate>Mon, 11 Jan 2021 00:00:00 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/post/2021-01-11/</guid>
+      <description>&lt;p&gt;先週一週間で解いた問題です（簡単で復習は不要かなと思ったものを除く）。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>プログラミングトレーニング(01/03/2021)</title>

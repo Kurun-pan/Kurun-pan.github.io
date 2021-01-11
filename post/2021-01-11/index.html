@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>プログラミングトレーニング(01/11/2021) - Kurun&#39;s Blog</title>
+  <meta name="description" content="先週一週間で解いた問題です（簡単で復習は不要かなと思ったものを除く）。">
+  <meta name="author" content="Kurun / くるん"/><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Kurun\u0027s Blog",
+    
+    "url": "https:\/\/Kurun-pan.github.io"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "https:\/\/Kurun-pan.github.io"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "https:\/\/Kurun-pan.github.io",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "https:\/\/Kurun-pan.github.io\/post\/2021-01-11\/",
+          "name": "プログラミングトレーニング(01\/11\/2021)"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Kurun \/ くるん"
+  },
+  "headline": "プログラミングトレーニング(01\/11\/2021)",
+  "description" : "先週一週間で解いた問題です（簡単で復習は不要かなと思ったものを除く）。\n",
+  "inLanguage" : "en",
+  "wordCount":  657 ,
+  "datePublished" : "2021-01-11T00:00:00",
+  "dateModified" : "2021-01-11T00:00:00",
+  "image" : "https:\/\/Kurun-pan.github.io\/images\/avatar-icon.png",
+  "keywords" : [ "競技プログラミング" ],
+  "mainEntityOfPage" : "https:\/\/Kurun-pan.github.io\/post\/2021-01-11\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "https:\/\/Kurun-pan.github.io",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "https:\/\/Kurun-pan.github.io\/images\/avatar-icon.png",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="プログラミングトレーニング(01/11/2021)" />
+<meta property="og:description" content="先週一週間で解いた問題です（簡単で復習は不要かなと思ったものを除く）。">
+<meta property="og:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
+<meta property="og:url" content="https://Kurun-pan.github.io/post/2021-01-11/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Kurun&#39;s Blog" />
+
+  <meta name="twitter:title" content="プログラミングトレーニング(01/11/2021)" />
+  <meta name="twitter:description" content="先週一週間で解いた問題です（簡単で復習は不要かなと思ったものを除く）。">
+  <meta name="twitter:image" content="https://Kurun-pan.github.io/images/avatar-icon.png" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@kurun_pan" />
+  <meta name="twitter:creator" content="@kurun_pan" />
+  <meta name="generator" content="Hugo 0.74.3" />
+  <link rel="alternate" href="https://Kurun-pan.github.io/index.xml" type="application/rss+xml" title="Kurun&#39;s Blog"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://Kurun-pan.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://Kurun-pan.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://Kurun-pan.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+<meta name="google-site-verification" content="3gTlPnyMTOBEn8dx6I8rcg7l4h_tjIKzGAZ2Z15upFw" />
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://Kurun-pan.github.io">Kurun&#39;s Blog</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="Home" href="/">Home</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Profile" href="/page/about/">Profile</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Tags" href="/tags">Tags</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Kurun&#39;s Blog" href="https://Kurun-pan.github.io">
+            <img class="avatar-img" src="https://Kurun-pan.github.io/images/avatar-icon.png" alt="Kurun&#39;s Blog" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+    <div id="header-big-imgs" data-num-img=1 
+      
+         
+          data-img-src-1="/img/sphere.jpg" 
+         
+         
+      ></div>
+  
+
+  <header class="header-section has-img">
+    
+      <div class="intro-header big-img">
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+              <div class="post-heading">
+                <h1>プログラミングトレーニング(01/11/2021)</h1>
+                  
+                  
+                    <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 11, 2021
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Kurun / くるん
+    
+  
+  
+</span>
+
+
+                  
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="img-desc" style="display: inline;"></span>
+      </div>
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>プログラミングトレーニング(01/11/2021)</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on January 11, 2021
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Kurun / くるん
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>先週一週間で解いた問題です（簡単で復習は不要かなと思ったものを除く）。</p>
+<h2 id="leetcode-medium-1506-find-root-of-n-ary-tree">(LeetCode) Medium 1506. Find Root of N-Ary Tree</h2>
+<hr>
+<p><a href="https://leetcode.com/problems/find-root-of-n-ary-tree/">https://leetcode.com/problems/find-root-of-n-ary-tree/</a></p>
+<p>問題文がやたら分り辛い気もしますが、やることはルートのノードを見つけるだけです。基本的な解き方は、全てのノードの子ノードをチェックし、誰からも参照されなかったノードがルートであるというシンプルな理論です。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">class Solution {
+public:
+    Node* findRoot(vector&lt;Node*&gt; tree) {
+        set&lt;Node*&gt; seen;
+        for (auto t : tree)
+            for (auto c : t-&gt;children)
+                seen.insert(c);
+        for (auto t : tree)
+            if (seen.find(t) == seen.end())
+                return t;
+        return nullptr;
+    }
+};
+</code></pre></div><p>追加で、スペースオーダーをO(1)にするためにもう少し工夫することを考えてみます。各ノードの値はユニークであると定義されていますので、各ノードの値の総計を求め、それから各ノードの子ノードの値を引いて残った値がルートノードの値ということになります。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">class Solution {
+public:
+    Node* findRoot(vector&lt;Node*&gt; tree) {
+        int sum = 0;
+
+        for (auto t : tree) {
+            sum += t-&gt;val;
+            for (auto c : t-&gt;children)
+                sum -= c-&gt;val;
+        }
+
+        for (auto t : tree)
+            if (t-&gt;val == sum)
+                return t;
+
+        return nullptr;
+    }
+};
+</code></pre></div><p>さらに工夫して1パスで解くことを考えてみます。ユニークな値を一つ求めるというこの手の問題では、XORが有効的です（同じ値が2回出現したらXORの値がゼロになるので、一度しか出現していない値だけが最後に残る）。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">class Solution {
+public:
+    Node* findRoot(vector&lt;Node*&gt; tree) {
+        long long res = 0;
+
+        for (auto t : tree) {
+            res ^= (long long) t;
+            for (auto c : t-&gt;children) {
+                res ^= (long long) c;
+            }
+        }
+        return (Node*) res;
+    }
+};
+</code></pre></div><br>
+<h2 id="leetcode-easy-1237-find-positive-integer-solution-for-a-given-equation">(LeetCode) Easy 1237. Find Positive Integer Solution for a Given Equation</h2>
+<hr>
+<p><a href="https://leetcode.com/problems/find-positive-integer-solution-for-a-given-equation/">https://leetcode.com/problems/find-positive-integer-solution-for-a-given-equation/</a></p>
+<p><code>f(x, y) = z</code> を満たす(x, y)の組み合わせを見つける問題です。x, yの取り得る値の範囲を全探索すれば解けます。問題の制約上、バイナリサーチも利用可能です。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">class Solution {
+public:
+    vector&lt;vector&lt;int&gt;&gt; findSolution(CustomFunction&amp; customfunction, int z) {
+        vector&lt;vector&lt;int&gt;&gt; res;
+        for (int x = 1; x &lt; 1000; x++)
+            for (int y = 1; y &lt; 1000; y++) {
+                if (z == customfunction.f(x, y)) {
+                    res.push_back({x, y});
+                    break;
+                }
+            }
+        return res;
+    }
+};
+</code></pre></div><p>もう少し少し探索範囲を枝刈りすることを考えます。<code>f(x,y) == z</code>を満たすx, yについて、xもしくはyが1増加すると必ずzも最低でも1増加する制約があるため、yは上限の方から見ていき、<code>f(x,y) == z</code>を満たすyがあったとして、そこからxが+1されたら次のyの候補は必ず前回のyの値よりも小さくなるため、基本的にyは減少方向に見ていけば良いです。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">class Solution {
+public:
+    vector&lt;vector&lt;int&gt;&gt; findSolution(CustomFunction&amp; customfunction, int z) {
+        vector&lt;vector&lt;int&gt;&gt; res;
+        int y = 1000;
+        for (int x = 1; x &lt;= 1000; x++) {
+            while (y &gt; 1 &amp;&amp; customfunction.f(x,y) &gt; z)
+                y--;
+
+            if (customfunction.f(x,y) == z)
+                res.push_back({x, y});
+        }
+        return res;
+    }
+};
+</code></pre></div><br>
+<h2 id="leetcode-medium-240-search-a-2d-matrix-ii">(LeetCode) Medium 240. Search a 2D Matrix II</h2>
+<hr>
+<p><a href="https://leetcode.com/problems/search-a-2d-matrix-ii/">https://leetcode.com/problems/search-a-2d-matrix-ii/</a></p>
+<p>縦横それぞれの方向で数値が照準になっている2次元配列の中からターゲットの値が存在するかどうかをチェックする問題です。単純に全探索するとTLEになりますが、昇順であることを利用してO(M + N)で解くことが出来ます。左下からスタートして、ジグザクにスキャンする感じです。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">class Solution {
+public:
+    bool searchMatrix(vector&lt;vector&lt;int&gt;&gt;&amp; matrix, int target) {
+        int M = matrix.size();
+        int N = matrix[0].size();
+        
+        int j = 0;
+        for (int i = M - 1; i &gt;= 0; i--) {
+            while (j &lt; N &amp;&amp; matrix[i][j] &lt;= target) {
+                if (matrix[i][j] == target)
+                    return true;
+                j++;
+            }
+        }
+        return false;
+    }
+};
+</code></pre></div><br>
+<h2 id="leetcode-medium-230-kth-smallest-element-in-a-bst">(LeetCode) Medium 230. Kth Smallest Element in a BST</h2>
+<hr>
+<p><a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/">https://leetcode.com/problems/kth-smallest-element-in-a-bst/</a></p>
+<p>与えられたバイナリーツリーの中で&rsquo;k&rsquo;番目に小さい値を求める問題です。</p>
+<p>与えられたツリーを全探索し、ヒープに突っ込んで最後に<code>k</code>個popしたときの値が答えというシンプルなアプローチです。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">class Solution {
+public:
+    int kthSmallest(TreeNode* root, int k) {
+        priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; pq;
+        dfs(root, pq);
+        int res = 0;
+        for (int i = 0; i &lt; k; i++) {
+            res = pq.top();
+            pq.pop();
+        }
+        return res;
+    }
+
+private:
+    void dfs(TreeNode* node, priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt;&amp; pq) {
+        if (!node)
+            return;
+        pq.push(node-&gt;val);
+        dfs(node-&gt;left, pq);
+        dfs(node-&gt;right, pq);
+    }
+};
+</code></pre></div><p>ヒープを使わない方法を考えると、in-oderで探索すれば良いですね。そう言えば、dfsを再起コール使わずに実装するの初めてかも。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">class Solution {
+public:
+    int kthSmallest(TreeNode* root, int k) {
+        if (!root)
+            return -1;
+        
+        int res = 0, count = 0;
+        stack&lt;TreeNode*&gt; stk;
+        while (1) {
+            while (root) {
+                stk.push(root);
+                root = root-&gt;left;
+            }
+            
+            root = stk.top();
+            stk.pop();
+            if (++count == k)
+                return root-&gt;val;
+            root = root-&gt;right;
+        }
+        return -1;
+    }
+};
+</code></pre></div><br>
+<h2 id="leetcode-medium-82-remove-duplicates-from-sorted-list-ii">(LeetCode) Medium 82. Remove Duplicates from Sorted List II</h2>
+<hr>
+<p><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/">https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/</a></p>
+<p>重複がある値のノードを全て削除したリストを求める問題です。ただ解くだけの問題ですが、リストの問題は多少の慣れが必要な気がします。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">class Solution {
+public:
+    ListNode* deleteDuplicates(ListNode* head) {
+        if (!head || !head-&gt;next)
+            return head;
+        
+        if (head-&gt;val == head-&gt;next-&gt;val) {
+            int val = head-&gt;val;
+            while (head &amp;&amp; head-&gt;val == val)
+                head = head-&gt;next;
+            return deleteDuplicates(head);
+        }
+        
+        head-&gt;next = deleteDuplicates(head-&gt;next);
+        return head;
+    }
+};
+</code></pre></div><br>
+<h2 id="leetcode-easy-1539-kth-missing-positive-number">(LeetCode) Easy 1539. Kth Missing Positive Number</h2>
+<hr>
+<p><a href="https://leetcode.com/problems/kth-missing-positive-number/">https://leetcode.com/problems/kth-missing-positive-number/</a></p>
+<p>-1するしないが少し混乱するけど、単に解くだけの問題です。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">class Solution {
+public:
+    int findKthPositive(vector&lt;int&gt;&amp; arr, int k) {
+        int res = 1;
+        int i = 0;
+        int count = 0;
+        while (count != k) {
+            if (i &gt;= arr.size() || res &lt; arr[i]) {
+                res++;
+                count++;
+            } else if (res == arr[i++])
+                res++;
+        }
+        return res - 1;
+    }
+};
+</code></pre></div><br>
+<h2 id="leetcode-medium-526-beautiful-arrangement">(LeetCode) Medium 526. Beautiful Arrangement</h2>
+<hr>
+<p><a href="https://leetcode.com/problems/beautiful-arrangement/">https://leetcode.com/problems/beautiful-arrangement/</a></p>
+<p><code>beautiful arrangements</code>と定義されている1-nの数値からなる順列の組み合わせ数を求める問題です。</p>
+<ul>
+<li>perm[i]がiで割り切れる</li>
+<li>iがperm[i]で割り切れる</li>
+</ul>
+<p>全ての要素に対して、のどちらか一方を満たす順列の組み合わせ数を求めるために、条件を満たす順列をDFSで探索（作成）していきます。スワップ＆DFSで条件を満たす順列を作っていくのが最初よく理解できなかったです…。</p>
+<div class="highlight"><pre class="chroma"><code class="language-fallback" data-lang="fallback">class Solution {
+public:
+    int countArrangement(int N) {
+        vector&lt;int&gt; v;
+        for (int i = 0; i &lt; N; i++)
+            v.push_back(i + 1);
+        
+        int res = 0;
+        dfs(v, res, 0);
+        return res;
+    }
+
+private:
+    void dfs(vector&lt;int&gt;&amp; v, int&amp; res, int idx) {
+        if (idx == v.size()) {
+            res++;
+            return;
+        }
+
+        for (int i = idx; i &lt; v.size(); i++) {
+            if (v[i] % (idx + 1) == 0 || (idx + 1) % v[i] == 0) {
+                swap(v[i], v[idx]);
+                dfs(v, res, idx + 1);
+                swap(v[i], v[idx]);
+            }
+        }
+    }
+};
+</code></pre></div><br>
+
+        
+          <div class="blog-tags">
+            
+              <a href="https://Kurun-pan.github.io/tags/%E7%AB%B6%E6%8A%80%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0/">競技プログラミング</a>&nbsp;
+            
+          </div>
+        
+
+        
+            <hr/>
+            <section id="social-share">
+              <div class="list-inline footer-links">
+                
+
+<div class="share-box" aria-hidden="true">
+    <ul class="share">
+      
+      <li>
+        <a href="//twitter.com/share?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2021-01-11%2f&amp;text=%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%83%88%e3%83%ac%e3%83%bc%e3%83%8b%e3%83%b3%e3%82%b0%2801%2f11%2f2021%29&amp;via=kurun_pan" target="_blank" title="Share on Twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2021-01-11%2f" target="_blank" title="Share on Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//reddit.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2021-01-11%2f&amp;title=%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%83%88%e3%83%ac%e3%83%bc%e3%83%8b%e3%83%b3%e3%82%b0%2801%2f11%2f2021%29" target="_blank" title="Share on Reddit">
+          <i class="fab fa-reddit"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2021-01-11%2f&amp;title=%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%83%88%e3%83%ac%e3%83%bc%e3%83%8b%e3%83%b3%e3%82%b0%2801%2f11%2f2021%29" target="_blank" title="Share on LinkedIn">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2021-01-11%2f&amp;title=%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%83%88%e3%83%ac%e3%83%bc%e3%83%8b%e3%83%b3%e3%82%b0%2801%2f11%2f2021%29" target="_blank" title="Share on StumbleUpon">
+          <i class="fab fa-stumbleupon"></i>
+        </a>
+      </li>
+  
+      
+      <li>
+        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fKurun-pan.github.io%2fpost%2f2021-01-11%2f&amp;description=%e3%83%97%e3%83%ad%e3%82%b0%e3%83%a9%e3%83%9f%e3%83%b3%e3%82%b0%e3%83%88%e3%83%ac%e3%83%bc%e3%83%8b%e3%83%b3%e3%82%b0%2801%2f11%2f2021%29" target="_blank" title="Share on Pinterest">
+          <i class="fab fa-pinterest"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+  
+
+              </div>
+            </section>
+        
+
+        
+          
+            
+          
+
+          
+                  <h4 class="see-also">See also</h4>
+                  <ul>
+                
+                
+                    <li><a href="/post/2021-01-03/">プログラミングトレーニング(01/03/2021)</a></li>
+                
+                    <li><a href="/post/2020-12-30/">プログラミングトレーニング(12/30/2020)</a></li>
+                
+                    <li><a href="/post/2020-12-28/">プログラミングトレーニング(12/28/2020)</a></li>
+                
+                    <li><a href="/post/2020-12-25/">編集距離 / 2つの文字列の類似度に関する問題</a></li>
+                
+              </ul>
+
+          
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://Kurun-pan.github.io/post/2021-01-03/" data-toggle="tooltip" data-placement="top" title="プログラミングトレーニング(01/03/2021)">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:kurunpan09@gmail.com" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Kurun-pan" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/kurun_pan" title="Twitter">
+                  <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+          <li>
+            <a href="" title="RSS">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Kurun / くるん
+            
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2021
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://Kurun-pan.github.io">Kurun&#39;s Blog</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.74.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://Kurun-pan.github.io/js/main.js"></script>
+<script src="https://Kurun-pan.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://Kurun-pan.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
