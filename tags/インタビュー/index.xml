@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>インタビュー on Kurun&#39;s Blog</title>
+    <link>https://Kurun-pan.github.io/tags/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%93%E3%83%A5%E3%83%BC/</link>
+    <description>Recent content in インタビュー on Kurun&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>kurunpan09@gmail.com (Kurun / くるん)</managingEditor>
+    <webMaster>kurunpan09@gmail.com (Kurun / くるん)</webMaster>
+    <lastBuildDate>Thu, 24 Dec 2020 00:00:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://Kurun-pan.github.io/tags/%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%93%E3%83%A5%E3%83%BC/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Appleのインタビューを受けた話</title>
+      <link>https://Kurun-pan.github.io/post/2020-12-24/</link>
+      <pubDate>Thu, 24 Dec 2020 00:00:00 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/post/2020-12-24/</guid>
+      <description>&lt;p&gt;外資IT企業のインタビューシリーズです。昔、Apple Japanのインタビューを受ける機会があったので、その時の内容を記事にまとめています。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Netflixのインタビューを受けた話</title>
+      <link>https://Kurun-pan.github.io/post/2020-12-23/</link>
+      <pubDate>Wed, 23 Dec 2020 00:00:00 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/post/2020-12-23/</guid>
+      <description>&lt;p&gt;外資IT企業のインタビューシリーズです。昔、Netflixのインタビューを受ける機会があったので、今回はその時の内容を記事にまとめています。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
