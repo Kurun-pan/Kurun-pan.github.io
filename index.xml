@@ -248,9 +248,9 @@ RISC-Vエミュレータ開発においても、このテストプログラム�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <author>kurunpan09@gmail.com (Kurun / くるん)</author>
       <guid>https://Kurun-pan.github.io/page/about/</guid>
-      <description>Who are you? I am a software engineer &amp;amp; Researcher, and develop system softwares and middlewares such as WebView and Flutter in my job.
+      <description>Who are you? I am a software engineer &amp;amp; Researcher, and develop system softwares and middlewares such as WebView and Flutter at work.
 In my private, I have developed and released Android apps, recently developed a RISC-V CPU emulator written in the Rust language and tried to run an OS such as xv6 or Linux on that emulator, and some for technical books.
-Key Qualities:  Embedded Systems &amp;amp; Software Linux, Android OS, RTOS SoC (System on Chip) - Have several years of LSI development experience  Computer Skills:  C/C++ Rust Dart (Flutter OSS Contributor) Java Kotlin (Just a little) Docker / Container runtimes (runc etc.</description>
+Key Qualities:  Embedded Systems &amp;amp; Software Flutter &amp;amp; Flutter app development Linux, Android OS, RTOS SoC (System on Chip) - Have several years of LSI development experience  Computer Skills:  C/C++ Rust Dart (Flutter open-source software Contributor) Java Kotlin (Just a little) Docker / Container runtimes (runc etc.</description>
     </item>
     
   </channel>
