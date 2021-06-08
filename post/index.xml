@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>kurunpan09@gmail.com (Kurun / くるん)</managingEditor>
     <webMaster>kurunpan09@gmail.com (Kurun / くるん)</webMaster>
-    <lastBuildDate>Sun, 16 May 2021 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 08 Jun 2021 00:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://Kurun-pan.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>プログラミングトレーニング(06/08/2021)</title>
+      <link>https://Kurun-pan.github.io/post/2021-06-08/</link>
+      <pubDate>Tue, 08 Jun 2021 00:00:00 +0900</pubDate>
+      <author>kurunpan09@gmail.com (Kurun / くるん)</author>
+      <guid>https://Kurun-pan.github.io/post/2021-06-08/</guid>
+      <description>&lt;p&gt;競技プログラミングの練習メモです。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>ASUS Chromebook Detachable CM3を買った</title>
